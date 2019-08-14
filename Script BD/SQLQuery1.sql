@@ -1,6 +1,12 @@
-create database gerenciadoVeiculo;
+use master;
 
-use gerenciadoVeiculo;
+drop database gerenciadoVeiculo
+
+
+
+create database gerenciadoVeiculo
+
+use gerenciadoVeiculo
 
 create table logins (
 LOG_INT_ID INT NOT NULL identity(1,1),
@@ -18,3 +24,4 @@ INSERT INTO logins (LOG_STR_LOGIN, LOG_STR_SENHA) VALUES ('lucas123','lucas123')
 
 
 SELECT * FROM LOGINS;
+

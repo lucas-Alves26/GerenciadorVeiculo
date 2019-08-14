@@ -13,7 +13,7 @@ namespace GerenciadorVeiculo1.Dal
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=DESKTOP-LUCAS;Initial Catalog=gerenciadoVeiculo;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=gerenciadoVeiculo;Integrated Security=True";
         }
 
         public SqlConnection conectar()
