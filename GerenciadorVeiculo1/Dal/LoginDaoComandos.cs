@@ -32,6 +32,7 @@ namespace GerenciadorVeiculo1.Dal
                 {
                     tem = true;
                 }
+              
             }
 
             catch (SqlException)
@@ -39,8 +40,15 @@ namespace GerenciadorVeiculo1.Dal
                 this.mensagem = "Erro com banco de dados";
             }
 
-
+            
+            con.desconectar();
             return tem;
+
+           
+
+           
         }
+
+        
     }
 }

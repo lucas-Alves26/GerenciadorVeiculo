@@ -25,5 +25,10 @@ namespace GerenciadorVeiculo1.Dal
             da.Fill(dt);
             return dt;
         }
+
+        public void DeletUsuario(int id)
+        {
+
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace GerenciadorVeiculo1.View
             // ao abrir o frm ja abre com as informações de usuarios cadastrados
             DaoCadastroUs us = new DaoCadastroUs();
             dgUsuario.DataSource = us.ConsultaUsuario();
+
+            
         }
 
         private void fmrTelaUsuario_Load(object sender, EventArgs e)
@@ -30,7 +32,11 @@ namespace GerenciadorVeiculo1.View
 
         private void dgUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            // ao clicar na informação da coluna desejada vai pegar informação e
+            //passar ao txtId
+            var valor = dgUsuario[e.ColumnIndex, e.RowIndex].Value.ToString();
+            txtId.Text = valor;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +49,16 @@ namespace GerenciadorVeiculo1.View
         {
             fmrCadastroUs cadastroUs = new fmrCadastroUs();
             cadastroUs.Show();
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
