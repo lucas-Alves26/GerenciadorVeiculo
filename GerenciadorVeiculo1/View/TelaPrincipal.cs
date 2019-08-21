@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
+
+
+
 
 namespace GerenciadorVeiculo1.View
 {
@@ -15,6 +20,23 @@ namespace GerenciadorVeiculo1.View
         public fmrPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void cadastroUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmrTelaUsuario telaUsuario = new fmrTelaUsuario();
+            telaUsuario.Show();
+        
+        }
+
+        private void fmrPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

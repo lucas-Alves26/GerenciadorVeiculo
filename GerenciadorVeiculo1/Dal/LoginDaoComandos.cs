@@ -18,7 +18,7 @@ namespace GerenciadorVeiculo1.Dal
         // vai verificar no banco se existe login e senha
         public bool verificarLogin(string login, string senha)
         {
-            cmd.CommandText = "select * from logins where LOG_STR_LOGIN = @login and LOG_STR_SENHA = @senha";
+            cmd.CommandText = "select * from tbl_logins where LOG_STR_LOGIN = @login and LOG_STR_SENHA = @senha";
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@senha", senha);
 

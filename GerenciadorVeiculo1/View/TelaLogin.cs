@@ -32,9 +32,6 @@ namespace GerenciadorVeiculo1.View
             {
                 if (conLogin.tem)
                 {
-
-                    MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
                     //Oculta o primeiro formulario
                     Hide();
 

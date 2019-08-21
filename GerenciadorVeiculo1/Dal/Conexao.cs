@@ -1,19 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 
 namespace GerenciadorVeiculo1.Dal
 {
     public  class Conexao
     {
         SqlConnection con = new SqlConnection();
+       
+
+        public string StrConfiguracao { get; set; }
+
+        
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=gerenciadoVeiculo;Integrated Security=True";
+
+            con.ConnectionString = @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
 
         public SqlConnection conectar()
@@ -33,6 +42,11 @@ namespace GerenciadorVeiculo1.Dal
             {
                 con.Close();
             }
+        }
+
+        public string StrConexao()
+        {
+            return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
     }
 }
