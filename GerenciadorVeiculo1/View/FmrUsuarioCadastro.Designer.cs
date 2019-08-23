@@ -74,7 +74,7 @@
             this.lblRuaUs = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblLoginUs = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblConfirSenha = new System.Windows.Forms.Label();
             this.txtConfirSenhaUs = new System.Windows.Forms.TextBox();
             this.lblSenhaUs = new System.Windows.Forms.Label();
@@ -498,7 +498,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lblLoginUs);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.txtLogin);
             this.groupBox4.Controls.Add(this.lblConfirSenha);
             this.groupBox4.Controls.Add(this.txtConfirSenhaUs);
             this.groupBox4.Controls.Add(this.lblSenhaUs);
@@ -519,12 +519,12 @@
             this.lblLoginUs.TabIndex = 26;
             this.lblLoginUs.Text = "Login *";
             // 
-            // textBox1
+            // txtLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 20);
-            this.textBox1.TabIndex = 27;
+            this.txtLogin.Location = new System.Drawing.Point(17, 45);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(111, 20);
+            this.txtLogin.TabIndex = 27;
             // 
             // lblConfirSenha
             // 
@@ -566,6 +566,7 @@
             this.btnSalvarUs.TabIndex = 31;
             this.btnSalvarUs.Text = "Salver";
             this.btnSalvarUs.UseVisualStyleBackColor = true;
+            this.btnSalvarUs.Click += new System.EventHandler(this.btnSalvarUs_Click);
             // 
             // btnLimparUs
             // 
@@ -655,7 +656,7 @@
         private System.Windows.Forms.Label lblConfirSenha;
         private System.Windows.Forms.TextBox txtConfirSenhaUs;
         private System.Windows.Forms.Label lblLoginUs;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Button btnSalvarUs;
         private System.Windows.Forms.Button btnLimparUs;
     }

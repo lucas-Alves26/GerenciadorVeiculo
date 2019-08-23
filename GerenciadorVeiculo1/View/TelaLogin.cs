@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GerenciadorVeiculo1.Control;
 
+
+
 namespace GerenciadorVeiculo1.View
 {
     public partial class tlaLogin : Form

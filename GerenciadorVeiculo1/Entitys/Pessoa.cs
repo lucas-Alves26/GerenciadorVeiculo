@@ -21,8 +21,8 @@ namespace GerenciadorVeiculo1.Entitys
 
         }
 
-        public Pessoa(string nome, char sexo, string cpf, string rg, string cnh, DateTime dataNasc, string email, string ddd, string operadora, int numero)
-           : base (ddd,operadora,numero)
+        public Pessoa(string nome, char sexo, string cpf, string rg, string cnh, DateTime dataNasc, string email)
+           
         {
             Nome = nome;
             Sexo = sexo;

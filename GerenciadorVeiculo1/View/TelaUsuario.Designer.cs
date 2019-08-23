@@ -33,6 +33,8 @@
             this.btnNovoUsuario = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,10 +51,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAtualizar);
             this.groupBox1.Controls.Add(this.dgUsuario);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 195);
+            this.groupBox1.Size = new System.Drawing.Size(407, 229);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de usuário";
@@ -69,7 +72,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(378, 224);
+            this.txtId.Location = new System.Drawing.Point(360, 275);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(41, 20);
             this.txtId.TabIndex = 3;
@@ -78,18 +81,39 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(356, 227);
+            this.lblID.Location = new System.Drawing.Point(338, 278);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 13);
             this.lblID.TabIndex = 4;
             this.lblID.Text = "ID:";
             this.lblID.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(425, 272);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(326, 190);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.TabIndex = 1;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // fmrTelaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 307);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnNovoUsuario);
@@ -111,5 +135,7 @@
         private System.Windows.Forms.Button btnNovoUsuario;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }

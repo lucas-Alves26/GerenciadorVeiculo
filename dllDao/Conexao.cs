@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
-
-
-namespace GerenciadorVeiculo1.Dal
+namespace dllDao
 {
-    public  class Conexao
+    public class Conexao
     {
         SqlConnection con = new SqlConnection();
-       
 
-        public string StrConfiguracao { get; set; }
 
-        
+       // public string StrConfiguracao { get; set; }
+
+
 
         public Conexao()
         {
@@ -48,5 +45,34 @@ namespace GerenciadorVeiculo1.Dal
         {
             return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
+
+        public void ExecutarQuery(string QuerySQL)
+            {
+                string strConexao = StrConexao();
+                string query = QuerySQL;
+                SqlConnection con = new SqlConnection(strConexao);
+                SqlCommand sqlCommand = new SqlCommand(query, con);
+
+        try
+         {
+                con.Open();
+              sqlCommand.ExecuteNonQuery();
+         }
+
+                catch (Exception ex)
+                {
+                    string erro = ex.Message;
+                    erro += "   !!!";
+                }
+
+                finally
+                {
+
+                con.Close();
+                }
+
+        }
+
     }
 }
+

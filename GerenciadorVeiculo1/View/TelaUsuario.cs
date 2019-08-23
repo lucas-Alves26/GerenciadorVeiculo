@@ -19,8 +19,8 @@ namespace GerenciadorVeiculo1.View
             InitializeComponent();
 
             // ao abrir o frm ja abre com as informações de usuarios cadastrados
-            DaoCadastroUs us = new DaoCadastroUs();
-            dgUsuario.DataSource = us.ConsultaUsuario();
+            DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
+            dgUsuario.DataSource = daoCadastroUs.ConsultaUsuario();
 
             
         }
@@ -58,6 +58,21 @@ namespace GerenciadorVeiculo1.View
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+           
+            DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
+            daoCadastroUs.DeletUsuario(int.Parse(txtId.Text));
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
+
+            dgUsuario.DataSource = daoCadastroUs.ConsultaUsuario();
 
         }
     }

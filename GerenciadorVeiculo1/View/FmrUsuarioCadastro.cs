@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GerenciadorVeiculo1.Entitys;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -47,6 +48,11 @@ namespace GerenciadorVeiculo1.View
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalvarUs_Click(object sender, EventArgs e)
+        {
+            Login log = new Login(txtLogin.Text, txtSenhaUs.Text);
         }
     }
 }

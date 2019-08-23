@@ -8,7 +8,6 @@ namespace GerenciadorVeiculo1.Entitys
 {
     class Telefon
     {
-        private object ddd;
 
         public string Ddd { get; set; }
         public string Operadora { get; set; }
