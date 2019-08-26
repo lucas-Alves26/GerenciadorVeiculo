@@ -63,9 +63,18 @@ namespace GerenciadorVeiculo1.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
-            DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
-            daoCadastroUs.DeletUsuario(int.Parse(txtId.Text));
+
+            //DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
+            //daoCadastroUs.DeletUsuario(int.Parse(txtId.Text));
+
+            DaoEndereco endereco = new DaoEndereco(int.Parse(txtId.Text));
+            endereco.DeleteEnd();
+            DaoTelefon telefon = new DaoTelefon(int.Parse(txtId.Text));
+            telefon.DeleteTel();
+            DaoCadastroUs daoCadastroUs = new DaoCadastroUs(int.Parse(txtId.Text));
+            daoCadastroUs.DeletUsuario();
+            DaoLogin login = new DaoLogin(int.Parse(txtId.Text));
+            login.DeleteLog();
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

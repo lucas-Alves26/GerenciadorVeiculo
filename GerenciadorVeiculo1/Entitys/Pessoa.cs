@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GerenciadorVeiculo1.Entitys
 {
-      abstract class  Pessoa : Telefon
+      abstract class  Pessoa
     {
         public string Nome { get; set; }
         public char Sexo { get; set; }

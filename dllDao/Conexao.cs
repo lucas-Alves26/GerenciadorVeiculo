@@ -11,11 +11,6 @@ namespace dllDao
     {
         SqlConnection con = new SqlConnection();
 
-
-       // public string StrConfiguracao { get; set; }
-
-
-
         public Conexao()
         {
 
@@ -46,30 +41,29 @@ namespace dllDao
             return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
 
-        public void ExecutarQuery(string QuerySQL)
+        public void ExecutaInstrucaoNaBase(string QuerySQL)
+        {
+
+            string strConxao = StrConexao();
+            //"Data Source=MSV_R01M13\\UNIP;Initial Catalog=dbAula02;Integrated Security=True";
+            string Query = QuerySQL;
+            SqlConnection con = new SqlConnection(strConxao);
+            SqlCommand sqlCommand = new SqlCommand(Query, con);
+
+            try
             {
-                string strConexao = StrConexao();
-                string query = QuerySQL;
-                SqlConnection con = new SqlConnection(strConexao);
-                SqlCommand sqlCommand = new SqlCommand(query, con);
-
-        try
-         {
                 con.Open();
-              sqlCommand.ExecuteNonQuery();
-         }
-
-                catch (Exception ex)
-                {
-                    string erro = ex.Message;
-                    erro += "   !!!";
-                }
-
-                finally
-                {
-
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                string erro = ex.Message;
+                erro += "   !!!";
+            }
+            finally
+            {
                 con.Close();
-                }
+            }
 
         }
 

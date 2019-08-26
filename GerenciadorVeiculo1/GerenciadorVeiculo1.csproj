@@ -52,10 +52,10 @@
     <Compile Include="Control\ControlLogin.cs" />
     <Compile Include="Dal\DaoCadastroUs.cs" />
     <Compile Include="Dal\LoginDaoComandos.cs" />
-    <Compile Include="Dal\Endereco.cs" />
-    <Compile Include="Dal\Login.cs" />
+    <Compile Include="Dal\DaoEndereco.cs" />
+    <Compile Include="Dal\DaoLogin.cs" />
     <Compile Include="Entitys\Pessoa.cs" />
-    <Compile Include="Dal\Telefon.cs" />
+    <Compile Include="Dal\DaoTelefon.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

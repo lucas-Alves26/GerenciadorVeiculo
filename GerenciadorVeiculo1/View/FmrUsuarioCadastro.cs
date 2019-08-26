@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GerenciadorVeiculo1.Entitys;
+using GerenciadorVeiculo1.Dal;
+
 
 namespace GerenciadorVeiculo1.View
 {
@@ -52,7 +53,13 @@ namespace GerenciadorVeiculo1.View
 
         private void btnSalvarUs_Click(object sender, EventArgs e)
         {
-            Login log = new Login(txtLogin.Text, txtSenhaUs.Text);
+            DaoLogin login = new DaoLogin(txtLoginUs.Text,txtSenhaUs.Text);
+            login.cadastroLog();
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
