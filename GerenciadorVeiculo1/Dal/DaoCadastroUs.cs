@@ -14,10 +14,17 @@ namespace GerenciadorVeiculo1.Dal
     class DaoCadastroUs
     {
         public int UsuarioId { get; set; }
+        public string Name { get; set; }
+        public DateTime Nasc { get; set; }
+        public string Cpf { get; set; }
+        public string Rg { get; set; }
+        public string Cng { get; set; }
+        public string Email { get; set; }
+        public string Cargo { get; set; }
+        public char Sexo { get; set; }
 
         public DaoCadastroUs()
         {
-
         }
 
         public DaoCadastroUs(int usuarioId)
@@ -25,7 +32,17 @@ namespace GerenciadorVeiculo1.Dal
             UsuarioId = usuarioId;
         }
 
-        
+        public DaoCadastroUs(string name, DateTime nasc, string cpf, string rg, string cng, string email, string cargo, char sexo)
+        {
+            Name = name;
+            Nasc = nasc;
+            Cpf = cpf;
+            Rg = rg;
+            Cng = cng;
+            Email = email;
+            Cargo = cargo;
+            Sexo = sexo;
+        }
 
         public DataTable ConsultaUsuario()
         {
@@ -53,6 +70,7 @@ namespace GerenciadorVeiculo1.Dal
 
             public void CadastraUsuario(string login,string senha)
             {
+             
 
             }
              

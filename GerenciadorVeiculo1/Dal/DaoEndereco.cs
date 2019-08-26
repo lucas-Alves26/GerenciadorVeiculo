@@ -80,5 +80,7 @@ namespace GerenciadorVeiculo1.Dal
                 con.Close();
             }
         }
+
+
     }
 }
