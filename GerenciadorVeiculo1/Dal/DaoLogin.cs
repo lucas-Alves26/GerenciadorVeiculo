@@ -17,6 +17,10 @@ namespace GerenciadorVeiculo1.Dal
         public string Logins { get; private set;}
         public string Senha { get; private set;}
 
+        public DaoLogin()
+        {
+        }
+
         public DaoLogin(int loginId)
         {
             LoginId = loginId;
@@ -46,13 +50,18 @@ namespace GerenciadorVeiculo1.Dal
         {
             string id;
             Conexao conexao = new Conexao();
-            string query = "SELECT MAX(LIV_INT_ID)";
+            string query = "SELECT MAX(LOG_INT_ID) FROM TBL_LOGINS";
+            
             SqlConnection con = new SqlConnection(conexao.StrConexao());
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            DataTable dt = new DataTable();
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+            
 
-            da.Fill(dt);
-            id = dt.ToString();
+            sqlCommand.Connection = conexao.conectar();
+
+            id = sqlCommand.ExecuteScalar().ToString();
+
+            conexao.desconectar();
+            
             return id;
         }
 

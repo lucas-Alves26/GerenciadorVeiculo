@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNmaeUs = new System.Windows.Forms.TextBox();
-            this.txtCpfUs = new System.Windows.Forms.TextBox();
-            this.txtNascUs = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.txtNasc = new System.Windows.Forms.TextBox();
             this.cbxSexo = new System.Windows.Forms.ComboBox();
-            this.txtRgUs = new System.Windows.Forms.TextBox();
-            this.txtEmailUs = new System.Windows.Forms.TextBox();
-            this.txtDddUs = new System.Windows.Forms.TextBox();
-            this.txtCnhUs = new System.Windows.Forms.TextBox();
-            this.txtOperadoraUs = new System.Windows.Forms.TextBox();
+            this.txtRg = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDdd = new System.Windows.Forms.TextBox();
+            this.txtCnh = new System.Windows.Forms.TextBox();
+            this.txtFixo = new System.Windows.Forms.TextBox();
             this.txtBairroUs = new System.Windows.Forms.TextBox();
-            this.TxtCargoUs = new System.Windows.Forms.TextBox();
-            this.txtOpUs = new System.Windows.Forms.TextBox();
+            this.txtOperadora = new System.Windows.Forms.TextBox();
             this.txtNumeroUs = new System.Windows.Forms.TextBox();
             this.txtRuaUs = new System.Windows.Forms.TextBox();
             this.txtComplementoUs = new System.Windows.Forms.TextBox();
@@ -55,10 +54,11 @@
             this.lblRgUs = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxCargo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblOpUs = new System.Windows.Forms.Label();
             this.lblCelularUs = new System.Windows.Forms.Label();
-            this.txtCelularUs = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
             this.lblTelefoneUS = new System.Windows.Forms.Label();
             this.lblDdd = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,26 +88,28 @@
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtNmaeUs
+            // txtName
             // 
-            this.txtNmaeUs.Location = new System.Drawing.Point(17, 41);
-            this.txtNmaeUs.Name = "txtNmaeUs";
-            this.txtNmaeUs.Size = new System.Drawing.Size(285, 20);
-            this.txtNmaeUs.TabIndex = 0;
+            this.txtName.Location = new System.Drawing.Point(17, 41);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(285, 20);
+            this.txtName.TabIndex = 0;
             // 
-            // txtCpfUs
+            // txtCpf
             // 
-            this.txtCpfUs.Location = new System.Drawing.Point(422, 41);
-            this.txtCpfUs.Name = "txtCpfUs";
-            this.txtCpfUs.Size = new System.Drawing.Size(111, 20);
-            this.txtCpfUs.TabIndex = 1;
+            this.txtCpf.Location = new System.Drawing.Point(422, 41);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(111, 20);
+            this.txtCpf.TabIndex = 1;
             // 
-            // txtNascUs
+            // txtNasc
             // 
-            this.txtNascUs.Location = new System.Drawing.Point(312, 41);
-            this.txtNascUs.Name = "txtNascUs";
-            this.txtNascUs.Size = new System.Drawing.Size(100, 20);
-            this.txtNascUs.TabIndex = 2;
+            this.txtNasc.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNasc.Location = new System.Drawing.Point(312, 41);
+            this.txtNasc.Name = "txtNasc";
+            this.txtNasc.Size = new System.Drawing.Size(100, 20);
+            this.txtNasc.TabIndex = 2;
+            this.txtNasc.Text = "yy/MM/AAAA";
             // 
             // cbxSexo
             // 
@@ -116,48 +118,48 @@
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(53, 21);
             this.cbxSexo.TabIndex = 3;
-            this.cbxSexo.Text = "SEXO";
+            this.cbxSexo.Text = "Sexo";
             this.cbxSexo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // txtRgUs
+            // txtRg
             // 
-            this.txtRgUs.Location = new System.Drawing.Point(17, 90);
-            this.txtRgUs.Name = "txtRgUs";
-            this.txtRgUs.Size = new System.Drawing.Size(111, 20);
-            this.txtRgUs.TabIndex = 4;
+            this.txtRg.Location = new System.Drawing.Point(17, 90);
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(111, 20);
+            this.txtRg.TabIndex = 4;
             // 
-            // txtEmailUs
+            // txtEmail
             // 
-            this.txtEmailUs.Location = new System.Drawing.Point(270, 89);
-            this.txtEmailUs.Name = "txtEmailUs";
-            this.txtEmailUs.Size = new System.Drawing.Size(263, 20);
-            this.txtEmailUs.TabIndex = 5;
-            this.txtEmailUs.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Location = new System.Drawing.Point(270, 89);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(263, 20);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // txtDddUs
+            // txtDdd
             // 
-            this.txtDddUs.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDddUs.Location = new System.Drawing.Point(189, 135);
-            this.txtDddUs.Name = "txtDddUs";
-            this.txtDddUs.Size = new System.Drawing.Size(37, 20);
-            this.txtDddUs.TabIndex = 6;
-            this.txtDddUs.Text = "000";
+            this.txtDdd.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDdd.Location = new System.Drawing.Point(189, 135);
+            this.txtDdd.Name = "txtDdd";
+            this.txtDdd.Size = new System.Drawing.Size(37, 20);
+            this.txtDdd.TabIndex = 6;
+            this.txtDdd.Text = "000";
             // 
-            // txtCnhUs
+            // txtCnh
             // 
-            this.txtCnhUs.Location = new System.Drawing.Point(138, 89);
-            this.txtCnhUs.Name = "txtCnhUs";
-            this.txtCnhUs.Size = new System.Drawing.Size(122, 20);
-            this.txtCnhUs.TabIndex = 7;
+            this.txtCnh.Location = new System.Drawing.Point(138, 89);
+            this.txtCnh.Name = "txtCnh";
+            this.txtCnh.Size = new System.Drawing.Size(122, 20);
+            this.txtCnh.TabIndex = 7;
             // 
-            // txtOperadoraUs
+            // txtFixo
             // 
-            this.txtOperadoraUs.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtOperadoraUs.Location = new System.Drawing.Point(236, 135);
-            this.txtOperadoraUs.Name = "txtOperadoraUs";
-            this.txtOperadoraUs.Size = new System.Drawing.Size(100, 20);
-            this.txtOperadoraUs.TabIndex = 8;
-            this.txtOperadoraUs.Text = "0000-0000";
+            this.txtFixo.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtFixo.Location = new System.Drawing.Point(236, 135);
+            this.txtFixo.Name = "txtFixo";
+            this.txtFixo.Size = new System.Drawing.Size(100, 20);
+            this.txtFixo.TabIndex = 8;
+            this.txtFixo.Text = "0000-0000";
             // 
             // txtBairroUs
             // 
@@ -166,19 +168,12 @@
             this.txtBairroUs.Size = new System.Drawing.Size(138, 20);
             this.txtBairroUs.TabIndex = 9;
             // 
-            // TxtCargoUs
+            // txtOperadora
             // 
-            this.TxtCargoUs.Location = new System.Drawing.Point(17, 136);
-            this.TxtCargoUs.Name = "TxtCargoUs";
-            this.TxtCargoUs.Size = new System.Drawing.Size(100, 20);
-            this.TxtCargoUs.TabIndex = 10;
-            // 
-            // txtOpUs
-            // 
-            this.txtOpUs.Location = new System.Drawing.Point(463, 134);
-            this.txtOpUs.Name = "txtOpUs";
-            this.txtOpUs.Size = new System.Drawing.Size(70, 20);
-            this.txtOpUs.TabIndex = 11;
+            this.txtOperadora.Location = new System.Drawing.Point(463, 136);
+            this.txtOperadora.Name = "txtOperadora";
+            this.txtOperadora.Size = new System.Drawing.Size(70, 20);
+            this.txtOperadora.TabIndex = 11;
             // 
             // txtNumeroUs
             // 
@@ -298,36 +293,48 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxCargo);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.lblOpUs);
             this.groupBox2.Controls.Add(this.lblCelularUs);
-            this.groupBox2.Controls.Add(this.txtCelularUs);
+            this.groupBox2.Controls.Add(this.txtCelular);
             this.groupBox2.Controls.Add(this.lblTelefoneUS);
             this.groupBox2.Controls.Add(this.lblDdd);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtNmaeUs);
+            this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtCpfUs);
-            this.groupBox2.Controls.Add(this.txtOpUs);
+            this.groupBox2.Controls.Add(this.txtCpf);
+            this.groupBox2.Controls.Add(this.txtOperadora);
             this.groupBox2.Controls.Add(this.lblRgUs);
-            this.groupBox2.Controls.Add(this.txtNascUs);
+            this.groupBox2.Controls.Add(this.txtNasc);
             this.groupBox2.Controls.Add(this.lblCpf);
             this.groupBox2.Controls.Add(this.cbxSexo);
             this.groupBox2.Controls.Add(this.lblNascUs);
-            this.groupBox2.Controls.Add(this.txtOperadoraUs);
-            this.groupBox2.Controls.Add(this.txtRgUs);
+            this.groupBox2.Controls.Add(this.txtFixo);
+            this.groupBox2.Controls.Add(this.txtRg);
             this.groupBox2.Controls.Add(this.CV);
-            this.groupBox2.Controls.Add(this.txtDddUs);
-            this.groupBox2.Controls.Add(this.TxtCargoUs);
-            this.groupBox2.Controls.Add(this.txtCnhUs);
-            this.groupBox2.Controls.Add(this.txtEmailUs);
+            this.groupBox2.Controls.Add(this.txtDdd);
+            this.groupBox2.Controls.Add(this.txtCnh);
+            this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(547, 190);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Pessoais";
+            // 
+            // cbxCargo
+            // 
+            this.cbxCargo.FormattingEnabled = true;
+            this.cbxCargo.Items.AddRange(new object[] {
+            "Usuário",
+            "Administrador"});
+            this.cbxCargo.Location = new System.Drawing.Point(17, 135);
+            this.cbxCargo.Name = "cbxCargo";
+            this.cbxCargo.Size = new System.Drawing.Size(100, 21);
+            this.cbxCargo.TabIndex = 36;
+            this.cbxCargo.Text = "Cargo";
             // 
             // label4
             // 
@@ -356,14 +363,14 @@
             this.lblCelularUs.TabIndex = 33;
             this.lblCelularUs.Text = "Celular";
             // 
-            // txtCelularUs
+            // txtCelular
             // 
-            this.txtCelularUs.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCelularUs.Location = new System.Drawing.Point(349, 134);
-            this.txtCelularUs.Name = "txtCelularUs";
-            this.txtCelularUs.Size = new System.Drawing.Size(100, 20);
-            this.txtCelularUs.TabIndex = 32;
-            this.txtCelularUs.Text = "00000-0000";
+            this.txtCelular.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCelular.Location = new System.Drawing.Point(349, 136);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(100, 20);
+            this.txtCelular.TabIndex = 32;
+            this.txtCelular.Text = "00000-0000";
             // 
             // lblTelefoneUS
             // 
@@ -388,9 +395,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Cargo *";
+            this.label3.Text = "*";
             // 
             // label2
             // 
@@ -607,18 +614,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNmaeUs;
-        private System.Windows.Forms.TextBox txtCpfUs;
-        private System.Windows.Forms.TextBox txtNascUs;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.TextBox txtNasc;
         private System.Windows.Forms.ComboBox cbxSexo;
-        private System.Windows.Forms.TextBox txtRgUs;
-        private System.Windows.Forms.TextBox txtEmailUs;
-        private System.Windows.Forms.TextBox txtDddUs;
-        private System.Windows.Forms.TextBox txtCnhUs;
-        private System.Windows.Forms.TextBox txtOperadoraUs;
+        private System.Windows.Forms.TextBox txtRg;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDdd;
+        private System.Windows.Forms.TextBox txtCnh;
+        private System.Windows.Forms.TextBox txtFixo;
         private System.Windows.Forms.TextBox txtBairroUs;
-        private System.Windows.Forms.TextBox TxtCargoUs;
-        private System.Windows.Forms.TextBox txtOpUs;
+        private System.Windows.Forms.TextBox txtOperadora;
         private System.Windows.Forms.TextBox txtNumeroUs;
         private System.Windows.Forms.TextBox txtRuaUs;
         private System.Windows.Forms.TextBox txtComplementoUs;
@@ -638,7 +644,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDdd;
         private System.Windows.Forms.Label lblCelularUs;
-        private System.Windows.Forms.TextBox txtCelularUs;
+        private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label lblTelefoneUS;
         private System.Windows.Forms.Label lblOpUs;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -660,5 +666,6 @@
         private System.Windows.Forms.TextBox txtLoginUs;
         private System.Windows.Forms.Button btnSalvarUs;
         private System.Windows.Forms.Button btnLimparUs;
+        private System.Windows.Forms.ComboBox cbxCargo;
     }
 }

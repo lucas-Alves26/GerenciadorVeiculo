@@ -13,7 +13,6 @@ namespace dllDao
 
         public Conexao()
         {
-
             con.ConnectionString = @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
 

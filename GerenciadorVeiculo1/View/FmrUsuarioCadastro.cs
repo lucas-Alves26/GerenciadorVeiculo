@@ -55,6 +55,19 @@ namespace GerenciadorVeiculo1.View
         {
             DaoLogin login = new DaoLogin(txtLoginUs.Text,txtSenhaUs.Text);
             login.cadastroLog();
+            DateTime date = DateTime.Parse(txtNasc.Text);
+            char sexo = char.Parse(cbxSexo.Text);
+
+            DaoCadastroUs daoCadastroUs = new DaoCadastroUs(txtName.Text, date, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
+            daoCadastroUs.CadastraUsuario();
+
+            
+          DaoTelefon daoTelefon = new DaoTelefon(int.Parse(txtDdd.Text),txtOperadora.Text,int.Parse(txtCelular.Text),int.Parse(txtFixo.Text));
+          daoTelefon.CadastroTel();
+
+            /*DaoEndereco daoEndereco = new DaoEndereco(int.Parse(txtNumeroUs.Text), int.Parse(txtCepUs.Text), txtComplementoUs.Text, txtCidUs.Text, txtEstadoUs.Text, txtBairroUs.Text, txtRuaUs.Text);
+            daoEndereco.CadastroEnd();*/
+        
         }
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
