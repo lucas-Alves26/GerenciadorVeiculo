@@ -47,7 +47,7 @@ namespace GerenciadorVeiculo1.View
 
         private void btnNovoUsuario_Click(object sender, EventArgs e)
         {
-            fmrCadastroUs cadastroUs = new fmrCadastroUs();
+            fmrCadastro cadastroUs = new fmrCadastro();
             cadastroUs.Show();
         }
 

@@ -7,6 +7,7 @@ using GerenciadorVeiculo1.View;
 using System.Data;
 using System.Data.SqlClient;
 using dllDao;
+using GerenciadorVeiculo1.Exceptions;
 
 
 
@@ -21,11 +22,9 @@ namespace GerenciadorVeiculo1.Dal
         public string Cnh { get; set; }
         public string Rg { get; set; }
         public string Cargo { get; set; }
-        public char Sexo { get; set; }
+        public char Sexo { get; set; } 
         public string Email { get; set; }
         
-        
-
         public DaoCadastroUs()
         {
         }
@@ -74,10 +73,12 @@ namespace GerenciadorVeiculo1.Dal
 
         public void CadastraUsuario()
         {
+            string nasc = Nasc.ToString("yyyy-MM-dd");
+
             DaoLogin daoLogin = new DaoLogin();
             string id = daoLogin.SelecioneId();
 
-            string nasc = Nasc.ToString("yyyy-MM-dd");
+            
             
 
             Conexao conexao = new Conexao();
