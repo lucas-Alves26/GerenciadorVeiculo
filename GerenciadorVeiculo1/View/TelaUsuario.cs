@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using GerenciadorVeiculo1.Dal;
+using GerenciadorVeiculo1.Entitys;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -19,7 +20,7 @@ namespace GerenciadorVeiculo1.View
             InitializeComponent();
 
             // ao abrir o frm ja abre com as informações de usuarios cadastrados
-            DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
+            DaoUsuario daoCadastroUs = new DaoUsuario();
             dgUsuario.DataSource = daoCadastroUs.ConsultaUsuario();
 
             
@@ -41,7 +42,7 @@ namespace GerenciadorVeiculo1.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DaoCadastroUs us = new DaoCadastroUs();
+            DaoUsuario us = new DaoUsuario();
             dgUsuario.DataSource = us.ConsultaUsuario();
         }
 
@@ -63,24 +64,14 @@ namespace GerenciadorVeiculo1.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            //DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
-            //daoCadastroUs.DeletUsuario(int.Parse(txtId.Text));
-
-            DaoEndereco endereco = new DaoEndereco(int.Parse(txtId.Text));
-            endereco.DeleteEnd();
-            DaoTelefon telefon = new DaoTelefon(int.Parse(txtId.Text));
-            telefon.DeleteTel();
-            DaoCadastroUs daoCadastroUs = new DaoCadastroUs(int.Parse(txtId.Text));
-            daoCadastroUs.DeletUsuario();
-            DaoLogin login = new DaoLogin(int.Parse(txtId.Text));
-            login.DeleteLog();
+            DaoUsuario DaoUs = new DaoUsuario();
+            DaoUs.usuario = new Usuario(int.Parse(txtId.Text));
+            DaoUs.DeletUsuario();
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            DaoCadastroUs daoCadastroUs = new DaoCadastroUs();
-
+            DaoUsuario daoCadastroUs = new DaoUsuario();
             dgUsuario.DataSource = daoCadastroUs.ConsultaUsuario();
 
         }

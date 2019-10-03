@@ -11,8 +11,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
+        protected override void Dispose(bool disposing) { 
+        //{
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -29,14 +29,23 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtUrlFotoUs = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAbrir = new System.Windows.Forms.Button();
             this.CV = new System.Windows.Forms.Label();
             this.lblNascUs = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblRgUs = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxSex = new System.Windows.Forms.ComboBox();
+            this.txtOpe = new System.Windows.Forms.TextBox();
+            this.txtCel = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.txtDdd = new System.Windows.Forms.TextBox();
+            this.cbxCargo = new System.Windows.Forms.ComboBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCnh = new System.Windows.Forms.TextBox();
+            this.txtRg = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtNasc = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -48,6 +57,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTele = new System.Windows.Forms.GroupBox();
+            this.cbxCidade = new System.Windows.Forms.ComboBox();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtComp = new System.Windows.Forms.TextBox();
+            this.txtNum = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
             this.lblCepUs = new System.Windows.Forms.Label();
             this.lblEstadoUs = new System.Windows.Forms.Label();
             this.lblCidadeUs = new System.Windows.Forms.Label();
@@ -56,31 +72,15 @@
             this.lblNumeroUs = new System.Windows.Forms.Label();
             this.lblRuaUs = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtSenha2 = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLoginUs = new System.Windows.Forms.Label();
             this.lblConfirSenha = new System.Windows.Forms.Label();
             this.lblSenhaUs = new System.Windows.Forms.Label();
             this.btnSalvarUs = new System.Windows.Forms.Button();
             this.btnLimparUs = new System.Windows.Forms.Button();
-            this.txtRg = new System.Windows.Forms.TextBox();
-            this.txtCnh = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.cbxCargo = new System.Windows.Forms.ComboBox();
-            this.cbxSexo = new System.Windows.Forms.ComboBox();
-            this.txtDdd = new System.Windows.Forms.TextBox();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.txtCel = new System.Windows.Forms.TextBox();
-            this.txtOpe = new System.Windows.Forms.TextBox();
-            this.txtRua = new System.Windows.Forms.TextBox();
-            this.txtNum = new System.Windows.Forms.TextBox();
-            this.txtComp = new System.Windows.Forms.TextBox();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.txtCep = new System.Windows.Forms.TextBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtSenha2 = new System.Windows.Forms.TextBox();
-            this.btnAbrir = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,27 +93,30 @@
             this.pictureBox1.Location = new System.Drawing.Point(11, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(117, 124);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtUrlFotoUs
-            // 
-            this.txtUrlFotoUs.Location = new System.Drawing.Point(11, 149);
-            this.txtUrlFotoUs.Name = "txtUrlFotoUs";
-            this.txtUrlFotoUs.Size = new System.Drawing.Size(117, 20);
-            this.txtUrlFotoUs.TabIndex = 21;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAbrir);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.txtUrlFotoUs);
             this.groupBox1.Location = new System.Drawing.Point(561, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(139, 204);
+            this.groupBox1.Size = new System.Drawing.Size(139, 190);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Foto usuário";
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Location = new System.Drawing.Point(68, 149);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(60, 23);
+            this.btnAbrir.TabIndex = 22;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // CV
             // 
@@ -162,11 +165,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxSex);
             this.groupBox2.Controls.Add(this.txtOpe);
             this.groupBox2.Controls.Add(this.txtCel);
             this.groupBox2.Controls.Add(this.txtTel);
             this.groupBox2.Controls.Add(this.txtDdd);
-            this.groupBox2.Controls.Add(this.cbxSexo);
             this.groupBox2.Controls.Add(this.cbxCargo);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.txtCnh);
@@ -193,6 +196,90 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Pessoais";
             // 
+            // cbxSex
+            // 
+            this.cbxSex.FormattingEnabled = true;
+            this.cbxSex.Location = new System.Drawing.Point(133, 134);
+            this.cbxSex.Name = "cbxSex";
+            this.cbxSex.Size = new System.Drawing.Size(65, 21);
+            this.cbxSex.TabIndex = 48;
+            // 
+            // txtOpe
+            // 
+            this.txtOpe.Location = new System.Drawing.Point(414, 135);
+            this.txtOpe.MaxLength = 15;
+            this.txtOpe.Name = "txtOpe";
+            this.txtOpe.Size = new System.Drawing.Size(73, 20);
+            this.txtOpe.TabIndex = 47;
+            // 
+            // txtCel
+            // 
+            this.txtCel.Location = new System.Drawing.Point(330, 135);
+            this.txtCel.MaxLength = 9;
+            this.txtCel.Name = "txtCel";
+            this.txtCel.Size = new System.Drawing.Size(68, 20);
+            this.txtCel.TabIndex = 46;
+            this.txtCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(251, 135);
+            this.txtTel.MaxLength = 8;
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(63, 20);
+            this.txtTel.TabIndex = 45;
+            this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtDdd
+            // 
+            this.txtDdd.Location = new System.Drawing.Point(207, 135);
+            this.txtDdd.MaxLength = 3;
+            this.txtDdd.Name = "txtDdd";
+            this.txtDdd.Size = new System.Drawing.Size(28, 20);
+            this.txtDdd.TabIndex = 44;
+            this.txtDdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbxCargo
+            // 
+            this.cbxCargo.DisplayMember = "n";
+            this.cbxCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCargo.FormattingEnabled = true;
+            this.cbxCargo.Items.AddRange(new object[] {
+            "Usuário",
+            "Administrador"});
+            this.cbxCargo.Location = new System.Drawing.Point(17, 134);
+            this.cbxCargo.MaxLength = 30;
+            this.cbxCargo.Name = "cbxCargo";
+            this.cbxCargo.Size = new System.Drawing.Size(100, 21);
+            this.cbxCargo.TabIndex = 42;
+            this.cbxCargo.Tag = "";
+            this.cbxCargo.ValueMember = "n";
+            this.cbxCargo.SelectedIndexChanged += new System.EventHandler(this.cbxCargo_SelectedIndexChanged);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(249, 90);
+            this.txtEmail.MaxLength = 60;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(238, 20);
+            this.txtEmail.TabIndex = 41;
+            // 
+            // txtCnh
+            // 
+            this.txtCnh.Location = new System.Drawing.Point(133, 90);
+            this.txtCnh.MaxLength = 8;
+            this.txtCnh.Name = "txtCnh";
+            this.txtCnh.Size = new System.Drawing.Size(100, 20);
+            this.txtCnh.TabIndex = 40;
+            // 
+            // txtRg
+            // 
+            this.txtRg.Location = new System.Drawing.Point(17, 90);
+            this.txtRg.MaxLength = 9;
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(100, 20);
+            this.txtRg.TabIndex = 39;
+            // 
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(402, 42);
@@ -200,7 +287,6 @@
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(85, 20);
             this.txtCpf.TabIndex = 38;
-            this.txtCpf.Text = "000.000.000/40";
             this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNasc
@@ -226,9 +312,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(130, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 35;
-            this.label4.Text = "*";
+            this.label4.Text = "Sexo *";
             // 
             // lblOpUs
             // 
@@ -271,9 +357,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "*";
+            this.label3.Text = "Cargo *";
             // 
             // label2
             // 
@@ -286,9 +372,9 @@
             // 
             // txtTele
             // 
+            this.txtTele.Controls.Add(this.cbxCidade);
+            this.txtTele.Controls.Add(this.cbxEstado);
             this.txtTele.Controls.Add(this.txtCep);
-            this.txtTele.Controls.Add(this.txtEstado);
-            this.txtTele.Controls.Add(this.txtCidade);
             this.txtTele.Controls.Add(this.txtBairro);
             this.txtTele.Controls.Add(this.txtComp);
             this.txtTele.Controls.Add(this.txtNum);
@@ -307,10 +393,69 @@
             this.txtTele.TabStop = false;
             this.txtTele.Text = "Endereço";
             // 
+            // cbxCidade
+            // 
+            this.cbxCidade.FormattingEnabled = true;
+            this.cbxCidade.Location = new System.Drawing.Point(157, 91);
+            this.cbxCidade.Name = "cbxCidade";
+            this.cbxCidade.Size = new System.Drawing.Size(121, 21);
+            this.cbxCidade.TabIndex = 33;
+            this.cbxCidade.SelectedIndexChanged += new System.EventHandler(this.cbxCidade_SelectedIndexChanged);
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.Location = new System.Drawing.Point(17, 91);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(121, 21);
+            this.cbxEstado.TabIndex = 32;
+            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(294, 91);
+            this.txtCep.MaxLength = 8;
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(87, 20);
+            this.txtCep.TabIndex = 29;
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(549, 41);
+            this.txtBairro.MaxLength = 30;
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(135, 20);
+            this.txtBairro.TabIndex = 26;
+            // 
+            // txtComp
+            // 
+            this.txtComp.Location = new System.Drawing.Point(378, 42);
+            this.txtComp.MaxLength = 60;
+            this.txtComp.Name = "txtComp";
+            this.txtComp.Size = new System.Drawing.Size(154, 20);
+            this.txtComp.TabIndex = 25;
+            this.txtComp.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(313, 42);
+            this.txtNum.MaxLength = 10;
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(49, 20);
+            this.txtNum.TabIndex = 24;
+            // 
+            // txtRua
+            // 
+            this.txtRua.Location = new System.Drawing.Point(17, 42);
+            this.txtRua.MaxLength = 60;
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(280, 20);
+            this.txtRua.TabIndex = 23;
+            // 
             // lblCepUs
             // 
             this.lblCepUs.AutoSize = true;
-            this.lblCepUs.Location = new System.Drawing.Point(248, 75);
+            this.lblCepUs.Location = new System.Drawing.Point(292, 75);
             this.lblCepUs.Name = "lblCepUs";
             this.lblCepUs.Size = new System.Drawing.Size(35, 13);
             this.lblCepUs.TabIndex = 22;
@@ -320,20 +465,20 @@
             // lblEstadoUs
             // 
             this.lblEstadoUs.AutoSize = true;
-            this.lblEstadoUs.Location = new System.Drawing.Point(130, 75);
+            this.lblEstadoUs.Location = new System.Drawing.Point(14, 75);
             this.lblEstadoUs.Name = "lblEstadoUs";
-            this.lblEstadoUs.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoUs.Size = new System.Drawing.Size(44, 13);
             this.lblEstadoUs.TabIndex = 20;
-            this.lblEstadoUs.Text = "Estado";
+            this.lblEstadoUs.Text = "Estado*";
             // 
             // lblCidadeUs
             // 
             this.lblCidadeUs.AutoSize = true;
-            this.lblCidadeUs.Location = new System.Drawing.Point(14, 75);
+            this.lblCidadeUs.Location = new System.Drawing.Point(154, 75);
             this.lblCidadeUs.Name = "lblCidadeUs";
-            this.lblCidadeUs.Size = new System.Drawing.Size(40, 13);
+            this.lblCidadeUs.Size = new System.Drawing.Size(44, 13);
             this.lblCidadeUs.TabIndex = 19;
-            this.lblCidadeUs.Text = "Cidade";
+            this.lblCidadeUs.Text = "Cidade*";
             // 
             // lblBairroUs
             // 
@@ -386,6 +531,31 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Acesso";
             // 
+            // txtSenha2
+            // 
+            this.txtSenha2.Location = new System.Drawing.Point(249, 42);
+            this.txtSenha2.MaxLength = 20;
+            this.txtSenha2.Name = "txtSenha2";
+            this.txtSenha2.Size = new System.Drawing.Size(100, 20);
+            this.txtSenha2.TabIndex = 29;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(133, 42);
+            this.txtSenha.MaxLength = 20;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(100, 20);
+            this.txtSenha.TabIndex = 28;
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Location = new System.Drawing.Point(17, 42);
+            this.txtLogin.MaxLength = 20;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtLogin.TabIndex = 27;
+            // 
             // lblLoginUs
             // 
             this.lblLoginUs.AutoSize = true;
@@ -432,186 +602,15 @@
             this.btnLimparUs.Text = "Limpar";
             this.btnLimparUs.UseVisualStyleBackColor = true;
             // 
-            // txtRg
+            // openFileDialog1
             // 
-            this.txtRg.Location = new System.Drawing.Point(17, 90);
-            this.txtRg.MaxLength = 9;
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(100, 20);
-            this.txtRg.TabIndex = 39;
-            // 
-            // txtCnh
-            // 
-            this.txtCnh.Location = new System.Drawing.Point(133, 90);
-            this.txtCnh.MaxLength = 8;
-            this.txtCnh.Name = "txtCnh";
-            this.txtCnh.Size = new System.Drawing.Size(100, 20);
-            this.txtCnh.TabIndex = 40;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(249, 90);
-            this.txtEmail.MaxLength = 60;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(238, 20);
-            this.txtEmail.TabIndex = 41;
-            // 
-            // cbxCargo
-            // 
-            this.cbxCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCargo.FormattingEnabled = true;
-            this.cbxCargo.Items.AddRange(new object[] {
-            "Usuário",
-            "Administrador"});
-            this.cbxCargo.Location = new System.Drawing.Point(17, 136);
-            this.cbxCargo.MaxLength = 30;
-            this.cbxCargo.Name = "cbxCargo";
-            this.cbxCargo.Size = new System.Drawing.Size(100, 21);
-            this.cbxCargo.TabIndex = 42;
-            this.cbxCargo.Text = "Cargo";
-            // 
-            // cbxSexo
-            // 
-            this.cbxSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSexo.FormattingEnabled = true;
-            this.cbxSexo.Location = new System.Drawing.Point(133, 135);
-            this.cbxSexo.MaxLength = 1;
-            this.cbxSexo.Name = "cbxSexo";
-            this.cbxSexo.Size = new System.Drawing.Size(58, 21);
-            this.cbxSexo.TabIndex = 43;
-            this.cbxSexo.Text = "Sexo";
-            // 
-            // txtDdd
-            // 
-            this.txtDdd.Location = new System.Drawing.Point(207, 135);
-            this.txtDdd.MaxLength = 3;
-            this.txtDdd.Name = "txtDdd";
-            this.txtDdd.Size = new System.Drawing.Size(28, 20);
-            this.txtDdd.TabIndex = 44;
-            this.txtDdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTel
-            // 
-            this.txtTel.Location = new System.Drawing.Point(251, 135);
-            this.txtTel.MaxLength = 8;
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(63, 20);
-            this.txtTel.TabIndex = 45;
-            this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCel
-            // 
-            this.txtCel.Location = new System.Drawing.Point(330, 135);
-            this.txtCel.MaxLength = 9;
-            this.txtCel.Name = "txtCel";
-            this.txtCel.Size = new System.Drawing.Size(68, 20);
-            this.txtCel.TabIndex = 46;
-            this.txtCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtOpe
-            // 
-            this.txtOpe.Location = new System.Drawing.Point(414, 135);
-            this.txtOpe.MaxLength = 15;
-            this.txtOpe.Name = "txtOpe";
-            this.txtOpe.Size = new System.Drawing.Size(73, 20);
-            this.txtOpe.TabIndex = 47;
-            // 
-            // txtRua
-            // 
-            this.txtRua.Location = new System.Drawing.Point(17, 42);
-            this.txtRua.MaxLength = 60;
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(280, 20);
-            this.txtRua.TabIndex = 23;
-            // 
-            // txtNum
-            // 
-            this.txtNum.Location = new System.Drawing.Point(313, 42);
-            this.txtNum.MaxLength = 10;
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(49, 20);
-            this.txtNum.TabIndex = 24;
-            // 
-            // txtComp
-            // 
-            this.txtComp.Location = new System.Drawing.Point(378, 42);
-            this.txtComp.MaxLength = 60;
-            this.txtComp.Name = "txtComp";
-            this.txtComp.Size = new System.Drawing.Size(154, 20);
-            this.txtComp.TabIndex = 25;
-            this.txtComp.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Location = new System.Drawing.Point(549, 41);
-            this.txtBairro.MaxLength = 30;
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(135, 20);
-            this.txtBairro.TabIndex = 26;
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(17, 92);
-            this.txtCidade.MaxLength = 30;
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(100, 20);
-            this.txtCidade.TabIndex = 27;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(133, 91);
-            this.txtEstado.MaxLength = 30;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 20);
-            this.txtEstado.TabIndex = 28;
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(250, 91);
-            this.txtCep.MaxLength = 8;
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(100, 20);
-            this.txtCep.TabIndex = 29;
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Location = new System.Drawing.Point(17, 42);
-            this.txtLogin.MaxLength = 20;
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(100, 20);
-            this.txtLogin.TabIndex = 27;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(133, 42);
-            this.txtSenha.MaxLength = 20;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 28;
-            // 
-            // txtSenha2
-            // 
-            this.txtSenha2.Location = new System.Drawing.Point(249, 42);
-            this.txtSenha2.MaxLength = 20;
-            this.txtSenha2.Name = "txtSenha2";
-            this.txtSenha2.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha2.TabIndex = 29;
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.Location = new System.Drawing.Point(68, 175);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(60, 23);
-            this.btnAbrir.TabIndex = 22;
-            this.btnAbrir.Text = "Abrir";
-            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // fmrCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 429);
+            this.ClientSize = new System.Drawing.Size(714, 434);
             this.Controls.Add(this.btnLimparUs);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.txtTele);
@@ -623,7 +622,6 @@
             this.Load += new System.EventHandler(this.FmrUsuarioCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.txtTele.ResumeLayout(false);
@@ -636,7 +634,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtUrlFotoUs;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label CV;
         private System.Windows.Forms.Label lblNascUs;
@@ -672,7 +669,6 @@
         private System.Windows.Forms.TextBox txtCnh;
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.ComboBox cbxCargo;
-        private System.Windows.Forms.ComboBox cbxSexo;
         private System.Windows.Forms.TextBox txtDdd;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtCel;
@@ -681,12 +677,14 @@
         private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.TextBox txtCep;
-        private System.Windows.Forms.TextBox txtEstado;
-        private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtSenha2;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.ComboBox cbxSex;
+        private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.ComboBox cbxCidade;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -42,7 +42,7 @@ namespace GerenciadorVeiculo1.Dal
         public void CadastroTel()
         {
             DaoLogin daoLogin = new DaoLogin();
-            string id = daoLogin.SelecioneId();
+            string id = SelecioneId();
 
             Conexao conexao = new Conexao();
             SqlConnection con = new SqlConnection(conexao.StrConexao());

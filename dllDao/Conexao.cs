@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 
 namespace dllDao
 {
@@ -63,8 +64,31 @@ namespace dllDao
             {
                 con.Close();
             }
-
         }
+
+        public DataTable CarregarDados(string sql)
+        {
+            string query = sql;
+            //Cria conexão com banco de dados
+            SqlConnection con = new SqlConnection(StrConexao());
+
+            con.Open();
+            //Cria um dataadapter para receber o select do banco de dados
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            
+            //SqlCommand cmd = new SqlCommand(query, con);
+
+            //SqlDataReader dr = cmd.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(dr);
+            con.Close();
+            return dt;
+        }
+
 
     }
 }

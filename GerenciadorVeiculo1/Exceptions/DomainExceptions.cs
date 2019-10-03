@@ -8,6 +8,10 @@ namespace GerenciadorVeiculo1.Exceptions
 {
     class DomainExceptions : ApplicationException
     {
+        public DomainExceptions()
+        {
+
+        }
         public DomainExceptions(string message): base(message)
         {
 
