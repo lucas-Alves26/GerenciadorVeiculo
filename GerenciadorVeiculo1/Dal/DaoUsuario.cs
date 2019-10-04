@@ -55,16 +55,13 @@ namespace GerenciadorVeiculo1.Dal
             SqlCommand cmd3 = con.CreateCommand();
             SqlCommand cmd4 = con.CreateCommand();
             SqlCommand cmd5 = con.CreateCommand();
-            SqlCommand cmd6 = con.CreateCommand();
-            SqlCommand cmd7 = con.CreateCommand();
 
-            cmd1.CommandText = "DELETE TBL_ENDERECO WHERE END_INT_ID =" + usuario.UsuarioId.ToString();
-            cmd2.CommandText = "DELETE TBL_CIDADE  WHERE CID_INT_ID =" + usuario.UsuarioId.ToString();
-            cmd3.CommandText = "DELETE TBL_ESTADO WHERE EST_INT_ID =" + usuario.UsuarioId.ToString();
-            cmd4.CommandText = "DELETE TBL_ESTADO_FUNCIONARIO WHERE EST_INT_ID =" + usuario.UsuarioId.ToString();
-            cmd5.CommandText = "DELETE TBL_TELEFONE WHERE TEL_INT_ID =" + usuario.UsuarioId.ToString();
-            cmd6.CommandText = "DELETE TBL_FUNCIONARIO WHERE FUN_INT_ID =" + usuario.UsuarioId.ToString();
-            cmd7.CommandText = "DELETE TBL_LOGINS WHERE LOG_INT_ID =" + usuario.UsuarioId.ToString();
+
+            cmd1.CommandText = "DELETE TBL_ENDERECO_FUNCIONARIO WHERE FUN_INT_ID =" + usuario.UsuarioId.ToString();
+            cmd2.CommandText = "DELETE TBL_ENDERECO WHERE END_INT_ID =" + usuario.UsuarioId.ToString();       
+            cmd3.CommandText = "DELETE TBL_TELEFONE WHERE TEL_INT_ID =" + usuario.UsuarioId.ToString();
+            cmd4.CommandText = "DELETE TBL_FUNCIONARIO WHERE FUN_INT_ID =" + usuario.UsuarioId.ToString();
+            cmd5.CommandText = "DELETE TBL_LOGINS WHERE LOG_INT_ID =" + usuario.UsuarioId.ToString();
 
             con.Open();
 
@@ -80,10 +77,8 @@ namespace GerenciadorVeiculo1.Dal
             cmd4.ExecuteNonQuery();
             cmd5.Transaction = tran;
             cmd5.ExecuteNonQuery();
-            cmd6.Transaction = tran;
-            cmd6.ExecuteNonQuery();
-            cmd7.Transaction = tran;
-            cmd7.ExecuteNonQuery();
+
+
 
             tran.Commit();
 

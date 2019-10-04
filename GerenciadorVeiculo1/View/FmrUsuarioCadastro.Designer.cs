@@ -203,6 +203,8 @@
             this.cbxSex.Name = "cbxSex";
             this.cbxSex.Size = new System.Drawing.Size(65, 21);
             this.cbxSex.TabIndex = 48;
+            this.cbxSex.SelectedIndexChanged += new System.EventHandler(this.cbxSex_SelectedIndexChanged);
+            this.cbxSex.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxSex_KeyPress);
             // 
             // txtOpe
             // 
@@ -211,6 +213,7 @@
             this.txtOpe.Name = "txtOpe";
             this.txtOpe.Size = new System.Drawing.Size(73, 20);
             this.txtOpe.TabIndex = 47;
+            this.txtOpe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpe_KeyPress);
             // 
             // txtCel
             // 
@@ -220,6 +223,8 @@
             this.txtCel.Size = new System.Drawing.Size(68, 20);
             this.txtCel.TabIndex = 46;
             this.txtCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCel.TextChanged += new System.EventHandler(this.txtCel_TextChanged);
+            this.txtCel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCel_KeyPress);
             // 
             // txtTel
             // 
@@ -229,6 +234,9 @@
             this.txtTel.Size = new System.Drawing.Size(63, 20);
             this.txtTel.TabIndex = 45;
             this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
+            this.txtTel.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTel_KeyUp);
             // 
             // txtDdd
             // 
@@ -238,6 +246,7 @@
             this.txtDdd.Size = new System.Drawing.Size(28, 20);
             this.txtDdd.TabIndex = 44;
             this.txtDdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDdd_KeyPress);
             // 
             // cbxCargo
             // 
@@ -263,6 +272,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(238, 20);
             this.txtEmail.TabIndex = 41;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // txtCnh
             // 
@@ -271,6 +281,7 @@
             this.txtCnh.Name = "txtCnh";
             this.txtCnh.Size = new System.Drawing.Size(100, 20);
             this.txtCnh.TabIndex = 40;
+            this.txtCnh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCnh_KeyPress);
             // 
             // txtRg
             // 
@@ -279,6 +290,7 @@
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(100, 20);
             this.txtRg.TabIndex = 39;
+            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
             // txtCpf
             // 
@@ -288,6 +300,8 @@
             this.txtCpf.Size = new System.Drawing.Size(85, 20);
             this.txtCpf.TabIndex = 38;
             this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCpf.TextChanged += new System.EventHandler(this.txtCpf_TextChanged);
+            this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             // 
             // txtNasc
             // 
@@ -298,6 +312,7 @@
             this.txtNasc.TabIndex = 37;
             this.txtNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNasc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNasc_KeyPress);
+            this.txtNasc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNasc_KeyUp);
             // 
             // txtName
             // 
@@ -306,6 +321,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(286, 20);
             this.txtName.TabIndex = 36;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // label4
             // 
@@ -364,7 +380,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(256, 73);
+            this.label2.Location = new System.Drawing.Point(247, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 28;
@@ -413,11 +429,13 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(294, 91);
+            this.txtCep.Location = new System.Drawing.Point(294, 92);
             this.txtCep.MaxLength = 8;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(87, 20);
             this.txtCep.TabIndex = 29;
+            this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
+            this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCep_KeyPress);
             // 
             // txtBairro
             // 
@@ -426,6 +444,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(135, 20);
             this.txtBairro.TabIndex = 26;
+            this.txtBairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBairro_KeyPress);
             // 
             // txtComp
             // 
@@ -435,6 +454,7 @@
             this.txtComp.Size = new System.Drawing.Size(154, 20);
             this.txtComp.TabIndex = 25;
             this.txtComp.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComp_KeyPress);
             // 
             // txtNum
             // 
@@ -443,6 +463,8 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(49, 20);
             this.txtNum.TabIndex = 24;
+            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // txtRua
             // 
@@ -451,6 +473,7 @@
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(280, 20);
             this.txtRua.TabIndex = 23;
+            this.txtRua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRua_KeyPress);
             // 
             // lblCepUs
             // 
@@ -601,6 +624,7 @@
             this.btnLimparUs.TabIndex = 33;
             this.btnLimparUs.Text = "Limpar";
             this.btnLimparUs.UseVisualStyleBackColor = true;
+            this.btnLimparUs.Click += new System.EventHandler(this.btnLimparUs_Click);
             // 
             // openFileDialog1
             // 

@@ -28,27 +28,10 @@ namespace GerenciadorVeiculo1.Entitys
         public Telefone(int ddd, string operadora, int celular, int fixo)
         {
 
-
-            if (ddd == 0)
-            {
-                throw new DomainExceptions("O campo DDD deve ser preenchido ! ");
-            }
-
-            else if (operadora == "")
-            {
-                throw new DomainExceptions(" O campo  Operadora deve ser preenchido ! ");
-            }
-
-            else if (celular == 0)
+            if (celular == 0)
             {
                 throw new DomainExceptions("O coampo celular deve ser preenchida ! ");
             }
-
-            else if (fixo == 0)
-            {
-                throw new DomainExceptions(" O campo Telefone Fixo deve ser preenchido ! ");
-            }
-
 
             Ddd = ddd;
             Celular = celular;

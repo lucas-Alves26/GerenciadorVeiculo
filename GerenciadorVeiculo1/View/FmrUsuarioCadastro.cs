@@ -59,6 +59,43 @@ namespace GerenciadorVeiculo1.View
             cbxEstado.DisplayMember = "EST_STR_NOME";
             cbxEstado.DataSource = usuario.RetornaEstado();// carrega a coluna nomeCliente dentro cbx
         }
+        public void populaCidade(string id)
+        {
+
+            cbxCidade.ValueMember = "CID_INT_ID";
+            cbxCidade.DisplayMember = "CID_STR_NOME";
+            cbxCidade.DataSource = usuario.RetornaCidade(id);
+        }
+
+        public void adcValorCampoVazio()
+        {
+            if (txtTel.Text == "")
+            {
+                txtTel.Text = "0";
+            }
+            if (txtDdd.Text == "")
+            {
+                txtDdd.Text = "0";
+            }
+            if (txtComp.Text == "")
+            {
+                txtComp.Text = "null";
+            }
+            if (txtOpe.Text == "")
+            {
+                txtOpe.Text = "null";
+            }
+            if (txtCnh.Text == "")
+            {
+                txtCnh.Text = "0";
+            }
+            if (txtEmail.Text == "")
+            {
+                txtEmail.Text = "null";
+            }
+        }
+
+
 
         public void salvarImg()
         {
@@ -101,14 +138,6 @@ namespace GerenciadorVeiculo1.View
 
         }
 
-        public void populaCidade(string id)
-        {
-
-            cbxCidade.ValueMember = "CID_INT_ID";
-            cbxCidade.DisplayMember = "CID_STR_NOME";
-            cbxCidade.DataSource = usuario.RetornaCidade(id);
-        }
-
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
@@ -129,32 +158,75 @@ namespace GerenciadorVeiculo1.View
         {
             try
             {
-                cbxSex.SelectedValue = '.';
+                if (txtNasc.Text == "" || txtNasc.TextLength <= 9)
+                {
+                    MessageBox.Show("Digite a Data de nascimeto!");
+                }
 
-                DateTime nasc = DateTime.Parse(txtNasc.Text);
-                char sexo = char.Parse(cbxSex.Text);
-                string estadoId = cbxEstado.SelectedValue.ToString();
-                string cidadeId = cbxCidade.SelectedValue.ToString();
+                else if (cbxSex.Text == "")
+                {
+                    MessageBox.Show("Selecione o sexo! ");
+                }
 
-                usuario.logins = new Logins(txtLogin.Text, txtSenha.Text, txtSenha2.Text);
-                usuario.usuario = new Usuario(txtName.Text, nasc, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
-                usuario.telefone = new Telefone(int.Parse(txtDdd.Text), txtOpe.Text, int.Parse(txtCel.Text), int.Parse(txtTel.Text));
-                usuario.endereco = new Endereco(int.Parse(estadoId),int.Parse(cidadeId),txtRua.Text,int.Parse(txtNum.Text),int.Parse(txtCep.Text),txtComp.Text,txtBairro.Text);
-                
+                else if (cbxCargo.Text == "")
+                {
+                    MessageBox.Show("Selecione o Cargo! ");
+                }
 
+                else
+                {
+                    adcValorCampoVazio();
 
+                    DateTime nasc = DateTime.Parse(txtNasc.Text);
+                    char sexo = char.Parse(cbxSex.Text);
+                    string estadoId = cbxEstado.SelectedValue.ToString();
+                    string cidadeId = cbxCidade.SelectedValue.ToString();
 
-                usuario.cadastroLog();
-                usuario.CadastraUsuario();
-                salvarImg();
-                MessageBox.Show("Cadastrado com sucesso !");
+                    usuario.logins = new Logins(txtLogin.Text, txtSenha.Text, txtSenha2.Text);
+                    usuario.usuario = new Usuario(txtName.Text, nasc, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
+                    usuario.telefone = new Telefone(int.Parse(txtDdd.Text), txtOpe.Text, int.Parse(txtCel.Text), int.Parse(txtTel.Text));
+                    usuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, int.Parse(txtNum.Text), int.Parse(txtCep.Text), txtComp.Text, txtBairro.Text);
 
+                    usuario.cadastroLog();
+                    usuario.CadastraUsuario();
+                    salvarImg();
+                    MessageBox.Show("Cadastrado com sucesso !");
+
+                    Limpar();
+
+                }
             }
             catch (DomainExceptions ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+           
+        }
+
+        private void Limpar()
+        {
+
+            txtName.Text = "";
+            txtNasc.Text = "";
+            txtCpf.Text = "";
+            txtCnh.Text = "";
+            txtRg.Text = "";
+            cbxCargo.Text = "";
+            cbxSex.Text = "";
+            txtEmail.Text = "";
+            txtLogin.Text = "";
+            txtSenha.Text = "";
+            txtSenha2.Text = "";
+            txtDdd.Text = "";
+            txtOpe.Text = "";
+            txtCel.Text = "";
+            txtCel.Text = "";
+            txtRua.Text = "";
+            txtNum.Text = "";
+            txtCep.Text = "";
+            txtComp.Text = "";
+            txtBairro.Text = "";
         }
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
@@ -164,6 +236,18 @@ namespace GerenciadorVeiculo1.View
 
         private void txtNasc_KeyPress(object sender, KeyPressEventArgs e)
         {
+         
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+
+
             if (char.IsNumber(e.KeyChar) == true)
             {
                 switch (txtNasc.TextLength)
@@ -215,6 +299,272 @@ namespace GerenciadorVeiculo1.View
                 bmp = new Bitmap(nomeImg);
                 pictureBox1.Image = bmp;
             }
+        }
+
+        private void txtCpf_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNum_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero! ");
+            }
+        }
+
+        private void txtDdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtCel_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtCep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {         
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>.,:;°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+
+        }
+
+        private void txtRua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>:;°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+        }
+
+        private void txtComp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+        }
+
+        private void txtBairro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>:;°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+        }
+
+        private void txtCep_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtOpe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>:;.,°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+        }
+
+        private void txtCnh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;:., ";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;:., ";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void cbxSex_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void cbxSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNasc_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void txtTel_KeyUp(object sender, KeyEventArgs e)
+        {         
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void btnLimparUs_Click(object sender, EventArgs e)
+        {
+            Limpar();
         }
     }
 }
