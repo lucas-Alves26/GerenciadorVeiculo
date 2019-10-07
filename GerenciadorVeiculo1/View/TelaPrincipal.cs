@@ -25,6 +25,7 @@ namespace GerenciadorVeiculo1.View
         private void cadastroUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmrTelaUsuario telaUsuario = new fmrTelaUsuario();
+            telaUsuario.MdiParent = this;
             telaUsuario.Show();
         
         }

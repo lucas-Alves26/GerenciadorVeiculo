@@ -46,65 +46,33 @@ namespace GerenciadorVeiculo1.View
         public void FmrUsuarioCadastro_Load(object sender, EventArgs e)
         {
 
-            cbxSex.Items.Add("F");
-            cbxSex.Items.Add("M");
             popularEstadoUF();
 
 
         }
-
+        //popula a combox Estado
         public void popularEstadoUF()
         {
             cbxEstado.ValueMember = "EST_INT_CODUF";
             cbxEstado.DisplayMember = "EST_STR_NOME";
-            cbxEstado.DataSource = usuario.RetornaEstado();// carrega a coluna nomeCliente dentro cbx
+            cbxEstado.DataSource = conexao.RetornaEstado();// carrega a coluna EST_STR_NOME dentro cbx
         }
+        //popula a combox cidade
         public void populaCidade(string id)
         {
 
             cbxCidade.ValueMember = "CID_INT_ID";
             cbxCidade.DisplayMember = "CID_STR_NOME";
-            cbxCidade.DataSource = usuario.RetornaCidade(id);
+            cbxCidade.DataSource = conexao.RetornaCidade(id);// carrega o COLUNA CID_INT_NOME CONFORME O Id ESTADO
         }
 
-        public void adcValorCampoVazio()
-        {
-            if (txtTel.Text == "")
-            {
-                txtTel.Text = "0";
-            }
-            if (txtDdd.Text == "")
-            {
-                txtDdd.Text = "0";
-            }
-            if (txtComp.Text == "")
-            {
-                txtComp.Text = "null";
-            }
-            if (txtOpe.Text == "")
-            {
-                txtOpe.Text = "null";
-            }
-            if (txtCnh.Text == "")
-            {
-                txtCnh.Text = "0";
-            }
-            if (txtEmail.Text == "")
-            {
-                txtEmail.Text = "null";
-            }
-        }
-
-
-
+        //salva a img na TBL_FOTO
         public void salvarImg()
         {
             MemoryStream memory = new MemoryStream();
             bmp.Save(memory, ImageFormat.Bmp);
             byte[] foto = memory.ToArray();
 
-            if (foto!=null)
-            {
                 int usuarioid = int.Parse(usuario.SelecioneId());
                 string strConexao = conexao.StrConexao();
 
@@ -112,8 +80,6 @@ namespace GerenciadorVeiculo1.View
                 SqlCommand command = new SqlCommand("INSERT INTO TBL_FOTO (FUN_INT_ID, FOTO) VALUES(@funcId, @imagem)", con);
                 SqlParameter image = new SqlParameter("@imagem", SqlDbType.Binary);
                 SqlParameter funId = new SqlParameter("@funcId", SqlDbType.Int);
-
-                
 
                 image.Value = foto;
                 funId.Value = usuarioid;
@@ -135,9 +101,7 @@ namespace GerenciadorVeiculo1.View
                     con.Close();
                 }
             }
-
-        }
-
+   
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
@@ -158,16 +122,10 @@ namespace GerenciadorVeiculo1.View
         {
             try
             {
-                if (txtNasc.Text == "" || txtNasc.TextLength <= 9)
-                {
-                    MessageBox.Show("Digite a Data de nascimeto!");
-                }
-
-                else if (cbxSex.Text == "")
+                if (cbxSex.Text == "")
                 {
                     MessageBox.Show("Selecione o sexo! ");
                 }
-
                 else if (cbxCargo.Text == "")
                 {
                     MessageBox.Show("Selecione o Cargo! ");
@@ -175,25 +133,22 @@ namespace GerenciadorVeiculo1.View
 
                 else
                 {
-                    adcValorCampoVazio();
-
-                    DateTime nasc = DateTime.Parse(txtNasc.Text);
+                    //DateTime nasc = DateTime.Parse(txtNasc.Text);
                     char sexo = char.Parse(cbxSex.Text);
                     string estadoId = cbxEstado.SelectedValue.ToString();
                     string cidadeId = cbxCidade.SelectedValue.ToString();
 
                     usuario.logins = new Logins(txtLogin.Text, txtSenha.Text, txtSenha2.Text);
-                    usuario.usuario = new Usuario(txtName.Text, nasc, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
-                    usuario.telefone = new Telefone(int.Parse(txtDdd.Text), txtOpe.Text, int.Parse(txtCel.Text), int.Parse(txtTel.Text));
-                    usuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, int.Parse(txtNum.Text), int.Parse(txtCep.Text), txtComp.Text, txtBairro.Text);
+                    usuario.usuario = new Usuario(txtName.Text, txtNasc.Text, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
+                    usuario.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCel.Text, txtTel.Text);
+                    usuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
 
                     usuario.cadastroLog();
                     usuario.CadastraUsuario();
                     salvarImg();
-                    MessageBox.Show("Cadastrado com sucesso !");
+                    MessageBox.Show("Cadastrado com sucesso!");
 
                     Limpar();
-
                 }
             }
             catch (DomainExceptions ex)
@@ -220,7 +175,7 @@ namespace GerenciadorVeiculo1.View
             txtSenha2.Text = "";
             txtDdd.Text = "";
             txtOpe.Text = "";
-            txtCel.Text = "";
+            txtTel.Text = "";
             txtCel.Text = "";
             txtRua.Text = "";
             txtNum.Text = "";
@@ -236,7 +191,6 @@ namespace GerenciadorVeiculo1.View
 
         private void txtNasc_KeyPress(object sender, KeyPressEventArgs e)
         {
-         
             //esse if é para aceitar, setas e apagar
             if (e.KeyChar == 8)
                 return;
@@ -280,6 +234,7 @@ namespace GerenciadorVeiculo1.View
 
         private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Seleciona o Id do estado
             string CodUF = cbxEstado.SelectedValue.ToString();
             populaCidade(CodUF);
 
@@ -288,16 +243,19 @@ namespace GerenciadorVeiculo1.View
 
         private void cbxCidade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //seleciona o id da cidade
             string CodCid = cbxCidade.SelectedValue.ToString();
         }
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
+            //Abrir e selecionar foto que está armazenado no cumputador
             if(openFileDialog1.ShowDialog()== DialogResult.OK)
             {
                 string nomeImg = openFileDialog1.FileName;
-                bmp = new Bitmap(nomeImg);
-                pictureBox1.Image = bmp;
+
+                    bmp = new Bitmap(nomeImg);
+                    pictureBox1.Image = bmp;
             }
         }
 
@@ -359,6 +317,7 @@ namespace GerenciadorVeiculo1.View
 
         private void txtCel_KeyPress(object sender, KeyPressEventArgs e)
         {
+       
             //esse if é para aceitar, setas e apagar
             if (e.KeyChar == 8)
                 return;
@@ -565,6 +524,11 @@ namespace GerenciadorVeiculo1.View
         private void btnLimparUs_Click(object sender, EventArgs e)
         {
             Limpar();
+        }
+
+        private void cbxEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

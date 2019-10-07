@@ -1,9 +1,11 @@
 ﻿using GerenciadorVeiculo1.Exceptions;
+using GerenciadorVeiculo1.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace GerenciadorVeiculo1.Entitys
 {
@@ -25,19 +27,31 @@ namespace GerenciadorVeiculo1.Entitys
             TelefoneId = telefoneId;
         }
 
-        public Telefone(int ddd, string operadora, int celular, int fixo)
+        public Telefone(string ddd, string operadora, string celular, string fixo)
         {
 
-            if (celular == 0)
+
+            if (celular == "")
             {
-                throw new DomainExceptions("O coampo celular deve ser preenchida ! ");
+                throw new DomainExceptions("O campo celular deve ser preenchido ! ");
             }
 
-            Ddd = ddd;
-            Celular = celular;
-            Fixo = fixo;
+            if (fixo == "")
+            {
+                fixo = "0";
+            }
+            if (ddd == "")
+            {
+                ddd = "0";
+            }
+
+            Ddd = int.Parse(ddd);
+            Celular = int.Parse(celular);
+            Fixo = int.Parse(fixo);
             Operadora = operadora;
         }
+
+
 
     }
 }

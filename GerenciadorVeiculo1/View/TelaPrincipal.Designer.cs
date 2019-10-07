@@ -56,7 +56,7 @@
             // cadastroUsuárioToolStripMenuItem
             // 
             this.cadastroUsuárioToolStripMenuItem.Name = "cadastroUsuárioToolStripMenuItem";
-            this.cadastroUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroUsuárioToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.cadastroUsuárioToolStripMenuItem.Text = "Usuário";
             this.cadastroUsuárioToolStripMenuItem.Click += new System.EventHandler(this.cadastroUsuárioToolStripMenuItem_Click);
             // 
@@ -66,9 +66,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fmrPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fmrPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

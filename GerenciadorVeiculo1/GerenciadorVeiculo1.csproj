@@ -72,6 +72,12 @@
     <Compile Include="View\FmrUsuarioCadastro.Designer.cs">
       <DependentUpon>FmrUsuarioCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FmrDadosUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FmrDadosUs.Designer.cs">
+      <DependentUpon>FmrDadosUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="View\FmrUsuarioCadastro.resx">
       <DependentUpon>FmrUsuarioCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FmrDadosUs.resx">
+      <DependentUpon>FmrDadosUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

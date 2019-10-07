@@ -17,16 +17,15 @@ namespace dllDao
             con.ConnectionString = @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
 
+        //se a conexao estiver fechada vai abrir a conexao
         public SqlConnection conectar()
-        {
-            //se a conexao estiver fechada vai abrir a conexao
+        {          
             if (con.State == System.Data.ConnectionState.Closed)
             {
                 con.Open();
             }
             return con;
         }
-
         // vai fechar a conexão
         public void desconectar()
         {
@@ -35,17 +34,17 @@ namespace dllDao
                 con.Close();
             }
         }
-
+        //retorna a string de conexao para ser utilizada.
         public string StrConexao()
         {
             return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
 
+        //Executa query simples.
         public void ExecutaInstrucaoNaBase(string QuerySQL)
         {
 
             string strConxao = StrConexao();
-            //"Data Source=MSV_R01M13\\UNIP;Initial Catalog=dbAula02;Integrated Security=True";
             string Query = QuerySQL;
             SqlConnection con = new SqlConnection(strConxao);
             SqlCommand sqlCommand = new SqlCommand(Query, con);
@@ -66,6 +65,7 @@ namespace dllDao
             }
         }
 
+        //pega os dados na base e retorna
         public DataTable CarregarDados(string sql)
         {
             string query = sql;
@@ -79,17 +79,40 @@ namespace dllDao
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            
-            //SqlCommand cmd = new SqlCommand(query, con);
-
-            //SqlDataReader dr = cmd.ExecuteReader();
-            //DataTable dt = new DataTable();
-            //dt.Load(dr);
             con.Close();
             return dt;
         }
 
+        public SqlDataReader CarregarVariosDados(string sql)
+        {
+            string query = sql;
+            //Cria conexão com banco de dados
+            SqlConnection con = new SqlConnection(StrConexao());
+            con.Open();
 
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+            SqlDataReader dr = null;
+
+            dr = sqlCommand.ExecuteReader();
+
+            dr.Read();
+            
+            return dr;
+        }
+        //Busca os EStados no banco de dados
+        public DataTable RetornaEstado()
+        {
+            string query = "SELECT EST_INT_CODUF, EST_STR_NOME FROM TBL_ESTADO";
+            DataTable dt = CarregarDados(query);
+            return dt;
+        }
+        //Busca as cidades no banco de dados
+        public DataTable RetornaCidade(string id)
+        {
+            string query = "SELECT CID_INT_ID, CID_STR_NOME FROM TBL_CIDADE WHERE EST_INT_CODUF=" + id;
+            DataTable dt = CarregarDados(query);
+            return dt;
+        }
     }
 }
 

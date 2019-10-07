@@ -29,7 +29,7 @@ namespace GerenciadorVeiculo1.Entitys
             CidadeId = cidadeId;
         }
 
-        public Endereco(int estadoId, int cidadeId, string rua, int numeroRua, int cep, string complemento, string bairro)
+        public Endereco(int estadoId, int cidadeId, string rua, string numeroRua, string cep, string complemento, string bairro)
         {
 
             if (estadoId == 0)
@@ -47,12 +47,12 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" A rua deve ser preenchida ! ");
             }
 
-            else if (numeroRua==0)
+            else if (numeroRua=="")
             {
                 throw new DomainExceptions(" O numero da rua deve ser preenchido ! ");
             }
 
-            else if (cep == 0)
+            else if (cep == "")
             {
                 throw new DomainExceptions(" O CEP deve ser preenchido ! ");
             }
@@ -64,8 +64,8 @@ namespace GerenciadorVeiculo1.Entitys
             EstadoId = estadoId;
             CidadeId = cidadeId;
             Rua = rua;
-            NumeroRua = numeroRua;
-            Cep = cep;
+            NumeroRua = int.Parse(numeroRua);
+            Cep = int.Parse(cep);
             Complemento = complemento;
             Bairro = bairro;
         }

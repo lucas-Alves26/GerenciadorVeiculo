@@ -34,12 +34,12 @@ namespace GerenciadorVeiculo1.Entitys
             UsuarioId = id;
         }
 
-        public Usuario(string name, DateTime nasc, string cpf, string cnh, string rg, string cargo, char sexo, string email)
+        public Usuario(string name, string nasc, string cpf, string cnh, string rg, string cargo, char sexo, string email)
         {
 
-            if (sexo != 'M' && sexo != 'F')
+            if (nasc == "" || nasc.Length <= 9)
             {
-                throw new DomainExceptions("O campo Sexo deve ser preenchido ! ");
+                throw new DomainExceptions("Digite a Data de nascimeto!");
             }
 
             else if (name == "")
@@ -67,8 +67,14 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O cargo deve ser Preenchido ! ");
             }
 
+            if (sexo != 'M' && sexo != 'F')
+            {
+                throw new DomainExceptions("O campo Sexo deve ser preenchido ! ");
+            }
+
+
             Name = name;
-            Nasc = nasc;
+            Nasc = DateTime.Parse(nasc);
             Cpf = cpf;
             Cnh = cnh;
             Rg = rg;

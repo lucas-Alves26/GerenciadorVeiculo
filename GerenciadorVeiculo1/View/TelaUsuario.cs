@@ -15,13 +15,23 @@ namespace GerenciadorVeiculo1.View
 {
     public partial class fmrTelaUsuario : Form
     {
+        DaoUsuario DaoUs = new DaoUsuario();
+
+        string usuarioID;
+
+        public string GetUsuarioID()
+        {
+            return usuarioID;
+        }
+
+
         public fmrTelaUsuario()
         {
             InitializeComponent();
 
             // ao abrir o frm ja abre com as informações de usuarios cadastrados
-            DaoUsuario daoCadastroUs = new DaoUsuario();
-            dgUsuario.DataSource = daoCadastroUs.ConsultaUsuario();
+            
+            dgUsuario.DataSource = DaoUs.ConsultaUsuario();
 
             
         }
@@ -64,16 +74,29 @@ namespace GerenciadorVeiculo1.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DaoUsuario DaoUs = new DaoUsuario();
+            
             DaoUs.usuario = new Usuario(int.Parse(txtId.Text));
             DaoUs.DeletUsuario();
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            DaoUsuario daoCadastroUs = new DaoUsuario();
-            dgUsuario.DataSource = daoCadastroUs.ConsultaUsuario();
+            dgUsuario.DataSource = DaoUs.ConsultaUsuario();
+        }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text != "")
+            {
+                usuarioID = txtId.Text;
+                FmrDadosUs dadosUs = new FmrDadosUs();
+                dadosUs.GetId(usuarioID);
+                dadosUs.Show();
+            }
+            else
+            {
+                MessageBox.Show("Coloque o ID do usuário para consultar");
+            }    
         }
     }
 }

@@ -92,7 +92,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(11, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(117, 136);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -110,7 +110,7 @@
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(68, 149);
+            this.btnAbrir.Location = new System.Drawing.Point(68, 161);
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(60, 23);
             this.btnAbrir.TabIndex = 22;
@@ -199,6 +199,9 @@
             // cbxSex
             // 
             this.cbxSex.FormattingEnabled = true;
+            this.cbxSex.Items.AddRange(new object[] {
+            "F",
+            "M"});
             this.cbxSex.Location = new System.Drawing.Point(133, 134);
             this.cbxSex.Name = "cbxSex";
             this.cbxSex.Size = new System.Drawing.Size(65, 21);
@@ -414,7 +417,7 @@
             this.cbxCidade.FormattingEnabled = true;
             this.cbxCidade.Location = new System.Drawing.Point(157, 91);
             this.cbxCidade.Name = "cbxCidade";
-            this.cbxCidade.Size = new System.Drawing.Size(121, 21);
+            this.cbxCidade.Size = new System.Drawing.Size(146, 21);
             this.cbxCidade.TabIndex = 33;
             this.cbxCidade.SelectedIndexChanged += new System.EventHandler(this.cbxCidade_SelectedIndexChanged);
             // 
@@ -426,10 +429,11 @@
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 32;
             this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
+            this.cbxEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxEstado_KeyPress);
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(294, 92);
+            this.txtCep.Location = new System.Drawing.Point(319, 92);
             this.txtCep.MaxLength = 8;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(87, 20);
@@ -478,7 +482,7 @@
             // lblCepUs
             // 
             this.lblCepUs.AutoSize = true;
-            this.lblCepUs.Location = new System.Drawing.Point(292, 75);
+            this.lblCepUs.Location = new System.Drawing.Point(317, 75);
             this.lblCepUs.Name = "lblCepUs";
             this.lblCepUs.Size = new System.Drawing.Size(35, 13);
             this.lblCepUs.TabIndex = 22;
@@ -642,6 +646,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "fmrCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro usuário";
             this.Load += new System.EventHandler(this.FmrUsuarioCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
