@@ -35,7 +35,6 @@
             this.lblNascUs = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblRgUs = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDdd = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtNasc = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
-            this.txtCnh = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cbxCargo = new System.Windows.Forms.ComboBox();
             this.txtDdd = new System.Windows.Forms.TextBox();
@@ -73,6 +71,7 @@
             this.cbxCidade = new System.Windows.Forms.ComboBox();
             this.txtTele = new System.Windows.Forms.GroupBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -144,19 +143,10 @@
             this.lblRgUs.TabIndex = 26;
             this.lblRgUs.Text = "RG:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "CNH:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(247, 73);
+            this.label2.Location = new System.Drawing.Point(130, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 28;
@@ -165,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 119);
+            this.label3.Location = new System.Drawing.Point(384, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 29;
@@ -174,7 +164,7 @@
             // lblDdd
             // 
             this.lblDdd.AutoSize = true;
-            this.lblDdd.Location = new System.Drawing.Point(204, 119);
+            this.lblDdd.Location = new System.Drawing.Point(87, 119);
             this.lblDdd.Name = "lblDdd";
             this.lblDdd.Size = new System.Drawing.Size(34, 13);
             this.lblDdd.TabIndex = 30;
@@ -183,7 +173,7 @@
             // lblTelefoneUS
             // 
             this.lblTelefoneUS.AutoSize = true;
-            this.lblTelefoneUS.Location = new System.Drawing.Point(248, 119);
+            this.lblTelefoneUS.Location = new System.Drawing.Point(131, 119);
             this.lblTelefoneUS.Name = "lblTelefoneUS";
             this.lblTelefoneUS.Size = new System.Drawing.Size(52, 13);
             this.lblTelefoneUS.TabIndex = 31;
@@ -192,7 +182,7 @@
             // lblCelularUs
             // 
             this.lblCelularUs.AutoSize = true;
-            this.lblCelularUs.Location = new System.Drawing.Point(327, 119);
+            this.lblCelularUs.Location = new System.Drawing.Point(210, 119);
             this.lblCelularUs.Name = "lblCelularUs";
             this.lblCelularUs.Size = new System.Drawing.Size(42, 13);
             this.lblCelularUs.TabIndex = 33;
@@ -201,7 +191,7 @@
             // lblOpUs
             // 
             this.lblOpUs.AutoSize = true;
-            this.lblOpUs.Location = new System.Drawing.Point(411, 119);
+            this.lblOpUs.Location = new System.Drawing.Point(294, 119);
             this.lblOpUs.Name = "lblOpUs";
             this.lblOpUs.Size = new System.Drawing.Size(60, 13);
             this.lblOpUs.TabIndex = 34;
@@ -210,7 +200,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 119);
+            this.label4.Location = new System.Drawing.Point(13, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 35;
@@ -246,18 +236,9 @@
             this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             // 
-            // txtCnh
-            // 
-            this.txtCnh.Location = new System.Drawing.Point(133, 90);
-            this.txtCnh.MaxLength = 8;
-            this.txtCnh.Name = "txtCnh";
-            this.txtCnh.Size = new System.Drawing.Size(100, 20);
-            this.txtCnh.TabIndex = 40;
-            this.txtCnh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCnh_KeyPress);
-            // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(249, 90);
+            this.txtEmail.Location = new System.Drawing.Point(132, 89);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(238, 20);
@@ -271,7 +252,7 @@
             this.cbxCargo.Items.AddRange(new object[] {
             "Usuário",
             "Administrador"});
-            this.cbxCargo.Location = new System.Drawing.Point(17, 134);
+            this.cbxCargo.Location = new System.Drawing.Point(387, 89);
             this.cbxCargo.MaxLength = 30;
             this.cbxCargo.Name = "cbxCargo";
             this.cbxCargo.Size = new System.Drawing.Size(100, 21);
@@ -281,7 +262,7 @@
             // 
             // txtDdd
             // 
-            this.txtDdd.Location = new System.Drawing.Point(207, 135);
+            this.txtDdd.Location = new System.Drawing.Point(90, 135);
             this.txtDdd.MaxLength = 3;
             this.txtDdd.Name = "txtDdd";
             this.txtDdd.Size = new System.Drawing.Size(28, 20);
@@ -291,7 +272,7 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(251, 135);
+            this.txtTel.Location = new System.Drawing.Point(134, 135);
             this.txtTel.MaxLength = 8;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(63, 20);
@@ -301,7 +282,7 @@
             // 
             // txtCel
             // 
-            this.txtCel.Location = new System.Drawing.Point(330, 135);
+            this.txtCel.Location = new System.Drawing.Point(213, 135);
             this.txtCel.MaxLength = 9;
             this.txtCel.Name = "txtCel";
             this.txtCel.Size = new System.Drawing.Size(68, 20);
@@ -311,7 +292,7 @@
             // 
             // txtOpe
             // 
-            this.txtOpe.Location = new System.Drawing.Point(414, 135);
+            this.txtOpe.Location = new System.Drawing.Point(297, 135);
             this.txtOpe.MaxLength = 15;
             this.txtOpe.Name = "txtOpe";
             this.txtOpe.Size = new System.Drawing.Size(73, 20);
@@ -324,7 +305,7 @@
             this.cbxSex.Items.AddRange(new object[] {
             "F",
             "M"});
-            this.cbxSex.Location = new System.Drawing.Point(133, 134);
+            this.cbxSex.Location = new System.Drawing.Point(16, 134);
             this.cbxSex.Name = "cbxSex";
             this.cbxSex.Size = new System.Drawing.Size(65, 21);
             this.cbxSex.TabIndex = 48;
@@ -339,7 +320,6 @@
             this.groupBox2.Controls.Add(this.txtDdd);
             this.groupBox2.Controls.Add(this.cbxCargo);
             this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.txtCnh);
             this.groupBox2.Controls.Add(this.txtCpf);
             this.groupBox2.Controls.Add(this.txtNasc);
             this.groupBox2.Controls.Add(this.txtName);
@@ -350,7 +330,6 @@
             this.groupBox2.Controls.Add(this.lblDdd);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblRgUs);
             this.groupBox2.Controls.Add(this.lblCpf);
             this.groupBox2.Controls.Add(this.lblNascUs);
@@ -542,11 +521,22 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(405, 351);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Fechar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FmrDadosUs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 390);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtTele);
             this.Controls.Add(this.btnEditar);
@@ -575,7 +565,6 @@
         private System.Windows.Forms.Label lblNascUs;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblRgUs;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDdd;
@@ -586,7 +575,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtNasc;
         private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.TextBox txtCnh;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.ComboBox cbxCargo;
         private System.Windows.Forms.TextBox txtDdd;
@@ -613,5 +601,6 @@
         private System.Windows.Forms.GroupBox txtTele;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtRg;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -39,7 +39,6 @@ namespace dllDao
         {
             return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
-
         //Executa query simples.
         public void ExecutaInstrucaoNaBase(string QuerySQL)
         {
@@ -64,7 +63,6 @@ namespace dllDao
                 con.Close();
             }
         }
-
         //pega os dados na base e retorna
         public DataTable CarregarDados(string sql)
         {
@@ -80,18 +78,21 @@ namespace dllDao
             da.Fill(dt);
 
             con.Close();
+       
             return dt;
+            
         }
-
         public SqlDataReader CarregarVariosDados(string sql)
         {
             string query = sql;
             //Cria conexão com banco de dados
             SqlConnection con = new SqlConnection(StrConexao());
-            con.Open();
+            
 
             SqlCommand sqlCommand = new SqlCommand(query, con);
             SqlDataReader dr = null;
+
+            con.Open();
 
             dr = sqlCommand.ExecuteReader();
 
@@ -112,6 +113,23 @@ namespace dllDao
             string query = "SELECT CID_INT_ID, CID_STR_NOME FROM TBL_CIDADE WHERE EST_INT_CODUF=" + id;
             DataTable dt = CarregarDados(query);
             return dt;
+        }
+        //Retorna apenas o ID
+        public string SelecioneId(string query)
+        {
+            string id;
+            Conexao conexao = new Conexao();
+            string Sqlquery = query;
+
+            SqlConnection con = new SqlConnection(conexao.StrConexao());
+            SqlCommand sqlCommand = new SqlCommand(Sqlquery, con);
+
+            con.Open();
+
+            id = sqlCommand.ExecuteScalar().ToString();
+
+            con.Close();
+            return id;
         }
     }
 }

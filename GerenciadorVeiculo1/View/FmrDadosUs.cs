@@ -48,11 +48,9 @@ namespace GerenciadorVeiculo1.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
             txtName.Enabled = true;
             txtNasc.Enabled = true;
             txtCpf.Enabled = true;
-            txtCnh.Enabled = true;
             txtRg.Enabled = true;
             cbxCargo.Enabled = true;
             cbxSex.Enabled = true;
@@ -73,7 +71,7 @@ namespace GerenciadorVeiculo1.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            char sexo = char.Parse(cbxSex.Text);
+            
             try
             {
                 if (cbxSex.Text == "")
@@ -87,16 +85,21 @@ namespace GerenciadorVeiculo1.View
 
                 else
                 {
-                    daoUsuario.usuario = new Usuario(txtName.Text, txtNasc.Text, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
+                    char sexo = char.Parse(cbxSex.Text);
+                    string estadoId = cbxEstado.SelectedValue.ToString();
+                    string cidadeId = cbxCidade.SelectedValue.ToString();
+                    daoUsuario.usuario = new Usuario(txtName.Text, txtNasc.Text, txtCpf.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
+                    daoUsuario.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCel.Text, txtTel.Text);
+                    daoUsuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
+
                     daoUsuario.UpdateUsuario(id);
+                    MessageBox.Show("Atualizado com sucesso!");
                 }
             }
             catch (DomainExceptions ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
     
 
@@ -108,12 +111,9 @@ namespace GerenciadorVeiculo1.View
 
             dt = daoUsuario.SelectUsuario(id);
 
-            conexao.conectar();
-
             txtName.Text = dt["Nome"].ToString();
             txtNasc.Text = dt["Nasc"].ToString();
             txtCpf.Text = dt["CPF"].ToString();
-            txtCnh.Text = dt["CNH"].ToString();
             txtRg.Text = dt["RG"].ToString();
             cbxCargo.Text = dt["CARGO"].ToString();
             cbxSex.Text = dt["SEXO"].ToString();
@@ -133,7 +133,6 @@ namespace GerenciadorVeiculo1.View
             txtName.Enabled = false;
             txtNasc.Enabled = false;
             txtCpf.Enabled = false;
-            txtCnh.Enabled = false;
             txtRg.Enabled = false;
             cbxCargo.Enabled = false;
             cbxSex.Enabled = false;
@@ -151,9 +150,8 @@ namespace GerenciadorVeiculo1.View
             cbxCidade.Enabled = false;
             btnAbrir.Enabled = false;
 
-
-
-
+            dt.Close();
+            conexao.desconectar();
         }
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
@@ -436,6 +434,11 @@ namespace GerenciadorVeiculo1.View
 
             //seleciona o id da cidade
             string CodCid = cbxCidade.SelectedValue.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

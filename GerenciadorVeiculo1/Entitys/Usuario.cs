@@ -13,7 +13,7 @@ namespace GerenciadorVeiculo1.Entitys
         public string Name { get; private set; }
         public DateTime Nasc { get; private set; }
         public string Cpf { get; private set; }
-        public string Cnh { get; private set; }
+        //public string Cnh { get; private set; }
         public string Rg { get; private set; }
         public string Cargo { get; private set; }
         public char Sexo { get; private set; }
@@ -29,12 +29,17 @@ namespace GerenciadorVeiculo1.Entitys
             Endereco = new Endereco();
         }
 
-        public Usuario(int id)
+        public Usuario(string id)
         {
-            UsuarioId = id;
+            if(id =="")
+            {
+                throw new DomainExceptions("Digite o ID o usuário!");
+            }
+
+            UsuarioId = int.Parse(id);
         }
 
-        public Usuario(string name, string nasc, string cpf, string cnh, string rg, string cargo, char sexo, string email)
+        public Usuario(string name, string nasc, string cpf, string rg, string cargo, char sexo, string email)
         {
 
             if (nasc == "" || nasc.Length <= 9)
@@ -76,7 +81,7 @@ namespace GerenciadorVeiculo1.Entitys
             Name = name;
             Nasc = DateTime.Parse(nasc);
             Cpf = cpf;
-            Cnh = cnh;
+            //Cnh = cnh;
             Rg = rg;
             Cargo = cargo;
             Sexo = sexo;

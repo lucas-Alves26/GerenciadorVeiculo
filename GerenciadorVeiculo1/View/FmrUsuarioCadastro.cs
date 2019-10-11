@@ -73,34 +73,35 @@ namespace GerenciadorVeiculo1.View
             bmp.Save(memory, ImageFormat.Bmp);
             byte[] foto = memory.ToArray();
 
-                int usuarioid = int.Parse(usuario.SelecioneId());
-                string strConexao = conexao.StrConexao();
+            //string query = "SELECT MAX(FUN_INT_ID) FROM TBL_FUNCIONARIO";
+            //int usuarioid = int.Parse(conexao.SelecioneId(query));
+            string strConexao = conexao.StrConexao();
 
-                SqlConnection con = new SqlConnection(strConexao);
-                SqlCommand command = new SqlCommand("INSERT INTO TBL_FOTO (FUN_INT_ID, FOTO) VALUES(@funcId, @imagem)", con);
-                SqlParameter image = new SqlParameter("@imagem", SqlDbType.Binary);
-                SqlParameter funId = new SqlParameter("@funcId", SqlDbType.Int);
+            SqlConnection con = new SqlConnection(strConexao);
+            SqlCommand command = new SqlCommand("INSERT INTO TBL_FOTO (FOTO) VALUES(@imagem)", con);
+            SqlParameter image = new SqlParameter("@imagem", SqlDbType.Binary);
+            //SqlParameter funId = new SqlParameter("@funcId", SqlDbType.Int);
 
-                image.Value = foto;
-                funId.Value = usuarioid;
+            image.Value = foto;
+            //funId.Value = usuarioid;
 
-                command.Parameters.Add(image);
-                command.Parameters.Add(funId);
+            command.Parameters.Add(image);
+            //command.Parameters.Add(funId);
 
-                try
-                {
-                    con.Open();
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
+            try
+            {
+                con.Open();
+                command.ExecuteNonQuery();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
    
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -139,13 +140,13 @@ namespace GerenciadorVeiculo1.View
                     string cidadeId = cbxCidade.SelectedValue.ToString();
 
                     usuario.logins = new Logins(txtLogin.Text, txtSenha.Text, txtSenha2.Text);
-                    usuario.usuario = new Usuario(txtName.Text, txtNasc.Text, txtCpf.Text, txtCnh.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
+                    usuario.usuario = new Usuario(txtName.Text, txtNasc.Text, txtCpf.Text,txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
                     usuario.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCel.Text, txtTel.Text);
                     usuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
 
-                    usuario.cadastroLog();
-                    usuario.CadastraUsuario();
                     salvarImg();
+                    usuario.CadastraUsuario();
+                    
                     MessageBox.Show("Cadastrado com sucesso!");
 
                     Limpar();
@@ -165,7 +166,6 @@ namespace GerenciadorVeiculo1.View
             txtName.Text = "";
             txtNasc.Text = "";
             txtCpf.Text = "";
-            txtCnh.Text = "";
             txtRg.Text = "";
             cbxCargo.Text = "";
             cbxSex.Text = "";

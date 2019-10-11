@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using GerenciadorVeiculo1.Dal;
 using GerenciadorVeiculo1.Entitys;
+using GerenciadorVeiculo1.Exceptions;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -74,9 +75,16 @@ namespace GerenciadorVeiculo1.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
-            DaoUs.usuario = new Usuario(int.Parse(txtId.Text));
-            DaoUs.DeletUsuario();
+            try
+            {
+                DaoUs.usuario = new Usuario(txtId.Text);
+                DaoUs.DeletUsuario();
+                MessageBox.Show("Deletado com sucesso!");
+            }
+            catch (DomainExceptions ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -86,16 +94,17 @@ namespace GerenciadorVeiculo1.View
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "")
+            if (txtId.Text == "")
             {
-                usuarioID = txtId.Text;
-                FmrDadosUs dadosUs = new FmrDadosUs();
-                dadosUs.GetId(usuarioID);
-                dadosUs.Show();
+               MessageBox.Show("Coloque o ID do usuário para consultar");
+           
             }
             else
             {
-                MessageBox.Show("Coloque o ID do usuário para consultar");
+                    usuarioID = txtId.Text;
+                    FmrDadosUs dadosUs = new FmrDadosUs();
+                    dadosUs.GetId(usuarioID);
+                    dadosUs.Show();
             }    
         }
     }
