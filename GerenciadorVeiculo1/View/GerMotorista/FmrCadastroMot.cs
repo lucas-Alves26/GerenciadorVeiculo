@@ -1,5 +1,5 @@
 ﻿using dllDao;
-using GerenciadorVeiculo1.Dal;
+using GerenciadorVeiculo1.Dal.DaoMotorista;
 using GerenciadorVeiculo1.Entitys;
 using GerenciadorVeiculo1.Exceptions;
 using System;
@@ -8,79 +8,44 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorVeiculo1.View
+namespace GerenciadorVeiculo1.View.GerMotorista
 {
-    public partial class FmrDadosUs : Form
+    public partial class FmrCadastroMot : Form
     {
+
+
         Conexao conexao = new Conexao();
-        DaoUsuario daoUsuario = new DaoUsuario();
+        Bitmap bmp;//trabalha com os pixos da img
 
-        string id;
-
-        public void GetId(string id)
-        {
-            this.id = id;
-        }
-        public FmrDadosUs()
+        public FmrCadastroMot()
         {
             InitializeComponent();
         }
-
-        public void popularEstadoUF()
+        private void FmrCadastroMot_Load(object sender, EventArgs e)
         {
-            cbxEstado.ValueMember = "EST_INT_CODUF";
-            cbxEstado.DisplayMember = "EST_STR_NOME";
-            cbxEstado.DataSource = conexao.RetornaEstado();// carrega a coluna EST_STR_NOME dentro cbx
-        }
-        //popula a combox cidade
-        public void populaCidade(string id)
-        {
-
-            cbxCidade.ValueMember = "CID_INT_ID";
-            cbxCidade.DisplayMember = "CID_STR_NOME";
-            cbxCidade.DataSource = conexao.RetornaCidade(id);// carrega o COLUNA CID_INT_NOME CONFORME O Id ESTADO
+            popularEstadoUF();
+            popularEmpresa();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            txtName.Enabled = true;
-            txtNasc.Enabled = true;
-            txtCpf.Enabled = true;
-            txtRg.Enabled = true;
-            cbxCargo.Enabled = true;
-            cbxSex.Enabled = true;
-            txtEmail.Enabled = true;
-            txtDdd.Enabled = true;
-            txtTel.Enabled = true;
-            txtCel.Enabled = true;
-            txtOpe.Enabled = true;
-            txtRua.Enabled = true;
-            txtNum.Enabled = true;
-            txtComp.Enabled = true;
-            txtBairro.Enabled = true;
-            txtCep.Enabled = true;
-            cbxEstado.Enabled = true;
-            cbxCidade.Enabled = true;
-            btnAbrir.Enabled = true;
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvarUs_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 if (cbxSex.Text == "")
                 {
                     MessageBox.Show("Selecione o sexo! ");
-                }
-                else if (cbxCargo.Text == "")
-                {
-                    MessageBox.Show("Selecione o Cargo! ");
                 }
 
                 else
@@ -88,70 +53,129 @@ namespace GerenciadorVeiculo1.View
                     char sexo = char.Parse(cbxSex.Text);
                     string estadoId = cbxEstado.SelectedValue.ToString();
                     string cidadeId = cbxCidade.SelectedValue.ToString();
-                    daoUsuario.usuario = new Usuario(txtName.Text, txtNasc.Text, txtCpf.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
-                    daoUsuario.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCel.Text, txtTel.Text);
-                    daoUsuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
+                    string empresaId = cbxEmpresa.SelectedValue.ToString();
 
-                    daoUsuario.UpdateUsuario(id);
-                    MessageBox.Show("Atualizado com sucesso!");
+                    DaoMotorista DaoMotorista = new DaoMotorista();
+                    DaoMotorista.cnh = new Cnh(txtCnh.Text, txtValidade.Text, cbxCategoria.Text);
+                    DaoMotorista.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCel.Text, txtTel.Text);
+                    DaoMotorista.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
+                    DaoMotorista.motorista = new Motorista(txtName.Text, txtNasc.Text, txtCpf.Text, txtRg.Text, sexo, txtEmail.Text);
+                    DaoMotorista.empresa = new Empresa(empresaId);
+                    salvarImg();
+                    DaoMotorista.CadastraMotorista();
+                    lblAviso.Text= "Cadastrado com Sucesso !";
+                    Limpar();
                 }
             }
             catch (DomainExceptions ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            { 
+
+            }
+
+
+            //lblAviso.Text = "";
         }
-    
-
-        private void DmrDadosUs_Load(object sender, EventArgs e)
+        //limpa os todos os campos
+        private void Limpar()
         {
-            popularEstadoUF();
+            txtName.Text = "";
+            txtNasc.Text = "";
+            txtCpf.Text = "";
+            txtRg.Text = "";
+            cbxSex.Text = "";
+            cbxCategoria.Text = "";
+            txtEmail.Text = "";
+            txtCnh.Text = "";
+            txtValidade.Text = "";
+            txtDdd.Text = "";
+            txtOpe.Text = "";
+            txtTel.Text = "";
+            txtCel.Text = "";
+            txtRua.Text = "";
+            txtNum.Text = "";
+            txtCep.Text = "";
+            txtComp.Text = "";
+            txtBairro.Text = "";
+            cbxCategoria.Text = "";
+        }
+        //popula o combox ESTADO
+        public void popularEstadoUF()
+        {
+            cbxEstado.ValueMember = "EST_INT_CODUF";
+            cbxEstado.DisplayMember = "EST_STR_NOME";
+            cbxEstado.DataSource = conexao.RetornaEstado();// carrega a coluna EST_STR_NOME dentro cbx
+        }
+        //popula o combox cidade
+        public void populaCidade(string id)
+        {
+            cbxCidade.ValueMember = "CID_INT_ID";
+            cbxCidade.DisplayMember = "CID_STR_NOME";
+            cbxCidade.DataSource = conexao.RetornaCidade(id);// carrega o COLUNA CID_INT_NOME CONFORME O Id ESTADO
+        }
+        //salva Img no banco de dados
+        public void salvarImg()
+        {
+            MemoryStream memory = new MemoryStream();//obj referente a guarda dados na memoria
+            bmp.Save(memory, ImageFormat.Bmp);
+            byte[] foto = memory.ToArray();
 
-            SqlDataReader dt;
+            string strConexao = conexao.StrConexao();
 
-            dt = daoUsuario.SelectUsuario(id);
+            SqlConnection con = new SqlConnection(strConexao);
+            SqlCommand command = new SqlCommand("INSERT INTO TBL_FOTO (FOTO) VALUES(@imagem)", con);
+            SqlParameter image = new SqlParameter("@imagem", SqlDbType.Binary);
 
-            txtName.Text = dt["Nome"].ToString();
-            txtNasc.Text = dt["Nasc"].ToString();
-            txtCpf.Text = dt["CPF"].ToString();
-            txtRg.Text = dt["RG"].ToString();
-            cbxCargo.Text = dt["CARGO"].ToString();
-            cbxSex.Text = dt["SEXO"].ToString();
-            txtEmail.Text = dt["EMAIL"].ToString();
-            txtDdd.Text = dt["DDD"].ToString();
-            txtTel.Text = dt["FIX"].ToString();
-            txtCel.Text = dt["TEL"].ToString();
-            txtOpe.Text = dt["OPE"].ToString();
-            txtRua.Text = dt["RUA"].ToString();
-            txtNum.Text = dt["NUMERO"].ToString();
-            txtComp.Text = dt["COMPLEMENTO"].ToString();
-            txtBairro.Text = dt["BAIRRO"].ToString();
-            txtCep.Text = dt["CEP"].ToString();
-            cbxEstado.Text = dt["ESTADO"].ToString();
-            cbxCidade.Text = dt["CIDADE"].ToString();
+            image.Value = foto;
 
-            txtName.Enabled = false;
-            txtNasc.Enabled = false;
-            txtCpf.Enabled = false;
-            txtRg.Enabled = false;
-            cbxCargo.Enabled = false;
-            cbxSex.Enabled = false;
-            txtEmail.Enabled = false;
-            txtDdd.Enabled = false;
-            txtTel.Enabled = false;
-            txtCel.Enabled = false;
-            txtOpe.Enabled = false;
-            txtRua.Enabled = false;
-            txtNum.Enabled = false;
-            txtComp.Enabled = false;
-            txtBairro.Enabled = false;
-            txtCep.Enabled = false;
-            cbxEstado.Enabled = false;
-            cbxCidade.Enabled = false;
-            btnAbrir.Enabled = false;
+            command.Parameters.Add(image);
+            //command.Parameters.Add(funId);
 
-            dt.Close();
-            conexao.desconectar();
+            try
+            {
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        //Retorna Empresa
+        public void popularEmpresa()
+        {
+            cbxEmpresa.ValueMember = "EMP_INT_ID";
+            cbxEmpresa.DisplayMember = "EMP_STR_NOME";
+            cbxEmpresa.DataSource = conexao.RetornaEmpresa();// carrega a coluna EST_STR_NOME dentro cbx
+        }
+
+
+        private void btnAbrir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            //Abrir e selecionar foto que está armazenado no cumputador
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string nomeImg = openFileDialog1.FileName;
+
+                bmp = new Bitmap(nomeImg);
+                pictureBox1.Image = bmp;
+            }
         }
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
@@ -175,12 +199,6 @@ namespace GerenciadorVeiculo1.View
                 e.Handled = true;
                 MessageBox.Show("Este campo aceita letras e espaços!");
             }
-
-        }
-
-        private void txtNasc_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNasc_KeyPress(object sender, KeyPressEventArgs e)
@@ -194,8 +212,6 @@ namespace GerenciadorVeiculo1.View
                 e.Handled = true;
                 MessageBox.Show("Este campo aceita somente numero!");
             }
-
-
             if (char.IsNumber(e.KeyChar) == true)
             {
                 switch (txtNasc.TextLength)
@@ -203,7 +219,6 @@ namespace GerenciadorVeiculo1.View
                     case 0:
                         txtNasc.Text = "";
                         break;
-
                     case 2:
                         txtNasc.Text = txtNasc.Text + "/";
                         txtNasc.SelectionStart = 4;
@@ -219,7 +234,7 @@ namespace GerenciadorVeiculo1.View
 
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //esse if é para aceitar, setas e apagar
+            // esse if é para aceitar, setas e apagar
             if (e.KeyChar == 8)
                 return;
 
@@ -262,7 +277,7 @@ namespace GerenciadorVeiculo1.View
             }
         }
 
-        private void txtDdd_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtValidade_KeyPress(object sender, KeyPressEventArgs e)
         {
             //esse if é para aceitar, setas e apagar
             if (e.KeyChar == 8)
@@ -272,6 +287,24 @@ namespace GerenciadorVeiculo1.View
             {
                 e.Handled = true;
                 MessageBox.Show("Este campo aceita somente numero!");
+            }
+            if (char.IsNumber(e.KeyChar) == true)
+            {
+                switch (txtValidade.TextLength)
+                {
+                    case 0:
+                        txtValidade.Text = "";
+                        break;
+                    case 2:
+                        txtValidade.Text = txtValidade.Text + "/";
+                        txtValidade.SelectionStart = 4;
+                        break;
+
+                    case 5:
+                        txtValidade.Text = txtValidade.Text + "/";
+                        txtValidade.SelectionStart = 6;
+                        break;
+                }
             }
         }
 
@@ -290,7 +323,19 @@ namespace GerenciadorVeiculo1.View
 
         private void txtCel_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
 
+        private void txtDdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
             //esse if é para aceitar, setas e apagar
             if (e.KeyChar == 8)
                 return;
@@ -413,13 +458,9 @@ namespace GerenciadorVeiculo1.View
             }
         }
 
-        private void cbxEstado_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtValidade_TextChanged(object sender, EventArgs e)
         {
-           
-        }
 
-        private void cbxCidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
         }
 
         private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -427,20 +468,28 @@ namespace GerenciadorVeiculo1.View
             //Seleciona o Id do estado
             string CodUF = cbxEstado.SelectedValue.ToString();
             populaCidade(CodUF);
+
         }
 
         private void cbxCidade_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             //seleciona o id da cidade
             string CodCid = cbxCidade.SelectedValue.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void txtName_Click(object sender, EventArgs e)
         {
-            this.Close();
+            lblAviso.Text = "";
+        }
+
+        private void txtTele_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
-
-
 }

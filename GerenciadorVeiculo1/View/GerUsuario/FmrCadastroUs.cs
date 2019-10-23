@@ -31,24 +31,9 @@ namespace GerenciadorVeiculo1.View
 
 
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         public void FmrUsuarioCadastro_Load(object sender, EventArgs e)
         {
-
             popularEstadoUF();
-
-
         }
         //popula a combox Estado
         public void popularEstadoUF()
@@ -60,30 +45,24 @@ namespace GerenciadorVeiculo1.View
         //popula a combox cidade
         public void populaCidade(string id)
         {
-
             cbxCidade.ValueMember = "CID_INT_ID";
             cbxCidade.DisplayMember = "CID_STR_NOME";
             cbxCidade.DataSource = conexao.RetornaCidade(id);// carrega o COLUNA CID_INT_NOME CONFORME O Id ESTADO
         }
-
         //salva a img na TBL_FOTO
         public void salvarImg()
         {
-            MemoryStream memory = new MemoryStream();
+            MemoryStream memory = new MemoryStream();//obj referente a guarda dados na memoria
             bmp.Save(memory, ImageFormat.Bmp);
             byte[] foto = memory.ToArray();
 
-            //string query = "SELECT MAX(FUN_INT_ID) FROM TBL_FUNCIONARIO";
-            //int usuarioid = int.Parse(conexao.SelecioneId(query));
             string strConexao = conexao.StrConexao();
 
             SqlConnection con = new SqlConnection(strConexao);
             SqlCommand command = new SqlCommand("INSERT INTO TBL_FOTO (FOTO) VALUES(@imagem)", con);
             SqlParameter image = new SqlParameter("@imagem", SqlDbType.Binary);
-            //SqlParameter funId = new SqlParameter("@funcId", SqlDbType.Int);
 
             image.Value = foto;
-            //funId.Value = usuarioid;
 
             command.Parameters.Add(image);
             //command.Parameters.Add(funId);
@@ -103,20 +82,16 @@ namespace GerenciadorVeiculo1.View
             }
         }
    
-
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void lblCepUs_Click(object sender, EventArgs e)
         {
-
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void btnSalvarUs_Click(object sender, EventArgs e)
@@ -155,14 +130,11 @@ namespace GerenciadorVeiculo1.View
             catch (DomainExceptions ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
-           
+            }          
         }
-
+        //limpa todos os campos
         private void Limpar()
         {
-
             txtName.Text = "";
             txtNasc.Text = "";
             txtCpf.Text = "";
@@ -529,6 +501,11 @@ namespace GerenciadorVeiculo1.View
         private void cbxEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

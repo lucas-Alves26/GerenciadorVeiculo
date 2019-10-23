@@ -50,11 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\ControlLogin.cs" />
-    <Compile Include="Dal\DaoUsuario.cs" />
-    <Compile Include="Dal\LoginDaoComandos.cs" />
-    <Compile Include="Dal\DaoLogin.cs" />
+    <Compile Include="Dal\DaoMotorista\DaoMotorista.cs" />
+    <Compile Include="Dal\DaoUsuario\DaoUsuario.cs" />
+    <Compile Include="Dal\DaoUsuario\LoginDaoComandos.cs" />
+    <Compile Include="Entitys\Cliente.cs" />
+    <Compile Include="Entitys\Cnh.cs" />
+    <Compile Include="Entitys\Empresa.cs" />
     <Compile Include="Entitys\Endereco.cs" />
     <Compile Include="Entitys\Logins.cs" />
+    <Compile Include="Entitys\Motorista.cs" />
     <Compile Include="Entitys\Telefone.cs" />
     <Compile Include="Entitys\Usuario.cs" />
     <Compile Include="Exceptions\DomainExceptions.cs" />
@@ -66,23 +70,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FmrUsuarioCadastro.cs">
+    <Compile Include="View\GerMotorista\FmrCadastroMot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FmrUsuarioCadastro.Designer.cs">
-      <DependentUpon>FmrUsuarioCadastro.cs</DependentUpon>
+    <Compile Include="View\GerMotorista\FmrCadastroMot.Designer.cs">
+      <DependentUpon>FmrCadastroMot.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FmrDadosUs.cs">
+    <Compile Include="View\GerMotorista\FmrEditarMot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FmrDadosUs.Designer.cs">
-      <DependentUpon>FmrDadosUs.cs</DependentUpon>
+    <Compile Include="View\GerMotorista\FmrEditarMot.Designer.cs">
+      <DependentUpon>FmrEditarMot.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaUsuario.cs">
+    <Compile Include="View\GerMotorista\FmrMotorista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaUsuario.Designer.cs">
-      <DependentUpon>TelaUsuario.cs</DependentUpon>
+    <Compile Include="View\GerMotorista\FmrMotorista.Designer.cs">
+      <DependentUpon>FmrMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerUsuario\FmrCadastroUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerUsuario\FmrCadastroUs.Designer.cs">
+      <DependentUpon>FmrCadastroUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerUsuario\FmrEditarUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerUsuario\FmrEditarUs.Designer.cs">
+      <DependentUpon>FmrEditarUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerUsuario\FmrUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerUsuario\FmrUsuario.Designer.cs">
+      <DependentUpon>FmrUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TelaLogin.cs">
       <SubType>Form</SubType>
@@ -108,11 +130,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FmrUsuarioCadastro.resx">
-      <DependentUpon>FmrUsuarioCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="View\GerMotorista\FmrCadastroMot.resx">
+      <DependentUpon>FmrCadastroMot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FmrDadosUs.resx">
-      <DependentUpon>FmrDadosUs.cs</DependentUpon>
+    <EmbeddedResource Include="View\GerMotorista\fmrEditarMot.resx">
+      <DependentUpon>FmrEditarMot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerMotorista\FmrMotorista.resx">
+      <DependentUpon>FmrMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerUsuario\FmrCadastroUs.resx">
+      <DependentUpon>FmrCadastroUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerUsuario\FmrEditarUs.resx">
+      <DependentUpon>FmrEditarUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
@@ -120,8 +151,8 @@
     <EmbeddedResource Include="View\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaUsuario.resx">
-      <DependentUpon>TelaUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="View\GerUsuario\FmrUsuario.resx">
+      <DependentUpon>FmrUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

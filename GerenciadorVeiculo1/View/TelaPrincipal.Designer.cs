@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.motoristasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroUsuárioToolStripMenuItem});
+            this.cadastroUsuárioToolStripMenuItem,
+            this.motoristasToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -56,9 +58,16 @@
             // cadastroUsuárioToolStripMenuItem
             // 
             this.cadastroUsuárioToolStripMenuItem.Name = "cadastroUsuárioToolStripMenuItem";
-            this.cadastroUsuárioToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.cadastroUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastroUsuárioToolStripMenuItem.Text = "Usuário";
             this.cadastroUsuárioToolStripMenuItem.Click += new System.EventHandler(this.cadastroUsuárioToolStripMenuItem_Click);
+            // 
+            // motoristasToolStripMenuItem
+            // 
+            this.motoristasToolStripMenuItem.Name = "motoristasToolStripMenuItem";
+            this.motoristasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.motoristasToolStripMenuItem.Text = "Motoristas";
+            this.motoristasToolStripMenuItem.Click += new System.EventHandler(this.motoristasToolStripMenuItem_Click);
             // 
             // fmrPrincipal
             // 
@@ -85,5 +94,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem motoristasToolStripMenuItem;
     }
 }

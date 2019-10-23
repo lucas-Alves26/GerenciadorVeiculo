@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcBox = new System.Windows.Forms.PictureBox();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CV = new System.Windows.Forms.Label();
@@ -36,24 +36,24 @@
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblRgUs = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblDdd = new System.Windows.Forms.Label();
             this.lblTelefoneUS = new System.Windows.Forms.Label();
             this.lblCelularUs = new System.Windows.Forms.Label();
             this.lblOpUs = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtNasc = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.cbxCargo = new System.Windows.Forms.ComboBox();
             this.txtDdd = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtCel = new System.Windows.Forms.TextBox();
             this.txtOpe = new System.Windows.Forms.TextBox();
-            this.cbxSex = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtRg = new System.Windows.Forms.TextBox();
+            this.cbxSex = new System.Windows.Forms.ComboBox();
+            this.cbxCargo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.lblRuaUs = new System.Windows.Forms.Label();
             this.lblNumeroUs = new System.Windows.Forms.Label();
@@ -72,20 +72,20 @@
             this.txtTele = new System.Windows.Forms.GroupBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.txtTele.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pcBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 136);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pcBox.Location = new System.Drawing.Point(11, 19);
+            this.pcBox.Name = "pcBox";
+            this.pcBox.Size = new System.Drawing.Size(117, 136);
+            this.pcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcBox.TabIndex = 19;
+            this.pcBox.TabStop = false;
             // 
             // btnAbrir
             // 
@@ -99,7 +99,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAbrir);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pcBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(139, 190);
@@ -152,15 +152,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "E-Mail:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(384, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Cargo:";
-            // 
             // lblDdd
             // 
             this.lblDdd.AutoSize = true;
@@ -196,15 +187,6 @@
             this.lblOpUs.Size = new System.Drawing.Size(60, 13);
             this.lblOpUs.TabIndex = 34;
             this.lblOpUs.Text = "Operadora:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Sexo :";
             // 
             // txtName
             // 
@@ -244,22 +226,6 @@
             this.txtEmail.Size = new System.Drawing.Size(238, 20);
             this.txtEmail.TabIndex = 41;
             // 
-            // cbxCargo
-            // 
-            this.cbxCargo.DisplayMember = "n";
-            this.cbxCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCargo.FormattingEnabled = true;
-            this.cbxCargo.Items.AddRange(new object[] {
-            "Usuário",
-            "Administrador"});
-            this.cbxCargo.Location = new System.Drawing.Point(387, 89);
-            this.cbxCargo.MaxLength = 30;
-            this.cbxCargo.Name = "cbxCargo";
-            this.cbxCargo.Size = new System.Drawing.Size(100, 21);
-            this.cbxCargo.TabIndex = 42;
-            this.cbxCargo.Tag = "";
-            this.cbxCargo.ValueMember = "n";
-            // 
             // txtDdd
             // 
             this.txtDdd.Location = new System.Drawing.Point(90, 135);
@@ -297,18 +263,8 @@
             this.txtOpe.Name = "txtOpe";
             this.txtOpe.Size = new System.Drawing.Size(73, 20);
             this.txtOpe.TabIndex = 47;
+            this.txtOpe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtOpe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpe_KeyPress);
-            // 
-            // cbxSex
-            // 
-            this.cbxSex.FormattingEnabled = true;
-            this.cbxSex.Items.AddRange(new object[] {
-            "F",
-            "M"});
-            this.cbxSex.Location = new System.Drawing.Point(16, 134);
-            this.cbxSex.Name = "cbxSex";
-            this.cbxSex.Size = new System.Drawing.Size(65, 21);
-            this.cbxSex.TabIndex = 48;
             // 
             // groupBox2
             // 
@@ -349,6 +305,51 @@
             this.txtRg.Size = new System.Drawing.Size(100, 20);
             this.txtRg.TabIndex = 49;
             this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
+            // 
+            // cbxSex
+            // 
+            this.cbxSex.FormattingEnabled = true;
+            this.cbxSex.Items.AddRange(new object[] {
+            "F",
+            "M"});
+            this.cbxSex.Location = new System.Drawing.Point(16, 134);
+            this.cbxSex.Name = "cbxSex";
+            this.cbxSex.Size = new System.Drawing.Size(65, 21);
+            this.cbxSex.TabIndex = 48;
+            // 
+            // cbxCargo
+            // 
+            this.cbxCargo.DisplayMember = "n";
+            this.cbxCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCargo.FormattingEnabled = true;
+            this.cbxCargo.Items.AddRange(new object[] {
+            "Usuário",
+            "Administrador"});
+            this.cbxCargo.Location = new System.Drawing.Point(387, 89);
+            this.cbxCargo.MaxLength = 30;
+            this.cbxCargo.Name = "cbxCargo";
+            this.cbxCargo.Size = new System.Drawing.Size(100, 21);
+            this.cbxCargo.TabIndex = 42;
+            this.cbxCargo.Tag = "";
+            this.cbxCargo.ValueMember = "n";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 119);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Sexo :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(384, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Cargo:";
             // 
             // btnEditar
             // 
@@ -439,6 +440,7 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(49, 20);
             this.txtNum.TabIndex = 24;
+            this.txtNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // txtComp
@@ -466,6 +468,7 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(87, 20);
             this.txtCep.TabIndex = 29;
+            this.txtCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCep_KeyPress);
             // 
             // cbxEstado
@@ -546,7 +549,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dados do usuário";
             this.Load += new System.EventHandler(this.DmrDadosUs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -558,7 +561,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcBox;
         private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label CV;
@@ -566,22 +569,18 @@
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblRgUs;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDdd;
         private System.Windows.Forms.Label lblTelefoneUS;
         private System.Windows.Forms.Label lblCelularUs;
         private System.Windows.Forms.Label lblOpUs;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtNasc;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.ComboBox cbxCargo;
         private System.Windows.Forms.TextBox txtDdd;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtCel;
         private System.Windows.Forms.TextBox txtOpe;
-        private System.Windows.Forms.ComboBox cbxSex;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblRuaUs;
@@ -602,5 +601,9 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbxSex;
+        private System.Windows.Forms.ComboBox cbxCargo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

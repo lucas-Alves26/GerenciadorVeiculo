@@ -8,10 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
-
-
-
+using GerenciadorVeiculo1.View.GerMotorista;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -38,6 +35,12 @@ namespace GerenciadorVeiculo1.View
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void motoristasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FmrMotorista fmrMotorista = new FmrMotorista();
+            fmrMotorista.Show();
         }
     }
 }

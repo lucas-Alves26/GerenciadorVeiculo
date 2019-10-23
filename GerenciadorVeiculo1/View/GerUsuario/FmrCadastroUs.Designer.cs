@@ -79,6 +79,7 @@
             this.btnSalvarUs = new System.Windows.Forms.Button();
             this.btnLimparUs = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -185,6 +186,7 @@
             // 
             // cbxSex
             // 
+            this.cbxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSex.FormattingEnabled = true;
             this.cbxSex.Items.AddRange(new object[] {
             "F",
@@ -203,6 +205,7 @@
             this.txtOpe.Name = "txtOpe";
             this.txtOpe.Size = new System.Drawing.Size(73, 20);
             this.txtOpe.TabIndex = 47;
+            this.txtOpe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtOpe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpe_KeyPress);
             // 
             // txtCel
@@ -241,6 +244,7 @@
             // cbxCargo
             // 
             this.cbxCargo.DisplayMember = "n";
+            this.cbxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCargo.FormattingEnabled = true;
             this.cbxCargo.Items.AddRange(new object[] {
@@ -271,6 +275,7 @@
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(100, 20);
             this.txtRg.TabIndex = 39;
+            this.txtRg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
             // txtCpf
@@ -297,11 +302,12 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(17, 42);
+            this.txtName.Location = new System.Drawing.Point(19, 42);
             this.txtName.MaxLength = 60;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(286, 20);
             this.txtName.TabIndex = 36;
+            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // label4
@@ -392,6 +398,7 @@
             // 
             // cbxCidade
             // 
+            this.cbxCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCidade.FormattingEnabled = true;
             this.cbxCidade.Location = new System.Drawing.Point(157, 91);
             this.cbxCidade.Name = "cbxCidade";
@@ -401,6 +408,7 @@
             // 
             // cbxEstado
             // 
+            this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Location = new System.Drawing.Point(17, 91);
             this.cbxEstado.Name = "cbxEstado";
@@ -416,6 +424,7 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(87, 20);
             this.txtCep.TabIndex = 29;
+            this.txtCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
             this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCep_KeyPress);
             // 
@@ -445,6 +454,7 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(49, 20);
             this.txtNum.TabIndex = 24;
+            this.txtNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
             this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
@@ -541,8 +551,10 @@
             this.txtSenha2.Location = new System.Drawing.Point(249, 42);
             this.txtSenha2.MaxLength = 20;
             this.txtSenha2.Name = "txtSenha2";
+            this.txtSenha2.PasswordChar = '*';
             this.txtSenha2.Size = new System.Drawing.Size(100, 20);
             this.txtSenha2.TabIndex = 29;
+            this.txtSenha2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSenha
             // 
@@ -552,6 +564,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 28;
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLogin
             // 
@@ -560,6 +573,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
             this.txtLogin.TabIndex = 27;
+            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblLoginUs
             // 
@@ -590,7 +604,7 @@
             // 
             // btnSalvarUs
             // 
-            this.btnSalvarUs.Location = new System.Drawing.Point(536, 370);
+            this.btnSalvarUs.Location = new System.Drawing.Point(531, 399);
             this.btnSalvarUs.Name = "btnSalvarUs";
             this.btnSalvarUs.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarUs.TabIndex = 31;
@@ -600,7 +614,7 @@
             // 
             // btnLimparUs
             // 
-            this.btnLimparUs.Location = new System.Drawing.Point(626, 370);
+            this.btnLimparUs.Location = new System.Drawing.Point(621, 399);
             this.btnLimparUs.Name = "btnLimparUs";
             this.btnLimparUs.Size = new System.Drawing.Size(75, 23);
             this.btnLimparUs.TabIndex = 33;
@@ -612,11 +626,23 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(411, 358);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 25);
+            this.label1.TabIndex = 34;
+            this.label1.Text = ".";
+            // 
             // fmrCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 434);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimparUs);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.txtTele);
@@ -625,7 +651,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "fmrCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro usuário";
+            this.Text = "Cadastro de Usuário";
             this.Load += new System.EventHandler(this.FmrUsuarioCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -636,6 +662,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -691,5 +718,6 @@
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.ComboBox cbxCidade;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label1;
     }
 }

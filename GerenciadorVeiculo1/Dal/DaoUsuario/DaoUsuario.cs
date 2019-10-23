@@ -19,6 +19,7 @@ namespace GerenciadorVeiculo1.Dal
         public Telefone telefone { get; set; }
         public Endereco endereco { get; set; }
 
+
         Conexao conexao = new Conexao();
 
         public DaoUsuario()
@@ -35,7 +36,24 @@ namespace GerenciadorVeiculo1.Dal
         //deleta todos o usuario conforme o ID selecionado
         public void DeletUsuario()
         {
-            Conexao conexao = new Conexao();
+            string idFun, idTel, idEnd, idFot,idLog;
+
+            string query = "SELECT F.FUN_INT_ID, T.TEL_INT_ID, E.END_INT_ID, FT.FOT_INT_ID, L.LOG_INT_ID  FROM TBL_FUNCIONARIO AS F "
+            +" INNER JOIN TBL_ENDERECO_FUNCIONARIO AS EF ON EF.FUN_INT_ID = F.FUN_INT_ID "
+            +" INNER JOIN TBL_ENDERECO AS E ON E.END_INT_ID = EF.END_INT_ID "
+            +" INNER JOIN TBL_TELEFONE AS T ON T.TEL_INT_ID = F.TEL_INT_ID "
+            +" INNER JOIN TBL_FOTO AS FT ON FT.FOT_INT_ID = F.FOT_INT_ID "
+            +" INNER JOIN TBL_LOGINS AS L ON L.LOG_INT_ID = F.LOG_INT_ID "
+            +" WHERE F.FUN_INT_ID =" + usuario.UsuarioId.ToString();
+
+            SqlDataReader dt = conexao.CarregarVariosDados(query);
+
+            idFun = dt["FUN_INT_ID"].ToString();
+            idTel = dt["TEL_INT_ID"].ToString();
+            idEnd = dt["END_INT_ID"].ToString();
+            idFot = dt["FOT_INT_ID"].ToString();
+            idLog = dt["LOG_INT_ID"].ToString();
+
             SqlConnection con = new SqlConnection(conexao.StrConexao());
 
             SqlCommand cmd1 = con.CreateCommand();
@@ -47,16 +65,13 @@ namespace GerenciadorVeiculo1.Dal
             SqlCommand cmd7 = con.CreateCommand();
 
 
-            cmd1.CommandText = "DELETE TBL_ENDERECO_FUNCIONARIO WHERE FUN_INT_ID = " + usuario.UsuarioId.ToString();
-            cmd2.CommandText = "DELETE TBL_ENDERECO WHERE END_INT_ID = " + usuario.UsuarioId.ToString();
-            cmd3.CommandText = "DELETE TBL_FUNCIONARIO WHERE FUN_INT_ID = " + usuario.UsuarioId.ToString();
-            cmd4.CommandText = "DELETE TBL_FOTO WHERE FOT_INT_ID = "+ usuario.UsuarioId.ToString();
-            cmd5.CommandText = "DELETE TBL_TELEFONE WHERE TEL_INT_ID = " + usuario.UsuarioId.ToString();
-            cmd6.CommandText = "DELETE TBL_LOGINS WHERE LOG_INT_ID = " + usuario.UsuarioId.ToString();
+            cmd1.CommandText = "DELETE TBL_ENDERECO_FUNCIONARIO WHERE FUN_INT_ID = " + idFun;
+            cmd2.CommandText = "DELETE TBL_ENDERECO WHERE END_INT_ID = " + idEnd;
+            cmd3.CommandText = "DELETE TBL_FUNCIONARIO WHERE FUN_INT_ID = " + idFun;
+            cmd4.CommandText = "DELETE TBL_FOTO WHERE FOT_INT_ID = "+ idFot;
+            cmd5.CommandText = "DELETE TBL_TELEFONE WHERE TEL_INT_ID = " + idTel;
+            cmd6.CommandText = "DELETE TBL_LOGINS WHERE LOG_INT_ID = " + idLog;
             
-
-
-
             con.Open();
 
             SqlTransaction tran = con.BeginTransaction();
@@ -73,8 +88,6 @@ namespace GerenciadorVeiculo1.Dal
             cmd5.ExecuteNonQuery();
             cmd6.Transaction = tran;
             cmd6.ExecuteNonQuery();
-
-
 
             tran.Commit();
 
@@ -161,42 +174,67 @@ namespace GerenciadorVeiculo1.Dal
         {
             //Traz o ultimo ID login para fazer o relacionamento
             string query = "SELECT MAX(LOG_INT_ID) FROM TBL_LOGINS";
-            string id = conexao.SelecioneId(query);//Armazena o ID
+            string logId = conexao.SelecioneId(query);//Armazena o ID
+
+            query = "SELECT MAX(TEL_INT_ID) FROM TBL_TELEFONE";
+            string telId = conexao.SelecioneId(query);
+
+            query = "SELECT MAX(FOT_INT_ID) FROM TBL_FOTO";
+            string fotId = conexao.SelecioneId(query);
+
+            query = "SELECT MAX(FUN_INT_ID) FROM TBL_FUNCIONARIO";
+            string funId = conexao.SelecioneId(query);
+
+            query = "SELECT MAX(END_INT_ID) FROM TBL_ENDERECO";
+            string endId = conexao.SelecioneId(query);
 
             //relacionas os ID das outras tabelas a TBL_FUNCIONARIO
-            query = "UPDATE TBL_FUNCIONARIO SET LOG_INT_ID = "+id+", TEL_INT_ID = "+id+", FOT_INT_ID = "+id+" WHERE FUN_INT_ID = "+id;
+            query = "UPDATE TBL_FUNCIONARIO SET LOG_INT_ID = "+logId+", TEL_INT_ID = "+telId+", FOT_INT_ID = "+fotId+" WHERE FUN_INT_ID = "+funId;
             conexao.ExecutaInstrucaoNaBase(query);
 
             //insere as chaves estrangeira de N,N TBL_ENDERECO_FUNCIONARIO
-            query = "INSERT INTO TBL_ENDERECO_FUNCIONARIO(END_INT_ID,FUN_INT_ID) VALUES (" + id + "," + id + ")";
+            query = "INSERT INTO TBL_ENDERECO_FUNCIONARIO(END_INT_ID,FUN_INT_ID) VALUES (" + endId + "," +funId+ ")";
             conexao.ExecutaInstrucaoNaBase(query);
         }
         //Seleciona todos os dados da tabela tbl_funcionario do usuario
+        public SqlDataReader TrazTodosId()
+        {
+            string query = "SELECT F.FUN_INT_ID, T.TEL_INT_ID, E.END_INT_ID, FT.FOT_INT_ID, L.LOG_INT_ID  FROM TBL_FUNCIONARIO AS F "
+            + " INNER JOIN TBL_ENDERECO_FUNCIONARIO AS EF ON EF.FUN_INT_ID = F.FUN_INT_ID "
+            + " INNER JOIN TBL_ENDERECO AS E ON E.END_INT_ID = EF.END_INT_ID "
+            + " INNER JOIN TBL_TELEFONE AS T ON T.TEL_INT_ID = F.TEL_INT_ID "
+            + " INNER JOIN TBL_FOTO AS FT ON FT.FOT_INT_ID = F.FOT_INT_ID "
+            + " INNER JOIN TBL_LOGINS AS L ON L.LOG_INT_ID = F.LOG_INT_ID "
+            + " WHERE F.FUN_INT_ID =" + usuario.UsuarioId.ToString();
+
+            SqlDataReader dr = conexao.CarregarVariosDados(query);
+
+            return dr;
+        }
         public SqlDataReader SelectUsuario(string id)
         {
-
             //nesse select existe convert que está convertendo a data de nasc para trazer a data sem a hora
             //o 103 é o tipo de formado Britânico/francês
-            string query = "SELECT F.FUN_STR_NOME AS NOME, CONVERT(VARCHAR(11),F.FUN_DATE_NASC,103) AS NASC, F.FUN_STR_CPF AS CPF, F.FUN_STR_RG AS RG, "
-            + "F.FUN_STR_CARGO AS CARGO, F.FUN_STR_SEXO AS SEXO, FUN_STR_EMAIL AS EMAIL, T.TEL_INT_DDD AS DDD, T.TEL_INT_CELULAR AS TEL, T.TEL_INT_FIXO AS FIX, "
-            +"T.TEL_STR_OPERADORA AS OPE, E.END_STR_RUA AS RUA, E.END_INT_NUMERO AS NUMERO, E.END_STR_COMPLEMENTO AS COMPLEMENTO, E.END_STR_BAIRRO AS BAIRRO, "
-            + "E.END_INT_CEP AS CEP, ES.EST_STR_NOME AS ESTADO, C.CID_STR_NOME AS CIDADE, FT.FOTO AS FOTO "
-            + "FROM TBL_FUNCIONARIO AS F "
-            +"INNER JOIN TBL_TELEFONE AS T ON T.TEL_INT_ID = F.TEL_INT_ID "
-            +"INNER JOIN TBL_ENDERECO_FUNCIONARIO AS EF ON EF.END_INT_ID = F.FUN_INT_ID "
-            +"INNER JOIN TBL_ENDERECO AS E ON EF.END_INT_ID = E.END_INT_ID "
-            +"INNER JOIN TBL_ESTADO AS ES ON ES.EST_INT_CODUF = E.EST_INT_CODUF "
-            +"INNER JOIN TBL_CIDADE AS C ON E.CID_INT_ID = C.CID_INT_ID "
-            +"INNER JOIN TBL_FOTO AS FT ON FT.FOT_INT_ID = F.FOT_INT_ID "
-            + "WHERE F.FUN_INT_ID = "+ id;
+            string query = "SELECT F.FUN_STR_NOME,CONVERT(VARCHAR(10),F.FUN_DATE_NASC,103) AS NASC, F.FUN_STR_CPF, F.FUN_STR_RG, F.FUN_STR_CARGO, F.FUN_STR_SEXO, F.FUN_STR_EMAIL, T.TEL_INT_DDD, T.TEL_INT_CELULAR,"
+            + " T.TEL_INT_FIXO, T.TEL_STR_OPERADORA, E.END_STR_RUA, E.END_INT_NUMERO, E.END_STR_COMPLEMENTO, E.END_STR_BAIRRO, E.END_INT_CEP, ES.EST_STR_NOME, C.CID_STR_NOME, "
+            +" FT.FOTO FROM TBL_FUNCIONARIO AS F "
+            +" INNER JOIN TBL_TELEFONE AS T ON T.TEL_INT_ID = F.TEL_INT_ID "
+            +" INNER JOIN TBL_ENDERECO_FUNCIONARIO AS EF ON EF.FUN_INT_ID = F.FUN_INT_ID "
+            +" INNER JOIN TBL_ENDERECO AS E ON E.END_INT_ID = EF.END_INT_ID "
+            +" INNER JOIN TBL_ESTADO AS ES ON ES.EST_INT_CODUF = E.EST_INT_CODUF "
+            +" INNER JOIN TBL_CIDADE AS C ON C.CID_INT_ID = E.CID_INT_ID "
+            +" INNER JOIN TBL_FOTO AS FT ON FT.FOT_INT_ID = F.FOT_INT_ID "
+            +" WHERE F.FUN_INT_ID = " + id;
 
             SqlDataReader dt = conexao.CarregarVariosDados(query);
 
             return dt;
         }
         //atualiza os dados do usuário
-        public void UpdateUsuario(string id)
+        public void UpdateUsuario()
         {
+            string idEnd, idTel, idFot;
+            //string que recebem datas e converte para um formato aceitavel para BD
             string nasc = usuario.Nasc.ToString("yyyy-MM-dd");
 
             SqlConnection con = new SqlConnection(conexao.StrConexao());
@@ -205,26 +243,38 @@ namespace GerenciadorVeiculo1.Dal
             SqlCommand cmd2 = con.CreateCommand();
             SqlCommand cmd3 = con.CreateCommand();
 
-            cmd1.CommandText = "UPDATE TBL_FUNCIONARIO SET FUN_STR_NOME = @name, FUN_DATE_NASC = " + nasc + ", FUN_STR_CPF = @cpf, FUN_STR_RG = @rg, FUN_STR_CARGO = @cargo, FUN_STR_SEXO = @sexo, FUN_STR_EMAIL = @email WHERE FUN_INT_ID = @id";
-            cmd2.CommandText = "UPDATE TBL_TELEFONE SET TEL_INT_DDD = @ddd, TEL_INT_FIXO = @fixo , TEL_INT_CELULAR = @celular , TEL_STR_OPERADORA = @operadora WHERE TEL_INT_ID = @id";
+            // variavel tipo DataReader recebendo todos os ID
+            SqlDataReader dr = TrazTodosId();
+
+            //Passando os ID para as Variaveis
+            idTel = dr["TEL_INT_ID"].ToString();
+            idEnd = dr["END_INT_ID"].ToString();
+            idFot = dr["FOT_INT_ID"].ToString();
+
+
+            cmd1.CommandText = "UPDATE TBL_FUNCIONARIO SET FUN_STR_NOME = @name, FUN_DATE_NASC = @nasc , FUN_STR_CPF = @cpf, FUN_STR_RG = @rg, FUN_STR_CARGO = @cargo, FUN_STR_SEXO = @sexo, FUN_STR_EMAIL = @email WHERE FUN_INT_ID = @idFun";
+
+            cmd2.CommandText = "UPDATE TBL_TELEFONE SET TEL_INT_DDD = @ddd, TEL_INT_FIXO = @fixo , TEL_INT_CELULAR = @celular , TEL_STR_OPERADORA = @operadora WHERE TEL_INT_ID = @idTel";
+
             cmd3.CommandText = "UPDATE TBL_ENDERECO SET END_STR_RUA = @rua , END_INT_NUMERO = @numEnd , END_STR_COMPLEMENTO = @complemento , END_STR_BAIRRO = @bairro,END_INT_CEP = @cep ,"
-                + "EST_INT_CODUF = @estadoCodUF , CID_INT_ID = @cidadeId WHERE END_INT_ID = @id";
+                + "EST_INT_CODUF = @estadoCodUF , CID_INT_ID = @cidadeId WHERE END_INT_ID = @idEnd";
 
 
 
             cmd1.Parameters.Add(new SqlParameter("@name", usuario.Name));
+            cmd1.Parameters.Add(new SqlParameter("@nasc", nasc));
             cmd1.Parameters.Add(new SqlParameter("@cpf", usuario.Cpf));
             cmd1.Parameters.Add(new SqlParameter("@rg", usuario.Rg));
             cmd1.Parameters.Add(new SqlParameter("@cargo", usuario.Cargo));
             cmd1.Parameters.Add(new SqlParameter("@sexo", usuario.Sexo));
             cmd1.Parameters.Add(new SqlParameter("@email", usuario.Email));
-            cmd1.Parameters.Add(new SqlParameter("@id", id));
+            cmd1.Parameters.Add(new SqlParameter("@idFun", usuario.UsuarioId));
 
             cmd2.Parameters.Add(new SqlParameter("@ddd", telefone.Ddd));
             cmd2.Parameters.Add(new SqlParameter("@celular", telefone.Celular));
             cmd2.Parameters.Add(new SqlParameter("@fixo", telefone.Fixo));
             cmd2.Parameters.Add(new SqlParameter("@operadora", telefone.Operadora));
-            cmd2.Parameters.Add(new SqlParameter("@id", id));
+            cmd2.Parameters.Add(new SqlParameter("@idTel", idTel));
 
             cmd3.Parameters.Add(new SqlParameter("@rua", endereco.Rua));
             cmd3.Parameters.Add(new SqlParameter("@numEnd", endereco.NumeroRua));
@@ -233,7 +283,7 @@ namespace GerenciadorVeiculo1.Dal
             cmd3.Parameters.Add(new SqlParameter("@cep", endereco.Cep));
             cmd3.Parameters.Add(new SqlParameter("@cidadeId", endereco.CidadeId));
             cmd3.Parameters.Add(new SqlParameter("@estadoCodUF", endereco.EstadoId));
-            cmd3.Parameters.Add(new SqlParameter("@id", id));
+            cmd3.Parameters.Add(new SqlParameter("@idEnd", idEnd));
 
             try
             {

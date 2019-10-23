@@ -13,7 +13,6 @@ namespace GerenciadorVeiculo1.Entitys
         public string Name { get; private set; }
         public DateTime Nasc { get; private set; }
         public string Cpf { get; private set; }
-        //public string Cnh { get; private set; }
         public string Rg { get; private set; }
         public string Cargo { get; private set; }
         public char Sexo { get; private set; }
@@ -52,17 +51,12 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O nome deve ser preenchido ! ");
             }
 
-            else if (nasc == null)
-            {
-                throw new DomainExceptions(" Data de nascimento deve ser preenchida ! ");
-            }
-
             else if (cpf == "")
             {
                 throw new DomainExceptions(" O CPF deve ser preenchido ! ");
             }
 
-            else if (rg == "" || cargo == "")
+            else if (rg == "")
             {
                 throw new DomainExceptions(" O RG deve ser Preenchido ! ");
             }
@@ -81,11 +75,46 @@ namespace GerenciadorVeiculo1.Entitys
             Name = name;
             Nasc = DateTime.Parse(nasc);
             Cpf = cpf;
-            //Cnh = cnh;
             Rg = rg;
             Cargo = cargo;
             Sexo = sexo;
             Email = email;
+        }
+
+        public Usuario(string usuarioId, string name, string nasc, string cpf, string rg, string cargo, char sexo, string email) : this(name,nasc,cpf,rg,cargo,sexo,email)
+        {
+            if (nasc == "" || nasc.Length <= 9)
+            {
+                throw new DomainExceptions("Digite a Data de nascimeto!");
+            }
+
+            else if (name == "")
+            {
+                throw new DomainExceptions(" O nome deve ser preenchido ! ");
+            }
+
+            else if (cpf == "")
+            {
+                throw new DomainExceptions(" O CPF deve ser preenchido ! ");
+            }
+
+            else if (rg == "")
+            {
+                throw new DomainExceptions(" O RG deve ser Preenchido ! ");
+            }
+
+            else if (cargo == "" || cargo == "Cargo")
+            {
+                throw new DomainExceptions(" O cargo deve ser Preenchido ! ");
+            }
+
+            if (sexo != 'M' && sexo != 'F')
+            {
+                throw new DomainExceptions("O campo Sexo deve ser preenchido ! ");
+            }
+
+            UsuarioId = int.Parse(usuarioId);
+          
         }
     }
 

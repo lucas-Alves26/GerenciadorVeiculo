@@ -39,6 +39,7 @@ namespace dllDao
         {
             return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
+            
         //Executa query simples.
         public void ExecutaInstrucaoNaBase(string QuerySQL)
         {
@@ -111,6 +112,13 @@ namespace dllDao
         public DataTable RetornaCidade(string id)
         {
             string query = "SELECT CID_INT_ID, CID_STR_NOME FROM TBL_CIDADE WHERE EST_INT_CODUF=" + id;
+            DataTable dt = CarregarDados(query);
+            return dt;
+        }
+        //Retorna Empresa
+        public DataTable RetornaEmpresa()
+        {
+            string query = "SELECT EMP_INT_ID, EMP_STR_NOME FROM TBL_EMPRESA";
             DataTable dt = CarregarDados(query);
             return dt;
         }
