@@ -75,5 +75,10 @@ namespace GerenciadorVeiculo1.View.GerMotorista
                 mot.Show();
             }
         }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

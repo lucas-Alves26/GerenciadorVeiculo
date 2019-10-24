@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using GerenciadorVeiculo1.View.GerMotorista;
+using GerenciadorVeiculo1.View.GerEmpresa;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -41,6 +42,18 @@ namespace GerenciadorVeiculo1.View
         {
             FmrMotorista fmrMotorista = new FmrMotorista();
             fmrMotorista.Show();
+        }
+
+        private void gerenciarEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FmrEmpresa empresa = new FmrEmpresa();
+            empresa.Show();
+        }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FmrEmpresa empresa = new FmrEmpresa();
+            empresa.Show();
         }
     }
 }

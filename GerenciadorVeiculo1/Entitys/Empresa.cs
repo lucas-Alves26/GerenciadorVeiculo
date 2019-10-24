@@ -10,7 +10,6 @@ namespace GerenciadorVeiculo1.Entitys
     class Empresa
     {
         public int EmpId { get; set; }
-        public Telefone Telefone { get; set; }
         public string NomeEmp { get; set; }
         public string Cnpj { get; set; }
         public string Email { get; set; }
@@ -37,13 +36,28 @@ namespace GerenciadorVeiculo1.Entitys
             }
             else if (cnpj == "")
             {
-                throw new DomainExceptions(" O numero de registro deve ser preenchido!");
+                throw new DomainExceptions(" O CNPJ deve ser preenchido!");
             }
 
             NomeEmp = nomeEmp;
             Cnpj = cnpj;
             Email = email;
             Desc = desc;
+        }
+
+        public Empresa(string empId, string nomeEmp, string cnpj, string email, string desc) : this(nomeEmp,cnpj,email,desc)
+        {
+            if (NomeEmp == "")
+            {
+                throw new DomainExceptions("O nome deve ser preenchido!");
+            }
+            else if (cnpj == "")
+            {
+                throw new DomainExceptions(" O CNPJ deve ser preenchido!");
+            }
+
+            EmpId = int.Parse(empId);
+    
         }
     }
 }
