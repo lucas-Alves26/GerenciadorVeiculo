@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GerenciadorVeiculo1.View;
+using GerenciadorVeiculo1.View.GerEmpresa;
 
 namespace GerenciadorVeiculo1
 {

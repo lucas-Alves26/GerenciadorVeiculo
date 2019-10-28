@@ -71,6 +71,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\GerEmpresa\FmrCadastroEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerEmpresa\FmrCadastroEmp.Designer.cs">
+      <DependentUpon>FmrCadastroEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerEmpresa\FmrEditarEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerEmpresa\FmrEditarEmp.Designer.cs">
+      <DependentUpon>FmrEditarEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GerEmpresa\FmrEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\GerEmpresa\FmrCadastroEmp.resx">
+      <DependentUpon>FmrCadastroEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerEmpresa\FmrEditarEmp.resx">
+      <DependentUpon>FmrEditarEmp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\GerEmpresa\FmrEmpresa.resx">
       <DependentUpon>FmrEmpresa.cs</DependentUpon>
     </EmbeddedResource>

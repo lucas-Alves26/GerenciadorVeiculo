@@ -30,9 +30,9 @@ namespace GerenciadorVeiculo1.Entitys
         public Telefone(string ddd, string operadora, string celular, string fixo)
         {
 
-            if (celular == "")
+            if (celular == "" && fixo == "")
             {
-                throw new DomainExceptions("O campo celular deve ser preenchido ! ");
+                throw new DomainExceptions("Pelo menos um numero de telefone deve ser preenchido ! ");
             }
             else if (celular.Length < 9)
             {
@@ -47,9 +47,13 @@ namespace GerenciadorVeiculo1.Entitys
             {
                 fixo = "0";
             }
+            else if (celular == "")
+            {
+                fixo = null;
+            }
             else if (ddd == "")
             {
-                ddd = "0";
+                ddd = null;
             }
 
             Ddd = int.Parse(ddd);

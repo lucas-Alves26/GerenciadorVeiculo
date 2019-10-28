@@ -50,6 +50,7 @@
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Consultar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnDelete
             // 

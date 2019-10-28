@@ -79,5 +79,21 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
             var valor = dgEmpresa[e.ColumnIndex, e.RowIndex].Value.ToString();
             txtId.Text = valor;
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Coloque o ID da Empresa para consultar.");
+            }
+            else
+            {
+                idEmp = txtId.Text;//recebe o id colocado no txtboxId
+                FmrEditarEmp editarEmp = new FmrEditarEmp();
+                editarEmp.GetId(idEmp);
+                editarEmp.Show();
+            }
+
+        }
     }
 }

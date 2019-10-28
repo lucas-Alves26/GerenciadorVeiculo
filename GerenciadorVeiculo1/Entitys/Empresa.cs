@@ -14,6 +14,7 @@ namespace GerenciadorVeiculo1.Entitys
         public string Cnpj { get; set; }
         public string Email { get; set; }
         public string Desc { get; set; }
+        public string Status { get; set; }
 
         public Empresa()
         {
@@ -45,7 +46,7 @@ namespace GerenciadorVeiculo1.Entitys
             Desc = desc;
         }
 
-        public Empresa(string empId, string nomeEmp, string cnpj, string email, string desc) : this(nomeEmp,cnpj,email,desc)
+        public Empresa(string empId, string nomeEmp, string cnpj, string email, string desc,string status) : this(nomeEmp,cnpj,email,desc)
         {
             if (NomeEmp == "")
             {
@@ -55,9 +56,14 @@ namespace GerenciadorVeiculo1.Entitys
             {
                 throw new DomainExceptions(" O CNPJ deve ser preenchido!");
             }
-
+            else if (status == "")
+            {
+                throw new DomainExceptions("O Status deve ser preenchido!");
+            }      
             EmpId = int.Parse(empId);
-    
+            Status = status;
         }
+   
+        
     }
 }

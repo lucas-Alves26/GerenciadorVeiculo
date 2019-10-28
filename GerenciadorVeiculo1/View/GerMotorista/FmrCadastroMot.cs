@@ -105,6 +105,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
             txtComp.Text = "";
             txtBairro.Text = "";
             cbxCategoria.Text = "";
+            
         }
         //popula o combox ESTADO
         public void popularEstadoUF()
@@ -159,8 +160,6 @@ namespace GerenciadorVeiculo1.View.GerMotorista
             cbxEmpresa.DisplayMember = "EMP_STR_NOME";
             cbxEmpresa.DataSource = conexao.RetornaEmpresa();// carrega a coluna EST_STR_NOME dentro cbx
         }
-
-
         private void btnAbrir_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -490,6 +489,11 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         private void cbxEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLimparUs_Click(object sender, EventArgs e)
+        {
+            Limpar();
         }
     }
 }

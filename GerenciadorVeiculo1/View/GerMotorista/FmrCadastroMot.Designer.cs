@@ -94,6 +94,7 @@
             this.btnLimparUs.TabIndex = 39;
             this.btnLimparUs.Text = "Limpar";
             this.btnLimparUs.UseVisualStyleBackColor = true;
+            this.btnLimparUs.Click += new System.EventHandler(this.btnLimparUs_Click);
             // 
             // txtTele
             // 

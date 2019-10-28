@@ -52,10 +52,6 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O numero da rua deve ser preenchido ! ");
             }
 
-            else if (cep == "")
-            {
-                throw new DomainExceptions(" O CEP deve ser preenchido ! ");
-            }
             else if (bairro == "")
             {
                 throw new DomainExceptions(" O bairro deve ser preenchido ! ");
