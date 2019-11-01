@@ -27,22 +27,19 @@ namespace GerenciadorVeiculo1.Entitys
 
             if (log == "")
             {
-                throw new DomainExceptions(" O Login deve ser preenchido ! ");
+                throw new DomainExceptions(" O campo login deve ser preenchido!");
             }
-
             else if (senha == "")
             {
-                throw new DomainExceptions(" A senha deve ser preenchida ! ");
+                throw new DomainExceptions(" O campo senha deve ser preenchido!");
             }
-
             else if(confirmaSenha == "")
             {
-                throw new DomainExceptions(" A confirmação de senha deve ser preenchida ! ");
+                throw new DomainExceptions(" O campo confirmação de senha deve ser preenchido!");
             }
-
             else if (senha != confirmaSenha)
             {
-                throw new DomainExceptions(" As senhas são diferentes ! ");
+                throw new DomainExceptions(" As senhas são diferentes!");
             }
 
             Log = log;

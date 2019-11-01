@@ -23,21 +23,20 @@ namespace GerenciadorVeiculo1.Entitys
         {
             if (empId == "")
             {
-                throw new DomainExceptions("O nome da empresa deve ser preenchido!");
+                throw new DomainExceptions("O campo ID da empresa deve ser preenchido!");
             }
             EmpId = int.Parse(empId);
         }
 
         public Empresa(string nomeEmp, string cnpj, string email, string desc)
         {
-
             if (NomeEmp == "")
             {
-                throw new DomainExceptions("O nome deve ser preenchido!");
+                throw new DomainExceptions("O campo nome da empresa deve ser preenchido!!");
             }
             else if (cnpj == "")
             {
-                throw new DomainExceptions(" O CNPJ deve ser preenchido!");
+                throw new DomainExceptions(" O campo CNPJ da empresa deve ser preenchido!");
             }
 
             NomeEmp = nomeEmp;
@@ -45,21 +44,21 @@ namespace GerenciadorVeiculo1.Entitys
             Email = email;
             Desc = desc;
         }
-
+       
         public Empresa(string empId, string nomeEmp, string cnpj, string email, string desc,string status) : this(nomeEmp,cnpj,email,desc)
         {
             if (NomeEmp == "")
             {
-                throw new DomainExceptions("O nome deve ser preenchido!");
+                throw new DomainExceptions("O campo nome deve ser preenchido!");
             }
             else if (cnpj == "")
             {
-                throw new DomainExceptions(" O CNPJ deve ser preenchido!");
+                throw new DomainExceptions(" O campo CNPJ deve ser preenchido!");
             }
             else if (status == "")
             {
-                throw new DomainExceptions("O Status deve ser preenchido!");
-            }      
+                throw new DomainExceptions("O campo status deve ser preenchido!");
+            }
             EmpId = int.Parse(empId);
             Status = status;
         }

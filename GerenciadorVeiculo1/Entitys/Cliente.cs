@@ -11,7 +11,7 @@ namespace GerenciadorVeiculo1.Entitys
     {
         public int Id { get; protected set; }
         public string Name { get; protected set; }
-        public DateTime Nasc { get; private set; }
+        public DateTime Nasc { get; protected set; }
         public string Cpf { get; protected set; }
         public string Rg { get; protected set; }
         public string Cargo { get; protected set; }
@@ -27,7 +27,7 @@ namespace GerenciadorVeiculo1.Entitys
         {
             if (id == "")
             {
-                throw new DomainExceptions("ID está vazio");
+                throw new DomainExceptions("O campo ID deve ser preenchido!");
             }
             Id = int.Parse(id);
         }
@@ -36,27 +36,27 @@ namespace GerenciadorVeiculo1.Entitys
         {
             if (nasc == "" || nasc.Length <= 9)
             {
-                throw new DomainExceptions("Digite a Data de nascimeto!");
+                throw new DomainExceptions("O campo data de nascimeto deve ser preenchido!");
             }
 
             else if (name == "")
             {
-                throw new DomainExceptions(" O nome deve ser preenchido! ");
+                throw new DomainExceptions(" O campo nome deve ser preenchido!");
             }
 
             else if (cpf == "")
             {
-                throw new DomainExceptions(" O CPF deve ser preenchido! ");
+                throw new DomainExceptions(" O campo CPF deve ser preenchido!");
             }
 
             else if (rg == "")
             {
-                throw new DomainExceptions(" O RG deve ser Preenchido! ");
+                throw new DomainExceptions(" O campo RG deve ser Preenchido!");
             }
 
             if (sexo != 'M' && sexo != 'F')
             {
-                throw new DomainExceptions("O campo Sexo deve ser preenchido! ");
+                throw new DomainExceptions("O campo Sexo deve ser preenchido!");
             }
 
             Name = name;
@@ -66,6 +66,37 @@ namespace GerenciadorVeiculo1.Entitys
             Sexo = sexo;
             Email = email;
 
+        }
+
+        public Cliente(string id, string name, string nasc, string cpf, string rg, string cargo, char sexo, string email) 
+           : this(name,nasc,cpf,rg,sexo,email)
+        {
+            if (nasc == "" || nasc.Length <= 9)
+            {
+                throw new DomainExceptions("O campo data de nascimeto deve ser preenchido!");
+            }
+
+            else if (name == "")
+            {
+                throw new DomainExceptions(" O campo nome deve ser preenchido!");
+            }
+
+            else if (cpf == "")
+            {
+                throw new DomainExceptions(" O campo CPF deve ser preenchido!");
+            }
+
+            else if (rg == "")
+            {
+                throw new DomainExceptions(" O campo RG deve ser Preenchido!");
+            }
+
+            if (sexo != 'M' && sexo != 'F')
+            {
+                throw new DomainExceptions("O campo Sexo deve ser preenchido!");
+            }
+
+            Id = int.Parse(id);
         }
     }
 }

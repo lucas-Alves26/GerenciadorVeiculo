@@ -62,6 +62,7 @@
     <Compile Include="Entitys\Motorista.cs" />
     <Compile Include="Entitys\Telefone.cs" />
     <Compile Include="Entitys\Usuario.cs" />
+    <Compile Include="Entitys\Veiculo.cs" />
     <Compile Include="Exceptions\DomainExceptions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

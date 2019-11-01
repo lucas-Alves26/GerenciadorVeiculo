@@ -34,27 +34,27 @@ namespace GerenciadorVeiculo1.Entitys
 
             if (estadoId == 0)
             {
-                throw new DomainExceptions(" O estado deve ser preenchido ! ");
+                throw new DomainExceptions(" O campo estado deve ser preenchido!");
             }
 
             else if (cidadeId == 0)
             {
-                throw new DomainExceptions(" A cidade deve ser preenchida ! ");
+                throw new DomainExceptions(" O campo cidade deve ser preenchido!");
             }
 
             else if (rua == "")
             {
-                throw new DomainExceptions(" A rua deve ser preenchida ! ");
+                throw new DomainExceptions(" O campo rua deve ser preenchido!");
             }
 
             else if (numeroRua=="")
             {
-                throw new DomainExceptions(" O numero da rua deve ser preenchido ! ");
+                throw new DomainExceptions(" O campo numero da rua deve ser preenchido!");
             }
 
             else if (bairro == "")
             {
-                throw new DomainExceptions(" O bairro deve ser preenchido ! ");
+                throw new DomainExceptions(" O campo bairro deve ser preenchido!");
             }
 
             EstadoId = estadoId;

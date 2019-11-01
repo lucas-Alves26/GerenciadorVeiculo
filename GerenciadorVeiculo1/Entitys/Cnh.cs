@@ -23,15 +23,15 @@ namespace GerenciadorVeiculo1.Entitys
 
             if (cnhValidade == "" || cnhValidade.Length <= 9)
             {
-                throw new DomainExceptions("Digite a Data de validade!");
+                throw new DomainExceptions("O campo data de validade deve ser preenchido!");
             }
             else if (registro == "")
             {
-                throw new DomainExceptions(" O numero de registro deve ser preenchido!");
+                throw new DomainExceptions(" O campo numero de registro deve ser preenchido!");
             }
             else if (categoria == ""|| categoria =="categoria")
             {            
-                throw new DomainExceptions(" A categoria deve ser preenchida!");
+                throw new DomainExceptions(" O campo categoria deve ser preenchido!");
             }
 
             Registro = long.Parse(registro);
