@@ -103,19 +103,8 @@ namespace GerenciadorVeiculo1.View
         {
             
             try
-            {
-                if (cbxSex.Text == "")
-                {
-                    MessageBox.Show("Selecione o sexo! ");
-                }
-                else if (cbxCargo.Text == "")
-                {
-                    MessageBox.Show("Selecione o Cargo! ");
-                }
-
-                else
-                {
-                    char sexo = char.Parse(cbxSex.Text);
+            { 
+                    string sexo = cbxSex.Text;
                     string estadoId = cbxEstado.SelectedValue.ToString();
                     string cidadeId = cbxCidade.SelectedValue.ToString();
                     daoUsuario.usuario = new Usuario(id,txtName.Text, txtNasc.Text, txtCpf.Text, txtRg.Text, cbxCargo.Text, sexo, txtEmail.Text);
@@ -123,8 +112,7 @@ namespace GerenciadorVeiculo1.View
                     daoUsuario.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
 
                     daoUsuario.UpdateUsuario();
-                    MessageBox.Show("Atualizado com sucesso!");
-                }
+
             }
             catch (DomainExceptions ex)
             {

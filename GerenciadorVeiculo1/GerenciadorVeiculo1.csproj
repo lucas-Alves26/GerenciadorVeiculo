@@ -54,6 +54,7 @@
     <Compile Include="Dal\DaoMotorista\DaoMotorista.cs" />
     <Compile Include="Dal\DaoUsuario\DaoUsuario.cs" />
     <Compile Include="Dal\DaoUsuario\LoginDaoComandos.cs" />
+    <Compile Include="Dal\DaoVeiculo\DaoVeiculo.cs" />
     <Compile Include="Entitys\Cliente.cs" />
     <Compile Include="Entitys\Cnh.cs" />
     <Compile Include="Entitys\Empresa.cs" />
@@ -126,6 +127,12 @@
     <Compile Include="View\GerUsuario\FmrUsuario.Designer.cs">
       <DependentUpon>FmrUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GerVeiculo\FmrVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVeiculo\FmrVeiculo.Designer.cs">
+      <DependentUpon>FmrVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerUsuario\FmrEditarUs.resx">
       <DependentUpon>FmrEditarUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVeiculo\FmrVeiculo.resx">
+      <DependentUpon>FmrVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

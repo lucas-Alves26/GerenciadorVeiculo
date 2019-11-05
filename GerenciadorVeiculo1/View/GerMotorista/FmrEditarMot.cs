@@ -179,18 +179,8 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         {
             try
             {
-                if (cbxSex.Text == "")
-                {
-                    MessageBox.Show("Selecione o sexo! ");
-                }
-                else if (cbxEmp.Text == "")
-                {
-                    MessageBox.Show("Selecione a Empresa! ");
-                }
-
-                else
-                {
-                    char sexo = char.Parse(cbxSex.Text);
+ 
+                    string sexo = cbxSex.Text;
                     string estadoId = cbxEstado.SelectedValue.ToString();
                     string cidadeId = cbxCidade.SelectedValue.ToString();
                     string empresaId = cbxEmp.SelectedValue.ToString();
@@ -206,7 +196,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
                     daoMotorista.UpdateMotorista();
                     lblAviso.Text = "Atualizado com Sucesso !";
 
-                }
+                
             }
             catch (DomainExceptions ex)
             {

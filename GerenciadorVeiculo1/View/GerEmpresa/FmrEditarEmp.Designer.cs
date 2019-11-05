@@ -273,18 +273,18 @@
             this.lblCpf.AutoSize = true;
             this.lblCpf.Location = new System.Drawing.Point(286, 26);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(44, 13);
+            this.lblCpf.Size = new System.Drawing.Size(40, 13);
             this.lblCpf.TabIndex = 25;
-            this.lblCpf.Text = "CNPJ: *";
+            this.lblCpf.Text = "CNPJ: ";
             // 
             // CV
             // 
             this.CV.AutoSize = true;
             this.CV.Location = new System.Drawing.Point(14, 26);
             this.CV.Name = "CV";
-            this.CV.Size = new System.Drawing.Size(103, 13);
+            this.CV.Size = new System.Drawing.Size(99, 13);
             this.CV.TabIndex = 23;
-            this.CV.Text = "Nome da empresa: *";
+            this.CV.Text = "Nome da empresa: ";
             // 
             // txtTele
             // 
@@ -390,27 +390,27 @@
             this.lblEstadoUs.AutoSize = true;
             this.lblEstadoUs.Location = new System.Drawing.Point(14, 75);
             this.lblEstadoUs.Name = "lblEstadoUs";
-            this.lblEstadoUs.Size = new System.Drawing.Size(50, 13);
+            this.lblEstadoUs.Size = new System.Drawing.Size(46, 13);
             this.lblEstadoUs.TabIndex = 20;
-            this.lblEstadoUs.Text = "Estado: *";
+            this.lblEstadoUs.Text = "Estado: ";
             // 
             // lblCidadeUs
             // 
             this.lblCidadeUs.AutoSize = true;
             this.lblCidadeUs.Location = new System.Drawing.Point(154, 75);
             this.lblCidadeUs.Name = "lblCidadeUs";
-            this.lblCidadeUs.Size = new System.Drawing.Size(50, 13);
+            this.lblCidadeUs.Size = new System.Drawing.Size(46, 13);
             this.lblCidadeUs.TabIndex = 19;
-            this.lblCidadeUs.Text = "Cidade: *";
+            this.lblCidadeUs.Text = "Cidade: ";
             // 
             // lblBairroUs
             // 
             this.lblBairroUs.AutoSize = true;
             this.lblBairroUs.Location = new System.Drawing.Point(17, 124);
             this.lblBairroUs.Name = "lblBairroUs";
-            this.lblBairroUs.Size = new System.Drawing.Size(47, 13);
+            this.lblBairroUs.Size = new System.Drawing.Size(40, 13);
             this.lblBairroUs.TabIndex = 18;
-            this.lblBairroUs.Text = "Bairro:  *";
+            this.lblBairroUs.Text = "Bairro: ";
             // 
             // lblComplementoUs
             // 
@@ -426,18 +426,18 @@
             this.lblNumeroUs.AutoSize = true;
             this.lblNumeroUs.Location = new System.Drawing.Point(368, 25);
             this.lblNumeroUs.Name = "lblNumeroUs";
-            this.lblNumeroUs.Size = new System.Drawing.Size(26, 13);
+            this.lblNumeroUs.Size = new System.Drawing.Size(22, 13);
             this.lblNumeroUs.TabIndex = 16;
-            this.lblNumeroUs.Text = "N° *";
+            this.lblNumeroUs.Text = "N° ";
             // 
             // lblRuaUs
             // 
             this.lblRuaUs.AutoSize = true;
             this.lblRuaUs.Location = new System.Drawing.Point(14, 25);
             this.lblRuaUs.Name = "lblRuaUs";
-            this.lblRuaUs.Size = new System.Drawing.Size(37, 13);
+            this.lblRuaUs.Size = new System.Drawing.Size(33, 13);
             this.lblRuaUs.TabIndex = 15;
-            this.lblRuaUs.Text = "Rua: *";
+            this.lblRuaUs.Text = "Rua: ";
             // 
             // btnEditar
             // 

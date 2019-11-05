@@ -38,22 +38,22 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions("O numero do celular está muito curto!");
             }
 
-            else if (fixo != "" && fixo.Length < 8)
+            else if (fixo.Length < 8)
             {
                 throw new DomainExceptions("O numero do telefone está muito curto!");
             }
-            //else if (fixo == "")
-            //{
-            //    fixo = "0";
-            //}
-            //else if (celular == "")
-            //{
-            //    fixo = null;
-            //}
-            //else if (ddd == "")
-            //{
-            //    ddd = null;
-            //}
+            else if (fixo == "")
+            {
+                fixo = "0";
+            }
+            else if (celular == "")
+            {
+                celular = "0";
+            }
+            else if (ddd == "")
+            {
+                ddd = "0";
+            }
 
             Ddd = int.Parse(ddd);
             Celular = int.Parse(celular);

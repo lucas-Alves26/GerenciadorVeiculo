@@ -311,9 +311,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(314, 118);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 62;
-            this.label8.Text = "Empresa*";
+            this.label8.Text = "Empresa:";
             // 
             // cbxEmp
             // 
@@ -329,9 +329,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(337, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 60;
-            this.label6.Text = "Categoria *";
+            this.label6.Text = "Categoria:";
             // 
             // cbxCategoria
             // 
@@ -354,9 +354,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(245, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(77, 13);
             this.label5.TabIndex = 58;
-            this.label5.Text = "Validade CNH*";
+            this.label5.Text = "Validade CNH:";
             // 
             // txtValidade
             // 
@@ -390,9 +390,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(129, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 56;
-            this.label1.Text = "CNH*";
+            this.label1.Text = "CNH:";
             // 
             // txtCnh
             // 

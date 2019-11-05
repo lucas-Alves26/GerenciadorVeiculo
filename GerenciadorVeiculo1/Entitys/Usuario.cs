@@ -34,7 +34,7 @@ namespace GerenciadorVeiculo1.Entitys
             UsuarioId = int.Parse(id);
         }
 
-        public Usuario(string name, string nasc, string cpf, string rg, string cargo, char sexo, string email)
+        public Usuario(string name, string nasc, string cpf, string rg, string cargo, string sexo, string email)
             : base(name,nasc,cpf,rg,sexo,email)
         {
             //if (nasc == "" || nasc.Length <= 9)
@@ -71,7 +71,7 @@ namespace GerenciadorVeiculo1.Entitys
 
         }
 
-        public Usuario(string usuarioId, string name, string nasc, string cpf, string rg, string cargo, char sexo, string email) : this(name,nasc,cpf,rg,cargo,sexo,email)
+        public Usuario(string usuarioId, string name, string nasc, string cpf, string rg, string cargo, string sexo, string email) : this(name,nasc,cpf,rg,cargo,sexo,email)
         {
             if (nasc == "" || nasc.Length <= 9)
             {
@@ -98,7 +98,7 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O cargo deve ser Preenchido ! ");
             }
 
-            if (sexo != 'M' && sexo != 'F')
+            if (sexo == "")
             {
                 throw new DomainExceptions("O campo Sexo deve ser preenchido ! ");
             }

@@ -346,6 +346,7 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
                 daoEmpresa.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCelular.Text, txtFixo.Text);
                 daoEmpresa.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
                 daoEmpresa.UpdateEmpresa();
+                lblAviso.Text = "Atualizado com sucesso!";
             }
             catch(DomainExceptions ex)
             {

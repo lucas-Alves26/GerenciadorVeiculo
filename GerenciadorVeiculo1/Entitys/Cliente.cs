@@ -32,7 +32,7 @@ namespace GerenciadorVeiculo1.Entitys
             Id = int.Parse(id);
         }
 
-        public Cliente(string name, string nasc, string cpf, string rg, char sexo, string email)
+        public Cliente(string name, string nasc, string cpf, string rg, string sexo, string email)
         {
             if (nasc == "" || nasc.Length <= 9)
             {
@@ -54,7 +54,7 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O campo RG deve ser Preenchido!");
             }
 
-            if (sexo != 'M' && sexo != 'F')
+            if (sexo == "")
             {
                 throw new DomainExceptions("O campo Sexo deve ser preenchido!");
             }
@@ -63,12 +63,12 @@ namespace GerenciadorVeiculo1.Entitys
             Nasc = DateTime.Parse(nasc);
             Cpf = cpf;
             Rg = rg;
-            Sexo = sexo;
+            Sexo = char.Parse(sexo);
             Email = email;
 
         }
 
-        public Cliente(string id, string name, string nasc, string cpf, string rg, string cargo, char sexo, string email) 
+        public Cliente(string id, string name, string nasc, string cpf, string rg, string cargo, string sexo, string email) 
            : this(name,nasc,cpf,rg,sexo,email)
         {
             if (nasc == "" || nasc.Length <= 9)
@@ -91,7 +91,7 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O campo RG deve ser Preenchido!");
             }
 
-            if (sexo != 'M' && sexo != 'F')
+            if (sexo == "")
             {
                 throw new DomainExceptions("O campo Sexo deve ser preenchido!");
             }

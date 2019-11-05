@@ -33,6 +33,7 @@
             this.cadastroUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motoristasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.veículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroUsuárioToolStripMenuItem,
             this.motoristasToolStripMenuItem,
-            this.empresaToolStripMenuItem});
+            this.empresaToolStripMenuItem,
+            this.veículosToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.cadastrosToolStripMenuItem.Text = "Gerenciamento";
@@ -61,7 +63,7 @@
             // 
             this.cadastroUsuárioToolStripMenuItem.Name = "cadastroUsuárioToolStripMenuItem";
             this.cadastroUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastroUsuárioToolStripMenuItem.Text = "Usuário";
+            this.cadastroUsuárioToolStripMenuItem.Text = "Usuários";
             this.cadastroUsuárioToolStripMenuItem.Click += new System.EventHandler(this.cadastroUsuárioToolStripMenuItem_Click);
             // 
             // motoristasToolStripMenuItem
@@ -75,8 +77,15 @@
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
             this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empresaToolStripMenuItem.Text = "Empresa";
+            this.empresaToolStripMenuItem.Text = "Empresas";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
+            // 
+            // veículosToolStripMenuItem
+            // 
+            this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
+            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.veículosToolStripMenuItem.Text = "Veículos";
+            this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veículosToolStripMenuItem_Click);
             // 
             // fmrPrincipal
             // 
@@ -105,5 +114,6 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroUsuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem motoristasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empresaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem veículosToolStripMenuItem;
     }
 }

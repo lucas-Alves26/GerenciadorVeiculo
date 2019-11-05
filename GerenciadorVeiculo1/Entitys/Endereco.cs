@@ -56,6 +56,10 @@ namespace GerenciadorVeiculo1.Entitys
             {
                 throw new DomainExceptions(" O campo bairro deve ser preenchido!");
             }
+            else if (cep == "")
+            {
+                cep = "0";
+            }
 
             EstadoId = estadoId;
             CidadeId = cidadeId;

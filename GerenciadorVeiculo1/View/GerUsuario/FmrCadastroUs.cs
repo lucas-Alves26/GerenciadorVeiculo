@@ -97,20 +97,8 @@ namespace GerenciadorVeiculo1.View
         private void btnSalvarUs_Click(object sender, EventArgs e)
         {
             try
-            {
-                if (cbxSex.Text == "")
-                {
-                    MessageBox.Show("Selecione o sexo! ");
-                }
-                else if (cbxCargo.Text == "")
-                {
-                    MessageBox.Show("Selecione o Cargo! ");
-                }
-
-                else
-                {
-                    //DateTime nasc = DateTime.Parse(txtNasc.Text);
-                    char sexo = char.Parse(cbxSex.Text);
+            {               
+                    string sexo = cbxSex.Text;
                     string estadoId = cbxEstado.SelectedValue.ToString();
                     string cidadeId = cbxCidade.SelectedValue.ToString();
 
@@ -121,11 +109,10 @@ namespace GerenciadorVeiculo1.View
 
                     salvarImg();
                     usuario.CadastraUsuario();
-                    
-                    MessageBox.Show("Cadastrado com sucesso!");
+                    lblAviso.Text = "Atualizado com Sucesso !";
 
-                    Limpar();
-                }
+                Limpar();
+                
             }
             catch (DomainExceptions ex)
             {
@@ -139,8 +126,8 @@ namespace GerenciadorVeiculo1.View
             txtNasc.Text = "";
             txtCpf.Text = "";
             txtRg.Text = "";
-            cbxCargo.Text = "";
-            cbxSex.Text = "";
+            cbxCargo.Text = null;
+            cbxSex.Text = null;
             txtEmail.Text = "";
             txtLogin.Text = "";
             txtSenha.Text = "";
@@ -154,6 +141,7 @@ namespace GerenciadorVeiculo1.View
             txtCep.Text = "";
             txtComp.Text = "";
             txtBairro.Text = "";
+            pictureBox1.Image = null;
         }
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
@@ -506,6 +494,11 @@ namespace GerenciadorVeiculo1.View
         private void txtName_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

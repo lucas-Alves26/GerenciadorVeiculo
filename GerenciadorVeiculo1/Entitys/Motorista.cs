@@ -13,11 +13,11 @@ namespace GerenciadorVeiculo1.Entitys
         {
         }
 
-        public Motorista(string name, string nasc, string cpf, string rg, char sexo, string email)
+        public Motorista(string name, string nasc, string cpf, string rg, string sexo, string email)
             : base(name,nasc,cpf,rg,sexo,email)
         {
         }
-        public Motorista(string id, string name, string nasc, string cpf, string rg, char sexo, string email)
+        public Motorista(string id, string name, string nasc, string cpf, string rg, string sexo, string email)
            : base(name, nasc, cpf, rg, sexo, email)
         {
             Id = int.Parse(id);

@@ -43,14 +43,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         {
             try
             {
-                if (cbxSex.Text == "")
-                {
-                    MessageBox.Show("Selecione o sexo! ");
-                }
-
-                else
-                {
-                    char sexo = char.Parse(cbxSex.Text);
+                    string sexo = cbxSex.Text;
                     string estadoId = cbxEstado.SelectedValue.ToString();
                     string cidadeId = cbxCidade.SelectedValue.ToString();
                     string empresaId = cbxEmpresa.SelectedValue.ToString();
@@ -65,7 +58,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
                     DaoMotorista.CadastraMotorista();
                     lblAviso.Text= "Cadastrado com Sucesso !";
                     Limpar();
-                }
+                
             }
             catch (DomainExceptions ex)
             {
@@ -90,8 +83,8 @@ namespace GerenciadorVeiculo1.View.GerMotorista
             txtNasc.Text = "";
             txtCpf.Text = "";
             txtRg.Text = "";
-            cbxSex.Text = "";
-            cbxCategoria.Text = "";
+            cbxSex.Text = null;
+            cbxCategoria.Text = null;
             txtEmail.Text = "";
             txtCnh.Text = "";
             txtValidade.Text = "";
@@ -104,7 +97,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
             txtCep.Text = "";
             txtComp.Text = "";
             txtBairro.Text = "";
-            cbxCategoria.Text = "";
+            pictureBox1.Image = null;
             
         }
         //popula o combox ESTADO
