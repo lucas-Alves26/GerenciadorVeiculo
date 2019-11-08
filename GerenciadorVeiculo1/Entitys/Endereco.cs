@@ -23,10 +23,10 @@ namespace GerenciadorVeiculo1.Entitys
         {
         }
 
-        public Endereco(int estadoId,int cidadeId)
+        public Endereco(string estadoId,string cidadeId = "0")
         {
-            EstadoId = estadoId;
-            CidadeId = cidadeId;
+            EstadoId = int.Parse(estadoId);
+            CidadeId = int.Parse(cidadeId);
         }
 
         public Endereco(int estadoId, int cidadeId, string rua, string numeroRua, string cep, string complemento, string bairro)

@@ -19,9 +19,10 @@ namespace GerenciadorVeiculo1.Entitys
         public string Combustivel { get; set; }
         public int Lugares { get; set; }
         public double Km { get; set; }
-        public DateTime DateFab { get; set; }
-        public DateTime ModeloAno { get; set; }
+        public int AnoFab { get; set; }
+        public int ModeloAno { get; set; }
         public string Status { get; set; }
+        public string Tipo { get; set; }
 
         public Veiculo()
         {
@@ -32,7 +33,7 @@ namespace GerenciadorVeiculo1.Entitys
             VeiId = int.Parse(veiId);
         }
 
-        public Veiculo(string marca, string modelo,string placa, string chassi, string renavam, string cor, string combustivel, int lugares, string km, string dateFab, string modeloAno, string status)
+        public Veiculo(string marca, string modelo,string placa, string chassi, string renavam, string cor, string combustivel, string lugares, string km, string dateFab, string modeloAno,string tipo)
         {
             if (marca == "" || marca.Length <= 3)
             {
@@ -73,16 +74,17 @@ namespace GerenciadorVeiculo1.Entitys
             Renavam = renavam;
             Cor = cor;
             Combustivel = combustivel;
-            Lugares = lugares;
+            Lugares = int.Parse(lugares);
             Km = double.Parse(km);
-            DateFab = DateTime.Parse(dateFab);
-            ModeloAno = DateTime.Parse(modeloAno);
-            Status = status;
+            AnoFab = int.Parse(dateFab);
+            ModeloAno = int.Parse(modeloAno);
+            Tipo = tipo;
         }
 
-        public Veiculo(string veiId, string marca, string modelo,string placa, string chassi, string renavam, string cor, string combustivel, int lugares, string km, string dateFab, string modeloAno, string status) : 
-            this(marca,modelo,placa,chassi,marca,cor,combustivel,lugares,km,dateFab,modeloAno,status)
+        public Veiculo(string veiId, string marca, string modelo,string placa, string chassi, string renavam, string cor, string combustivel, string lugares, string km, string dateFab, string modeloAno, string status, string tipo) : 
+            this(marca,modelo,placa,chassi,marca,cor,combustivel,lugares,km,dateFab,modeloAno,tipo)
         {
+            Status = Status;
             VeiId = int.Parse(veiId);
         }
     }

@@ -488,5 +488,10 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         {
             Limpar();
         }
+
+        private void txtNasc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

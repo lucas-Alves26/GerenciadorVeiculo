@@ -498,6 +498,7 @@
             this.txtNasc.Size = new System.Drawing.Size(68, 20);
             this.txtNasc.TabIndex = 37;
             this.txtNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNasc.TextChanged += new System.EventHandler(this.txtNasc_TextChanged);
             this.txtNasc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNasc_KeyPress);
             // 
             // txtName
