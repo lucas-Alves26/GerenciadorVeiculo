@@ -72,6 +72,7 @@
             // Disponiveis
             // 
             this.Disponiveis.AutoSize = true;
+            this.Disponiveis.Checked = true;
             this.Disponiveis.Location = new System.Drawing.Point(205, 217);
             this.Disponiveis.Name = "Disponiveis";
             this.Disponiveis.Size = new System.Drawing.Size(79, 17);
@@ -83,7 +84,7 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(361, 210);
+            this.btnAtualizar.Location = new System.Drawing.Point(361, 214);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 1;
@@ -125,6 +126,7 @@
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Consultar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnDelete
             // 
@@ -144,6 +146,7 @@
             this.btnNovoUsuario.TabIndex = 11;
             this.btnNovoUsuario.Text = "Novo +";
             this.btnNovoUsuario.UseVisualStyleBackColor = true;
+            this.btnNovoUsuario.Click += new System.EventHandler(this.btnNovoUsuario_Click);
             // 
             // FmrVeiculos
             // 

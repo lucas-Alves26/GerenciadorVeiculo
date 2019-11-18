@@ -320,6 +320,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(253, 20);
             this.txtName.TabIndex = 50;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             this.txtName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 

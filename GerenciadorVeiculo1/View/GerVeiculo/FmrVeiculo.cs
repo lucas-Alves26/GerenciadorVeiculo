@@ -16,7 +16,7 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
     public partial class FmrVeiculos : Form
     {
         string status = "ATIVO";
-        string idEmp;
+        string idVei;
 
         DaoVeiculo dao = new DaoVeiculo();
 
@@ -78,6 +78,19 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnNovoUsuario_Click(object sender, EventArgs e)
+        {
+            FmrCadastroVei fmrCadastroVei = new FmrCadastroVei();
+            fmrCadastroVei.Show();
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            idVei = txtId.Text;//recebe o id colocado no txtboxId
+            FmrEditarVei fmrEditarVei = new FmrEditarVei();
+            fmrEditarVei.GetId(idVei);
+            fmrEditarVei.Show();
         }
     }
 }

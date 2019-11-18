@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorVeiculo1.View.GerVeiculo
 {
-    partial class FmrCadastroVei
+    partial class FmrEditarVei
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,8 @@
         {
             this.tabVeiculo = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblAviso = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cbxTipoVei = new System.Windows.Forms.ComboBox();
@@ -60,7 +61,6 @@
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.txtCombus = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnLimparUs = new System.Windows.Forms.Button();
             this.btnSalvarMot = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -72,6 +72,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cbxSegura = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.cbxStatusVei = new System.Windows.Forms.ComboBox();
             this.tabVeiculo.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,17 +86,18 @@
             this.tabVeiculo.AccessibleName = "";
             this.tabVeiculo.Controls.Add(this.tabPage1);
             this.tabVeiculo.Controls.Add(this.tabPage2);
-            this.tabVeiculo.Location = new System.Drawing.Point(11, 3);
+            this.tabVeiculo.Location = new System.Drawing.Point(9, 4);
             this.tabVeiculo.Name = "tabVeiculo";
             this.tabVeiculo.SelectedIndex = 0;
             this.tabVeiculo.Size = new System.Drawing.Size(559, 313);
-            this.tabVeiculo.TabIndex = 0;
+            this.tabVeiculo.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.lblAviso);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnEditar);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.btnLimparUs);
             this.tabPage1.Controls.Add(this.btnSalvarMot);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -104,19 +107,28 @@
             this.tabPage1.Text = "Veículo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // lblAviso
+            // button1
             // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAviso.ForeColor = System.Drawing.Color.Red;
-            this.lblAviso.Location = new System.Drawing.Point(17, 248);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(16, 24);
-            this.lblAviso.TabIndex = 68;
-            this.lblAviso.Text = ".";
+            this.button1.Location = new System.Drawing.Point(458, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 69;
+            this.button1.Text = "Fechar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(274, 246);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 68;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxStatusVei);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.cbxTipoVei);
             this.groupBox1.Controls.Add(this.cbxmodelo);
@@ -157,9 +169,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(216, 131);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.Size = new System.Drawing.Size(34, 13);
             this.label17.TabIndex = 63;
-            this.label17.Text = "Tipo: *";
+            this.label17.Text = "Tipo: ";
             // 
             // cbxTipoVei
             // 
@@ -187,9 +199,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Marca: *";
+            this.label1.Text = "Marca: ";
             // 
             // cbxMarca
             // 
@@ -199,7 +211,6 @@
             this.cbxMarca.Size = new System.Drawing.Size(121, 21);
             this.cbxMarca.TabIndex = 1;
             this.cbxMarca.SelectedIndexChanged += new System.EventHandler(this.cbxMarca_SelectedIndexChanged);
-            this.cbxMarca.Click += new System.EventHandler(this.cbxMarca_Click);
             this.cbxMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxMarca_KeyPress);
             // 
             // cbxEstado
@@ -210,43 +221,42 @@
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 61;
-            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(153, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Modelo: *";
+            this.label2.Text = "Modelo: ";
             // 
             // lblEstadoUs
             // 
             this.lblEstadoUs.AutoSize = true;
             this.lblEstadoUs.Location = new System.Drawing.Point(16, 181);
             this.lblEstadoUs.Name = "lblEstadoUs";
-            this.lblEstadoUs.Size = new System.Drawing.Size(50, 13);
+            this.lblEstadoUs.Size = new System.Drawing.Size(46, 13);
             this.lblEstadoUs.TabIndex = 60;
-            this.lblEstadoUs.Text = "Estado: *";
+            this.lblEstadoUs.Text = "Estado: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(291, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Placa: *";
+            this.label3.Text = "Placa: ";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(355, 132);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 59;
-            this.label12.Text = "Empresa: *";
+            this.label12.Text = "Empresa: ";
             // 
             // txtPlaca
             // 
@@ -256,6 +266,7 @@
             this.txtPlaca.Size = new System.Drawing.Size(56, 20);
             this.txtPlaca.TabIndex = 5;
             this.txtPlaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPlaca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlaca_KeyPress);
             // 
             // cbxEmpresa
             // 
@@ -271,9 +282,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(366, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Chassis: *";
+            this.label4.Text = "Chassis: ";
             // 
             // label10
             // 
@@ -309,9 +320,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Renavam: *";
+            this.label5.Text = "Renavam: ";
             // 
             // txtAnoFab
             // 
@@ -356,9 +367,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(403, 78);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Quilometragem: *";
+            this.label8.Text = "Quilometragem: ";
             // 
             // txtCor
             // 
@@ -416,23 +427,13 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Lugares: ";
             // 
-            // btnLimparUs
-            // 
-            this.btnLimparUs.Location = new System.Drawing.Point(458, 248);
-            this.btnLimparUs.Name = "btnLimparUs";
-            this.btnLimparUs.Size = new System.Drawing.Size(75, 23);
-            this.btnLimparUs.TabIndex = 66;
-            this.btnLimparUs.Text = "Limpar";
-            this.btnLimparUs.UseVisualStyleBackColor = true;
-            this.btnLimparUs.Click += new System.EventHandler(this.btnLimparUs_Click);
-            // 
             // btnSalvarMot
             // 
-            this.btnSalvarMot.Location = new System.Drawing.Point(365, 248);
+            this.btnSalvarMot.Location = new System.Drawing.Point(366, 246);
             this.btnSalvarMot.Name = "btnSalvarMot";
             this.btnSalvarMot.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarMot.TabIndex = 65;
-            this.btnSalvarMot.Text = "Salver";
+            this.btnSalvarMot.Text = "Salvar";
             this.btnSalvarMot.UseVisualStyleBackColor = true;
             this.btnSalvarMot.Click += new System.EventHandler(this.btnSalvarMot_Click);
             // 
@@ -463,7 +464,6 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados do seguro";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtVigFin
             // 
@@ -471,6 +471,7 @@
             this.txtVigFin.Name = "txtVigFin";
             this.txtVigFin.Size = new System.Drawing.Size(80, 20);
             this.txtVigFin.TabIndex = 9;
+            this.txtVigFin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtVigFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVigFin_KeyPress);
             // 
             // label15
@@ -488,6 +489,7 @@
             this.txtVigIni.Name = "txtVigIni";
             this.txtVigIni.Size = new System.Drawing.Size(80, 20);
             this.txtVigIni.TabIndex = 7;
+            this.txtVigIni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtVigIni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVigIni_KeyPress);
             // 
             // label14
@@ -528,7 +530,6 @@
             this.cbxSegura.Name = "cbxSegura";
             this.cbxSegura.Size = new System.Drawing.Size(157, 21);
             this.cbxSegura.TabIndex = 3;
-            this.cbxSegura.Click += new System.EventHandler(this.cbxSegura_Click);
             this.cbxSegura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxSegura_KeyPress);
             // 
             // label11
@@ -540,15 +541,39 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Nome seguradoura: ";
             // 
-            // FmrCadastroVei
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAviso.ForeColor = System.Drawing.Color.Red;
+            this.lblAviso.Location = new System.Drawing.Point(17, 246);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(16, 24);
+            this.lblAviso.TabIndex = 69;
+            this.lblAviso.Text = ".";
+            // 
+            // cbxStatusVei
+            // 
+            this.cbxStatusVei.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxStatusVei.FormattingEnabled = true;
+            this.cbxStatusVei.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO",
+            "MANUTENÇÃO"});
+            this.cbxStatusVei.Location = new System.Drawing.Point(156, 197);
+            this.cbxStatusVei.Name = "cbxStatusVei";
+            this.cbxStatusVei.Size = new System.Drawing.Size(121, 21);
+            this.cbxStatusVei.TabIndex = 64;
+            // 
+            // FmrEditarVei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 320);
             this.Controls.Add(this.tabVeiculo);
-            this.Name = "FmrCadastroVei";
-            this.Text = "Cadastro de veículos";
-            this.Load += new System.EventHandler(this.FmrCadastroVei_Load);
+            this.Name = "FmrEditarVei";
+            this.Text = "Dados do veículo";
+            this.Load += new System.EventHandler(this.FmrEditarVei_Load);
             this.tabVeiculo.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -566,6 +591,8 @@
         private System.Windows.Forms.TabControl tabVeiculo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbxTipoVei;
         private System.Windows.Forms.ComboBox cbxmodelo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxMarca;
@@ -592,7 +619,6 @@
         private System.Windows.Forms.TextBox txtLugar;
         private System.Windows.Forms.TextBox txtCombus;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnLimparUs;
         private System.Windows.Forms.Button btnSalvarMot;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -604,8 +630,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbxSegura;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cbxTipoVei;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.ComboBox cbxStatusVei;
     }
 }

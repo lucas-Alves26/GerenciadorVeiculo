@@ -64,12 +64,13 @@
             // 
             // btnNovoUsuario
             // 
-            this.btnNovoUsuario.Location = new System.Drawing.Point(193, 284);
+            this.btnNovoUsuario.Location = new System.Drawing.Point(195, 284);
             this.btnNovoUsuario.Name = "btnNovoUsuario";
             this.btnNovoUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnNovoUsuario.TabIndex = 8;
             this.btnNovoUsuario.Text = "Novo +";
             this.btnNovoUsuario.UseVisualStyleBackColor = true;
+            this.btnNovoUsuario.Click += new System.EventHandler(this.btnNovoUsuario_Click);
             // 
             // groupBox1
             // 

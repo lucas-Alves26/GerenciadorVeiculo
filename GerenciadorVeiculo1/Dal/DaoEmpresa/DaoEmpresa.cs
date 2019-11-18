@@ -202,8 +202,7 @@ namespace GerenciadorVeiculo1.Dal.DaoEmpresa
             + " INNER JOIN TBL_CIDADE AS C ON C.CID_INT_ID = E.CID_INT_ID"
             + " WHERE EP.EMP_INT_ID = " + id;
 
-            SqlDataReader dt = conexao.CarregarVariosDados(query);
-
+            SqlDataReader dt = conexao.CarregarVariosDados(query); 
             return dt;
         }
         public void UpdateEmpresa()

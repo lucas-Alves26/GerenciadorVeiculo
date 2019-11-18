@@ -117,7 +117,11 @@ namespace GerenciadorVeiculo1.View
             catch (DomainExceptions ex)
             {
                 MessageBox.Show(ex.Message);
-            }          
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         //limpa todos os campos
         private void Limpar()
@@ -499,6 +503,11 @@ namespace GerenciadorVeiculo1.View
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            lblAviso.Text = "";
         }
     }
 }

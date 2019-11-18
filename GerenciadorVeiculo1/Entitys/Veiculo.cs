@@ -30,6 +30,10 @@ namespace GerenciadorVeiculo1.Entitys
 
         public Veiculo(string veiId)
         {
+            if (veiId == "")
+            {
+                throw new DomainExceptions("O campo ID do veículo deve ser preenchido!");
+            }
             VeiId = int.Parse(veiId);
         }
 
@@ -84,7 +88,38 @@ namespace GerenciadorVeiculo1.Entitys
         public Veiculo(string veiId, string marca, string modelo,string placa, string chassi, string renavam, string cor, string combustivel, string lugares, string km, string dateFab, string modeloAno, string status, string tipo) : 
             this(marca,modelo,placa,chassi,marca,cor,combustivel,lugares,km,dateFab,modeloAno,tipo)
         {
-            Status = Status;
+            if (marca == "" || marca.Length <= 3)
+            {
+                throw new DomainExceptions("O campo marca do veículo deve ser preenchido!");
+            }
+            else if (modelo == "")
+            {
+                throw new DomainExceptions("O campo modelo do veículo deve ser preenchido!");
+            }
+            else if (placa == "")
+            {
+                throw new DomainExceptions("O campo placa do veículo deve ser preenchido!");
+            }
+            else if (chassi == "")
+            {
+                throw new DomainExceptions("O campo chassis do veículo deve ser preenchido!");
+            }
+
+            else if (renavam == "")
+            {
+                throw new DomainExceptions("O campo renavam do veículo deve ser preenchido!");
+            }
+
+            else if (cor == "")
+            {
+                throw new DomainExceptions("O campo cor do veículo deve ser preenchido!");
+            }
+
+            else if (km == "")
+            {
+                throw new DomainExceptions("O campo quilometragem do veículo deve ser preenchido!");
+            }
+            Status = status;
             VeiId = int.Parse(veiId);
         }
     }

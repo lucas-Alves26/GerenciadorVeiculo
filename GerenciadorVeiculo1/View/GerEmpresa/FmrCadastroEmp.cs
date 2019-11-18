@@ -307,5 +307,10 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
         {
             Limpar();
         }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            lblAviso.Text = "";
+        }
     }
 }

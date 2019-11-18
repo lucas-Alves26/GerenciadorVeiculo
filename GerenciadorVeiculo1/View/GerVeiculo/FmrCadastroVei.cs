@@ -41,8 +41,22 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
             cbxSegura.DisplayMember = "SEG_STR_NOME";
             cbxSegura.DataSource = dao.RetornaSeguros();// carrega a coluna EST_STR_NOME dentro cbx
         }
+        public void popularMarca()
+        {
+            cbxMarca.ValueMember = "VEI_STR_MARCA";
+            cbxMarca.DisplayMember = "VEI_STR_MARCA";
+            cbxMarca.DataSource = dao.RetornaMarca();// carrega a coluna EST_STR_NOME dentro cbx
+        }
+
+        public void popularModelo(string marca)
+        {
+            cbxmodelo.ValueMember = "VEI_STR_MODELO";
+            cbxmodelo.DisplayMember = "VEI_STR_MODELO";
+            cbxmodelo.DataSource = dao.RetornaModelo(marca);// carrega o COLUNA CID_INT_NOME CONFORME O Id ESTADO
+        }
         private void FmrCadastroVei_Load(object sender, EventArgs e)
         {
+            popularMarca();
             popularEmpresa();
             popularEstadoUF();
             
@@ -65,6 +79,9 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
                 dao.seguro = new Seguro(cbxSegura.Text,txtVigIni.Text,txtVigFin.Text,cbxTipo.Text);
                 dao.empresa = new Empresa(empresaId);
                 dao.CadastraVeiculo();
+                lblAviso.Text = "Cadastrado com Sucesso !";
+
+                Limpar();
             }
             catch (DomainExceptions ex)
             {
@@ -78,12 +95,9 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
             finally
             { 
 
-            }
-
-    
+            }  
             
         }
-
         private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Seleciona o Id do estado
@@ -151,10 +165,247 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
                 }
             }
         }
-
         private void cbxSegura_Click(object sender, EventArgs e)
         {
             popularSeguro();
+        }
+
+        private void cbxMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void cbxmodelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void txtCombus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>.,:;°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+        }
+
+        private void txtLugar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtKm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtAnoFab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtAnoModelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+        }
+
+        private void txtChassis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;:., ";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void txtrenavam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;:., ";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void txtCor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>.,:;°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+        }
+
+        private void cbxSegura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais(obs caracteres modificados)
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>;";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+        }
+
+        private void cbxTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+
+            //esse if não aceitar, os seguintes caracteres especiais
+            string caracteresPermitidos = "!@#$¨&*()_-+ºª[]{}?/|\"'¬§<>.,:;°";
+
+            if ((caracteresPermitidos.Contains(e.KeyChar.ToString().ToUpper())))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo não aceita caracteres especiais!");
+            }
+
+            //se for diferente de letras e espaço aparece a menssagem
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita letras e espaços!");
+            }
+        }
+
+        private void cbxMarca_Click(object sender, EventArgs e)
+        {
+            lblAviso.Text = "";
+        }
+
+        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string marca = cbxMarca.SelectedValue.ToString();
+            popularModelo(marca);
+        }
+
+        private void btnLimparUs_Click(object sender, EventArgs e)
+        {
+            Limpar();
+        }
+        public void Limpar()
+        {
+            cbxMarca.Text = "";
+            cbxmodelo.Text = "";
+            txtPlaca.Text = "";
+            txtChassis.Text = "";
+            txtrenavam.Text = "";
+            txtCor.Text = "";
+            txtCombus.Text = "";
+            txtLugar.Text = "";
+            txtKm.Text = "";
+            txtAnoFab.Text = "";
+            txtAnoModelo.Text = "";
+            cbxTipoVei.Text = "";
+            cbxEmpresa.Text = "";
+            cbxEstado.Text = "";
+            cbxSegura.Text = "";
+            cbxTipo.Text = "";
+            txtVigIni.Text = "";
+            txtVigFin.Text = "";
         }
     }
 }

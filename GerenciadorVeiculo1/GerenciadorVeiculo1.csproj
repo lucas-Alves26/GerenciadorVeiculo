@@ -134,6 +134,12 @@
     <Compile Include="View\GerVeiculo\FmrCadastroVei.Designer.cs">
       <DependentUpon>FmrCadastroVei.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GerVeiculo\FmrEditarVei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVeiculo\FmrEditarVei.Designer.cs">
+      <DependentUpon>FmrEditarVei.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GerVeiculo\FmrVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerVeiculo\FmrCadastroVei.resx">
       <DependentUpon>FmrCadastroVei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVeiculo\FmrEditarVei.resx">
+      <DependentUpon>FmrEditarVei.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerVeiculo\FmrVeiculo.resx">
       <DependentUpon>FmrVeiculo.cs</DependentUpon>

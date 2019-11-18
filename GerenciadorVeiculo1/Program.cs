@@ -19,7 +19,7 @@ namespace GerenciadorVeiculo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FmrCadastroVei());
+            Application.Run(new fmrPrincipal());
         }
     }
 }
