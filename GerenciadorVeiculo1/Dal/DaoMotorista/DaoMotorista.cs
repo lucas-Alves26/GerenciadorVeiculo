@@ -128,8 +128,8 @@ namespace GerenciadorVeiculo1.Dal.DaoMotorista
             cmd3.CommandText = "INSERT INTO TBL_CNH(CNH_STR_CATEGORIA,CNH_STR_REGISTRO,CNH_DATE_VALIDADE)VALUES" +
                 "(@categoria,@registro,@validade)";
 
-            cmd4.CommandText = "INSERT INTO TBL_MOTORISTA(MOT_STR_NOME,MOT_DATE_NASC,MOT_STR_CPF,MOT_STR_RG,MOT_STR_SEXO,MOT_STR_EMAIL,EMP_INT_ID)"
-                 + "VALUES(@name, '" + nasc + "', @cpf, @rg, @sexo, @email, @empId)";
+            cmd4.CommandText = "INSERT INTO TBL_MOTORISTA(MOT_STR_NOME,MOT_DATE_NASC,MOT_STR_CPF,MOT_STR_RG,MOT_STR_SEXO,MOT_STR_EMAIL,EMP_INT_ID, MOT_STR_STATUS, MOT_STR_SITUACAO)"
+                 + "VALUES(@name, '" + nasc + "', @cpf, @rg, @sexo, @email, @empId,'ATIVO','Disponivel')";
 
             cmd1.Parameters.Add(new SqlParameter("@ddd", telefone.Ddd));
             cmd1.Parameters.Add(new SqlParameter("@celular", telefone.Celular));
@@ -252,6 +252,32 @@ namespace GerenciadorVeiculo1.Dal.DaoMotorista
 
             return dt;
         }
+        //busca todos os motorista pelo ID da empresa
+        public DataTable SelectMotoristasPelaEmpresa(string idEmpresa)
+        {
+            string query = "SELECT MOT_INT_ID, MOT_STR_NOME FROM TBL_MOTORISTA WHERE MOT_STR_SITUACAO = 'Disponivel' AND EMP_INT_ID = " + idEmpresa;
+            DataTable dt = conexao.CarregarDados(query);
+            return dt;
+        }
+
+        public DataTable MotoristasViagemDisponivel(string idEmpresa,string idSaida)
+        {
+            string query = "SELECT M.MOT_INT_ID, M.MOT_STR_NOME FROM TBL_MOTORISTA AS M"
+            +" INNER JOIN TBL_SAIDA AS S ON S.MOT_INT_ID = M.MOT_INT_ID"
+            +" WHERE EMP_INT_ID = "+idEmpresa+" AND S.SAI_INT_ID = "+idSaida+" OR(M.MOT_STR_SITUACAO = 'Disponivel' AND EMP_INT_ID = "+ idEmpresa +")";
+
+            DataTable dt = conexao.CarregarDados(query);
+            return dt;
+        }
+
+        public SqlDataReader SelectCnh(string idMot)
+        {
+            string query = "SELECT C.CNH_INT_ID, C.CNH_STR_REGISTRO, CONVERT(VARCHAR(10),C.CNH_DATE_VALIDADE,103) AS NASC FROM TBL_MOTORISTA AS M INNER JOIN TBL_CNH AS C ON M.CNH_INT_ID = C.CNH_INT_ID WHERE MOT_INT_ID = " + idMot;
+            SqlDataReader dt = conexao.CarregarVariosDados(query);
+            return dt;
+        }
+
+
         public void UpdateMotorista()
         {
             string idEnd, idTel, idCnh;

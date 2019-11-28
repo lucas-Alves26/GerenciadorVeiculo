@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Control\ControlLogin.cs" />
     <Compile Include="Dal\DaoEmpresa\DaoEmpresa.cs" />
+    <Compile Include="Dal\DaoEntradaSaida\DaoEntrada.cs" />
+    <Compile Include="Dal\DaoEntradaSaida\DaoSaida.cs" />
     <Compile Include="Dal\DaoMotorista\DaoMotorista.cs" />
     <Compile Include="Dal\DaoUsuario\DaoUsuario.cs" />
     <Compile Include="Dal\DaoUsuario\LoginDaoComandos.cs" />
@@ -59,8 +61,10 @@
     <Compile Include="Entitys\Cnh.cs" />
     <Compile Include="Entitys\Empresa.cs" />
     <Compile Include="Entitys\Endereco.cs" />
+    <Compile Include="Entitys\Entrada.cs" />
     <Compile Include="Entitys\Logins.cs" />
     <Compile Include="Entitys\Motorista.cs" />
+    <Compile Include="Entitys\Saida.cs" />
     <Compile Include="Entitys\Seguro.cs" />
     <Compile Include="Entitys\Telefone.cs" />
     <Compile Include="Entitys\Usuario.cs" />
@@ -91,6 +95,30 @@
     </Compile>
     <Compile Include="View\GerEmpresa\FmrEmpresa.Designer.cs">
       <DependentUpon>FmrEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrConsultaSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrConsultaSaida.Designer.cs">
+      <DependentUpon>FmrConsultaSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrDadosSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrDadosSaida.Designer.cs">
+      <DependentUpon>FmrDadosSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrEntrada.Designer.cs">
+      <DependentUpon>FmrEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerEntradaSaida\FmrSaida.Designer.cs">
+      <DependentUpon>FmrSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GerMotorista\FmrCadastroMot.cs">
       <SubType>Form</SubType>
@@ -178,6 +206,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerEmpresa\FmrEmpresa.resx">
       <DependentUpon>FmrEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerEntradaSaida\fmrConsultaSaida.resx">
+      <DependentUpon>FmrConsultaSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerEntradaSaida\FmrDadosSaida.resx">
+      <DependentUpon>FmrDadosSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerEntradaSaida\FmrEntrada.resx">
+      <DependentUpon>FmrEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerEntradaSaida\FmrSaida.resx">
+      <DependentUpon>FmrSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerMotorista\FmrCadastroMot.resx">
       <DependentUpon>FmrCadastroMot.cs</DependentUpon>

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using GerenciadorVeiculo1.View.GerMotorista;
 using GerenciadorVeiculo1.View.GerEmpresa;
 using GerenciadorVeiculo1.View.GerVeiculo;
+using GerenciadorVeiculo1.View.GerEntradaSaida;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -61,6 +62,18 @@ namespace GerenciadorVeiculo1.View
         {
             FmrVeiculos veiculo = new FmrVeiculos();
             veiculo.Show();
+        }
+
+        private void gerenciarSaidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FmrConsultaSaida fmrConsultaSaida = new FmrConsultaSaida();
+            fmrConsultaSaida.Show();
+        }
+
+        private void saidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FmrSaida fmrSaida = new FmrSaida();
+            fmrSaida.Show();
         }
     }
 }

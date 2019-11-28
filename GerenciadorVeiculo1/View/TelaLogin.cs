@@ -16,9 +16,17 @@ namespace GerenciadorVeiculo1.View
 {
     public partial class tlaLogin : Form
     {
+        string id;
+        public void Setlog(string id)
+        {
+            InitializeComponent();
+            this.id = id;
+        }
+
         public tlaLogin()
         {
             InitializeComponent();
+
         }
 
         private void tlaLogin_Load(object sender, EventArgs e)

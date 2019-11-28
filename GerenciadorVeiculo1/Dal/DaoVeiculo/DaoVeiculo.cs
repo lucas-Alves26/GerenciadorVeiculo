@@ -117,8 +117,8 @@ namespace GerenciadorVeiculo1.Dal.DaoVeiculo
                 "VALUES(@segNome, @dateIni, @dateFDinal,@tipo, 'ATIVO')";
             }
 
-            cmd2.CommandText = "INSERT INTO TBL_VEICULO (EMP_INT_ID,EST_INT_CODUF,VEI_STR_MARCA,VEI_STR_MODELO,VEI_STR_PLACA,VEI_STR_CHASSI,VEI_STR_RENAVAM,VEI_STR_COR,VEI_STR_COMBUSTIVEL,VEI_STR_LUGARES,VEI_DOUBLE_KM,VEI_DATE_FAB,VEI_DATE_ANO_MODELO,VEI_STR_STATUS,VEI_STR_TIPO) " +
-            " VALUES (@emp,@uf,@marca,@modelo,@placa,@chassi,@renavam,@cor,@combustivel,@lugar,@km,@anoFab,@anoMod,'ATIVO',@tipo)";
+            cmd2.CommandText = "INSERT INTO TBL_VEICULO (EMP_INT_ID,EST_INT_CODUF,VEI_STR_MARCA,VEI_STR_MODELO,VEI_STR_PLACA,VEI_STR_CHASSI,VEI_STR_RENAVAM,VEI_STR_COR,VEI_STR_COMBUSTIVEL,VEI_STR_LUGARES,VEI_DOUBLE_KM,VEI_DATE_FAB,VEI_DATE_ANO_MODELO,VEI_STR_STATUS,VEI_STR_TIPO,VEI_STR_SITUACAO) " +
+            " VALUES (@emp,@uf,@marca,@modelo,@placa,@chassi,@renavam,@cor,@combustivel,@lugar,@km,@anoFab,@anoMod,'ATIVO',@tipo,'Disponivel')";
 
 
             cmd1.Parameters.Add(new SqlParameter("@segNome", seguro.Nome));
@@ -303,5 +303,27 @@ namespace GerenciadorVeiculo1.Dal.DaoVeiculo
             }
 
         }
+
+        public DataTable SelectVeiculoPelaEmpresa(string idEmp)
+        {
+            string query = "SELECT DISTINCT VEI_INT_ID, VEI_STR_PLACA FROM TBL_VEICULO WHERE VEI_STR_SITUACAO = 'disponivel' and EMP_INT_ID = " + idEmp;
+
+            DataTable dt = conexao.CarregarDados(query);
+
+            return dt;
+        }
+
+        public DataTable VeiculoPelaEmpresaSaida(string idEmp, string idSaida)
+        {
+            string query = "SELECT DISTINCT V.VEI_INT_ID, V.VEI_STR_PLACA FROM TBL_VEICULO AS V"
+            +" INNER JOIN TBL_SAIDA AS S ON S.VEI_INT_ID = V.VEI_INT_ID"
+            +" WHERE EMP_INT_ID = "+idEmp+" AND S.SAI_INT_ID = "+idSaida+" OR (V.VEI_STR_SITUACAO = 'Disponivel' AND EMP_INT_ID = "+idEmp+")";
+
+            DataTable dt = conexao.CarregarDados(query);
+
+            return dt;
+        }
     }
+
+
 }

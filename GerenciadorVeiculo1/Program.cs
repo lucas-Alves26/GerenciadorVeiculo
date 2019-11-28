@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GerenciadorVeiculo1.View;
 using GerenciadorVeiculo1.View.GerEmpresa;
+using GerenciadorVeiculo1.View.GerEntradaSaida;
 using GerenciadorVeiculo1.View.GerVeiculo;
 
 namespace GerenciadorVeiculo1
@@ -20,6 +21,9 @@ namespace GerenciadorVeiculo1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new fmrPrincipal());
+            /*FmrSaida*/
+            //tlaLogin
+            //fmrPrincipal
         }
     }
 }

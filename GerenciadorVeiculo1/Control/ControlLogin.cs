@@ -11,6 +11,17 @@ namespace GerenciadorVeiculo1.Control
     {
         public bool tem = false;
         public string mensagem = "";
+        public string id;
+        public void Setlog(string id)
+        {   
+            this.id = id;
+        }
+
+        public string Getlog(string id)
+        {
+            return id;
+        }
+
 
         public bool acessar(string login, string senha)
         {
