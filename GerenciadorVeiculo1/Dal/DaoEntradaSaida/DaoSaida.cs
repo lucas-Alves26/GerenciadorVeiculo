@@ -94,7 +94,7 @@ namespace GerenciadorVeiculo1.Dal.DaoEntradaSaida
         {
             //nesse select existe convert que está convertendo a data de nasc para trazer a data sem a hora
             //o 103 é o tipo de formado Britânico/francês
-            string query = "SELECT S.SAI_INT_ID, E.EMP_STR_NOME,M.MOT_STR_NOME, C.CNH_STR_REGISTRO, V.VEI_STR_PLACA, V.VEI_STR_MARCA, V.VEI_STR_MODELO, V.VEI_STR_CHASSI, V.VEI_DOUBLE_KM ,CONVERT(VARCHAR(10),S.SAI_DATE_DATA,103) AS DATA, S.SAI_STR_DESC FROM TBL_SAIDA AS S"
+            string query = "SELECT V.VEI_INT_ID, S.SAI_INT_ID, E.EMP_STR_NOME,M.MOT_STR_NOME, C.CNH_STR_REGISTRO, V.VEI_STR_PLACA, V.VEI_STR_MARCA, V.VEI_STR_MODELO, V.VEI_STR_CHASSI, V.VEI_DOUBLE_KM ,CONVERT(VARCHAR(10),S.SAI_DATE_DATA,103) AS DATA, S.SAI_STR_DESC FROM TBL_SAIDA AS S"
             + " INNER JOIN TBL_MOTORISTA AS M ON S.MOT_INT_ID = M.MOT_INT_ID"
             + " INNER JOIN TBL_EMPRESA AS E ON E.EMP_INT_ID = M.EMP_INT_ID"
             + " INNER JOIN TBL_CNH AS C ON C.CNH_INT_ID = M.MOT_INT_ID"

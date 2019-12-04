@@ -64,5 +64,40 @@ namespace GerenciadorVeiculo1.View
 
 
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+           this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void txtLogin_Click(object sender, EventArgs e)
+        {
+            txtLogin.Text = "";
+        }
+
+        private void txtSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.Text = "";
+        }
     }
 }

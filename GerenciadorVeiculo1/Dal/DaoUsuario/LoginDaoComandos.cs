@@ -43,8 +43,8 @@ namespace GerenciadorVeiculo1.Dal
                 this.mensagem = "Erro com banco de dados";
             }
             //Pega o id do login e passa para o fmrprincipal para depois ser passado para o fmrSaida
-            dr = con.CarregarVariosDados("select LOG_INT_ID from tbl_logins where LOG_STR_LOGIN = '" + login + "' and LOG_STR_SENHA = '" + senha + "'");
-            string idLog = dr["LOG_INT_ID"].ToString();
+            //dr = con.CarregarVariosDados("select LOG_INT_ID from tbl_logins where LOG_STR_LOGIN = '" + login + "' and LOG_STR_SENHA = '" + senha + "'");
+            //string idLog = dr["LOG_INT_ID"].ToString();
 
 
             con.desconectar();

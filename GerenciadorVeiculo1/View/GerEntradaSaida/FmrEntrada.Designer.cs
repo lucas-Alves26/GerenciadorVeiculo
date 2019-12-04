@@ -68,7 +68,7 @@
             this.txtHora = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DateAgenda = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -376,6 +376,7 @@
             this.txtDataEntrada.Size = new System.Drawing.Size(85, 20);
             this.txtDataEntrada.TabIndex = 83;
             this.txtDataEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDataEntrada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataEntrada_KeyPress);
             // 
             // groupBox5
             // 
@@ -425,6 +426,7 @@
             this.txtOdoEntrada.Size = new System.Drawing.Size(93, 20);
             this.txtOdoEntrada.TabIndex = 83;
             this.txtOdoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOdoEntrada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOdoEntrada_KeyPress);
             // 
             // label16
             // 
@@ -478,7 +480,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label17);
-            this.groupBox7.Controls.Add(this.dateTimePicker1);
+            this.groupBox7.Controls.Add(this.DateAgenda);
             this.groupBox7.Controls.Add(this.label14);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.label13);
@@ -503,14 +505,14 @@
             this.label17.TabIndex = 105;
             this.label17.Text = "Agendar data *";
             // 
-            // dateTimePicker1
+            // DateAgenda
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(11, 84);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
-            this.dateTimePicker1.TabIndex = 104;
+            this.DateAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateAgenda.Location = new System.Drawing.Point(11, 84);
+            this.DateAgenda.Name = "DateAgenda";
+            this.DateAgenda.Size = new System.Drawing.Size(129, 20);
+            this.DateAgenda.TabIndex = 104;
             // 
             // label14
             // 
@@ -554,7 +556,17 @@
             // 
             // cbxTipo
             // 
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Lataria",
+            "Pneus",
+            "Freios",
+            "Motor",
+            "Elétrica",
+            "Suspensão",
+            "Troca de oleo"});
             this.cbxTipo.Location = new System.Drawing.Point(148, 35);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(129, 21);
@@ -562,7 +574,12 @@
             // 
             // cbxServico
             // 
+            this.cbxServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxServico.FormattingEnabled = true;
+            this.cbxServico.Items.AddRange(new object[] {
+            "Corretiva",
+            "Preventiva"});
             this.cbxServico.Location = new System.Drawing.Point(11, 35);
             this.cbxServico.Name = "cbxServico";
             this.cbxServico.Size = new System.Drawing.Size(129, 21);
@@ -579,7 +596,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnGravar);
             this.Name = "FmrEntrada";
-            this.Text = "FmrEntrada";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.FmrEntrada_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -645,7 +662,7 @@
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.ComboBox cbxServico;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DateAgenda;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox txtOdoEntrada;

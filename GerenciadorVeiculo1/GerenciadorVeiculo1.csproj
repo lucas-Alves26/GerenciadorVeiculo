@@ -53,6 +53,7 @@
     <Compile Include="Dal\DaoEmpresa\DaoEmpresa.cs" />
     <Compile Include="Dal\DaoEntradaSaida\DaoEntrada.cs" />
     <Compile Include="Dal\DaoEntradaSaida\DaoSaida.cs" />
+    <Compile Include="Dal\DaoManutencao\DaoManutencao.cs" />
     <Compile Include="Dal\DaoMotorista\DaoMotorista.cs" />
     <Compile Include="Dal\DaoUsuario\DaoUsuario.cs" />
     <Compile Include="Dal\DaoUsuario\LoginDaoComandos.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Entitys\Endereco.cs" />
     <Compile Include="Entitys\Entrada.cs" />
     <Compile Include="Entitys\Logins.cs" />
+    <Compile Include="Entitys\Manutencao.cs" />
     <Compile Include="Entitys\Motorista.cs" />
     <Compile Include="Entitys\Saida.cs" />
     <Compile Include="Entitys\Seguro.cs" />
@@ -78,6 +80,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GerEmpresa\FmrCadastroEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +132,18 @@
     </Compile>
     <Compile Include="View\GerEntradaSaida\FmrSaida.Designer.cs">
       <DependentUpon>FmrSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerManutencao\FmrCadastroManut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerManutencao\FmrCadastroManut.Designer.cs">
+      <DependentUpon>FmrCadastroManut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerManutencao\FmrManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerManutencao\FmrManutencao.Designer.cs">
+      <DependentUpon>FmrManutencao.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GerMotorista\FmrCadastroMot.cs">
       <SubType>Form</SubType>
@@ -191,13 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="View\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\GerEmpresa\FmrCadastroEmp.resx">
       <DependentUpon>FmrCadastroEmp.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +242,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerEntradaSaida\FmrSaida.resx">
       <DependentUpon>FmrSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerManutencao\FmrCadastroManut.resx">
+      <DependentUpon>FmrCadastroManut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerManutencao\FmrManutencao.resx">
+      <DependentUpon>FmrManutencao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerMotorista\FmrCadastroMot.resx">
       <DependentUpon>FmrCadastroMot.cs</DependentUpon>
@@ -267,6 +297,68 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grey_close_x.svg_ %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizethewindow_theapplication_maximizar_2873 copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carro-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hamburger_icon.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grey_close_x.svg_ %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizethewindow_theapplication_maximizar_2873 copia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carro-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizethewindow_theapplication_maximizar_2873 copia2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fusca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fusca1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ícone-do-carro-99664495 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fuscca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carro-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veiculos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone-carro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_and_steering_wheel_transport_vehicle_icon_123460 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresa..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xPreto.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

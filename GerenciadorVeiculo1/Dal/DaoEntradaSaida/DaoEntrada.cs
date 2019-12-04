@@ -23,6 +23,8 @@ namespace GerenciadorVeiculo1.Dal.DaoEntradaSaida
             idVei = dr["VEI_INT_ID"].ToString();
 
             string data = entrada.DataEntrada.ToString("yyyy-MM-dd");
+            string hora = entrada.HoraEntrada.ToString();
+            
 
             SqlConnection con = new SqlConnection(conexao.StrConexao());
 
@@ -31,7 +33,7 @@ namespace GerenciadorVeiculo1.Dal.DaoEntradaSaida
             SqlCommand cmd3 = con.CreateCommand();
             SqlCommand cmd4 = con.CreateCommand();
 
-            cmd1.CommandText = "INSERT INTO TBL_ENTRADA(SAI_INT_ID, ENT_DATE_DATA) VALUES(@idSaida,@dataEntrada)";
+            cmd1.CommandText = "INSERT INTO TBL_ENTRADA(SAI_INT_ID, ENT_DATE_DATA, ENT_TIME_HORA) VALUES(@idSaida,@dataEntrada,@horaEntrada)";
 
             cmd2.CommandText = "UPDATE TBL_SAIDA SET SAI_STR_SITUACAO = 'Finalizada' WHERE SAI_INT_ID = @idSaida";
 
@@ -41,6 +43,7 @@ namespace GerenciadorVeiculo1.Dal.DaoEntradaSaida
 
             cmd1.Parameters.Add(new SqlParameter("@idSaida", entrada.IdSaida));
             cmd1.Parameters.Add(new SqlParameter("@dataEntrada", data));
+            cmd1.Parameters.Add(new SqlParameter("@horaEntrada", hora));
 
             cmd2.Parameters.Add(new SqlParameter("@idSaida", entrada.IdSaida));
 

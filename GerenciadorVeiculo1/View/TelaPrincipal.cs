@@ -12,6 +12,7 @@ using GerenciadorVeiculo1.View.GerMotorista;
 using GerenciadorVeiculo1.View.GerEmpresa;
 using GerenciadorVeiculo1.View.GerVeiculo;
 using GerenciadorVeiculo1.View.GerEntradaSaida;
+using GerenciadorVeiculo1.View.GerManutencao;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -74,6 +75,17 @@ namespace GerenciadorVeiculo1.View
         {
             FmrSaida fmrSaida = new FmrSaida();
             fmrSaida.Show();
+        }
+
+        private void manutençãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnNovo fmrManutencao = new btnNovo();
+            fmrManutencao.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

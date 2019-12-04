@@ -13,16 +13,18 @@ namespace GerenciadorVeiculo1.Entitys
         public int IdSaida { get; set; }
         public DateTime DataEntrada { get; set; }
         public double OdoEntrada { get; set; }
+        public TimeSpan HoraEntrada { get; set; }
 
         public Entrada()
         {
         }
 
-        public Entrada(string idSaida, string dataEntrada, string odoEntrada)
+        public Entrada(string idSaida, string dataEntrada, string odoEntrada, string hora)
         {
             IdSaida =  int.Parse(idSaida);
             DataEntrada = DateTime.Parse(dataEntrada);
             OdoEntrada = double.Parse(odoEntrada);
+            HoraEntrada = TimeSpan.Parse(hora);
         }
     }
 }

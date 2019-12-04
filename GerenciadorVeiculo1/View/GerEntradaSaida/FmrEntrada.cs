@@ -1,5 +1,6 @@
 ﻿using dllDao;
 using GerenciadorVeiculo1.Dal.DaoEntradaSaida;
+using GerenciadorVeiculo1.Dal.DaoManutencao;
 using GerenciadorVeiculo1.Dal.DaoMotorista;
 using GerenciadorVeiculo1.Dal.DaoVeiculo;
 using GerenciadorVeiculo1.Entitys;
@@ -25,14 +26,12 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
         }
 
         string dataHora = DateTime.Now.ToString();
-        string hora = DateTime.Now.ToShortTimeString();
-
+        string hora = DateTime.Now.ToString("HH:mm:ss");
 
         Conexao conexao = new Conexao();
         DaoSaida daoSaida = new DaoSaida();
-        DaoVeiculo daoVeiculo = new DaoVeiculo();
-        DaoMotorista daoMotorista = new DaoMotorista();
         DaoEntrada daoEntrada = new DaoEntrada();
+        DaoManutencao daoManutencao = new DaoManutencao();
 
         public FmrEntrada()
         {
@@ -41,10 +40,12 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         private void FmrEntrada_Load(object sender, EventArgs e)
         {
-            txtDataEntrada.Text =  DateTime.Now.ToShortDateString();
-            txtHoras.Text = DateTime.Now.ToString("HH:mm:ss");
-            
+            txtDataEntrada.Text =  DateTime.Now.ToShortDateString();//mostra data atual no txtbox
+            txtHoras.Text = DateTime.Now.ToShortTimeString(); /*DateTime.Now.ToString("HH:mm:ss");*///mostra a hora atual no ttxBox
 
+           
+
+            //preenche todos os dados da saída do veículo
             SqlDataReader dt = daoSaida.ConsultarSaida(id);
             txtEmp.Text = dt["EMP_STR_NOME"].ToString();
             txtMot.Text = dt["MOT_STR_NOME"].ToString();
@@ -57,6 +58,7 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
             txtDataSaida.Text = dt["DATA"].ToString();
             txtObs.Text = dt["SAI_STR_DESC"].ToString();
             string idSaida = dt["SAI_INT_ID"].ToString();
+            string idVei = dt["VEI_INT_ID"].ToString();
 
             txtEmp.ReadOnly = true;
             txtMot.ReadOnly = true;
@@ -103,8 +105,65 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         private void button1_Click(object sender, EventArgs e)
         {
-            daoEntrada.entrada = new Entrada(id, dataHora, txtOdoEntrada.Text);
+            //serve para pegar o id do veiculo que está dando entrada
+            SqlDataReader dt = daoSaida.ConsultarSaida(id);
+            string idVei = dt["VEI_INT_ID"].ToString();
+
+
+            daoEntrada.entrada = new Entrada(id, dataHora, txtOdoEntrada.Text,hora);
             daoEntrada.efetuarEntrada();
+
+            if (cbxServico.Text != "" && cbxTipo.Text != "")
+            {
+                daoManutencao.manutencao = new Manutencao(idVei, cbxServico.Text, cbxTipo.Text, txtObs.Text, DateAgenda.Text,hora);
+                daoManutencao.RegistrarManutecao();
+
+            }
+            MessageBox.Show("Veiculo deu entrada com sucesso!");
+        }
+
+        private void txtDataEntrada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
+            if (char.IsNumber(e.KeyChar) == true)
+            {
+                switch (txtDataEntrada.TextLength)
+                {
+                    case 0:
+                        txtDataEntrada.Text = "";
+                        break;
+                    case 2:
+                        txtDataEntrada.Text = txtDataEntrada.Text + "/";
+                        txtDataEntrada.SelectionStart = 4;
+                        break;
+
+                    case 5:
+                        txtDataEntrada.Text = txtDataEntrada.Text + "/";
+                        txtDataEntrada.SelectionStart = 6;
+                        break;
+                }
+            }
+        }
+
+        private void txtOdoEntrada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse if é para aceitar, setas e apagar
+            if (e.KeyChar == 8)
+                return;
+            //se for diferente de numeros aparece a menssagem
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente numero!");
+            }
         }
     }
 }

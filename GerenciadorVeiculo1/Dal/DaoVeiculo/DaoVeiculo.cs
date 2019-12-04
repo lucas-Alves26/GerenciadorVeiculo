@@ -313,12 +313,22 @@ namespace GerenciadorVeiculo1.Dal.DaoVeiculo
             return dt;
         }
 
-        public DataTable VeiculoPelaEmpresaSaida(string idEmp, string idSaida)
+        public DataTable VeiculoPelaEmpresaSaida(string idEmp, string idSaida = "")
         {
-            string query = "SELECT DISTINCT V.VEI_INT_ID, V.VEI_STR_PLACA FROM TBL_VEICULO AS V"
-            +" INNER JOIN TBL_SAIDA AS S ON S.VEI_INT_ID = V.VEI_INT_ID"
-            +" WHERE EMP_INT_ID = "+idEmp+" AND S.SAI_INT_ID = "+idSaida+" OR (V.VEI_STR_SITUACAO = 'Disponivel' AND EMP_INT_ID = "+idEmp+")";
+            string query = "";
 
+            if (idSaida != "")
+            {
+                query = "SELECT DISTINCT V.VEI_INT_ID, V.VEI_STR_PLACA FROM TBL_VEICULO AS V"
+                + " INNER JOIN TBL_SAIDA AS S ON S.VEI_INT_ID = V.VEI_INT_ID"
+                + " WHERE EMP_INT_ID = " + idEmp + " AND S.SAI_INT_ID = " + idSaida + " OR (V.VEI_STR_SITUACAO = 'Disponivel' AND EMP_INT_ID = " + idEmp + ")";
+            }
+            else
+            {
+                query = "SELECT DISTINCT V.VEI_INT_ID, V.VEI_STR_PLACA FROM TBL_VEICULO AS V"
+                + " INNER JOIN TBL_SAIDA AS S ON S.VEI_INT_ID = V.VEI_INT_ID"
+                + " WHERE EMP_INT_ID = " + idEmp + " AND V.VEI_STR_SITUACAO = 'Disponivel' ";
+            }
             DataTable dt = conexao.CarregarDados(query);
 
             return dt;
