@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using GerenciadorVeiculo1.Entitys;
 
 
 namespace GerenciadorVeiculo1.View
@@ -135,6 +136,17 @@ namespace GerenciadorVeiculo1.View
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bntUsuario_Click(object sender, EventArgs e)
+        {
+            fmrTelaUsuario fmrTelaUsuario = new fmrTelaUsuario();
+            fmrTelaUsuario.Show();
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

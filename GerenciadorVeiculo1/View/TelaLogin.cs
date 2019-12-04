@@ -46,7 +46,7 @@ namespace GerenciadorVeiculo1.View
                     //Oculta o primeiro formulario
                     Hide();
 
-                    fmrPrincipal principal = new fmrPrincipal();
+                    FormPrincipal principal = new FormPrincipal();
                     principal.Show();
 
 
@@ -98,6 +98,11 @@ namespace GerenciadorVeiculo1.View
         private void txtSenha_Click(object sender, EventArgs e)
         {
             txtSenha.Text = "";
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -107,5 +107,10 @@ namespace GerenciadorVeiculo1.View
                     dadosUs.Show();
             }    
         }
+
+        private void btnAtualiza_Click(object sender, EventArgs e)
+        {
+            dgUsuario.DataSource = DaoUs.ConsultaUsuario();
+        }
     }
 }

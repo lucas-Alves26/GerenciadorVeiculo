@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.button2 = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.bntUsuario = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.bntUsuario = new System.Windows.Forms.Button();
             this.iconEcerrar = new System.Windows.Forms.PictureBox();
             this.iconNormal = new System.Windows.Forms.PictureBox();
             this.iconMaximizar = new System.Windows.Forms.PictureBox();
@@ -76,42 +76,8 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(240, 450);
+            this.MenuVertical.Size = new System.Drawing.Size(240, 558);
             this.MenuVertical.TabIndex = 4;
-            // 
-            // bntUsuario
-            // 
-            this.bntUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntUsuario.FlatAppearance.BorderSize = 0;
-            this.bntUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.bntUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntUsuario.ForeColor = System.Drawing.Color.White;
-            this.bntUsuario.Image = ((System.Drawing.Image)(resources.GetObject("bntUsuario.Image")));
-            this.bntUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntUsuario.Location = new System.Drawing.Point(2, 69);
-            this.bntUsuario.Name = "bntUsuario";
-            this.bntUsuario.Size = new System.Drawing.Size(235, 40);
-            this.bntUsuario.TabIndex = 4;
-            this.bntUsuario.Text = "      Gerenciar usuário";
-            this.bntUsuario.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(1, 169);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(235, 40);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "       Gerenciar veículo";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -130,12 +96,47 @@
             this.button4.Text = "          Gerenciar Motorista";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(1, 169);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(235, 40);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "       Gerenciar veículo";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // bntUsuario
+            // 
+            this.bntUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntUsuario.FlatAppearance.BorderSize = 0;
+            this.bntUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.bntUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntUsuario.ForeColor = System.Drawing.Color.White;
+            this.bntUsuario.Image = ((System.Drawing.Image)(resources.GetObject("bntUsuario.Image")));
+            this.bntUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntUsuario.Location = new System.Drawing.Point(2, 69);
+            this.bntUsuario.Name = "bntUsuario";
+            this.bntUsuario.Size = new System.Drawing.Size(235, 40);
+            this.bntUsuario.TabIndex = 4;
+            this.bntUsuario.Text = "      Gerenciar usuário";
+            this.bntUsuario.UseVisualStyleBackColor = true;
+            this.bntUsuario.Click += new System.EventHandler(this.bntUsuario_Click);
+            // 
             // iconEcerrar
             // 
             this.iconEcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconEcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconEcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconEcerrar.Image")));
-            this.iconEcerrar.Location = new System.Drawing.Point(552, 12);
+            this.iconEcerrar.Location = new System.Drawing.Point(737, 12);
             this.iconEcerrar.Name = "iconEcerrar";
             this.iconEcerrar.Size = new System.Drawing.Size(25, 25);
             this.iconEcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,7 +149,7 @@
             this.iconNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconNormal.Image = ((System.Drawing.Image)(resources.GetObject("iconNormal.Image")));
-            this.iconNormal.Location = new System.Drawing.Point(521, 12);
+            this.iconNormal.Location = new System.Drawing.Point(706, 12);
             this.iconNormal.Name = "iconNormal";
             this.iconNormal.Size = new System.Drawing.Size(25, 25);
             this.iconNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +162,7 @@
             this.iconMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMaximizar.Image")));
-            this.iconMaximizar.Location = new System.Drawing.Point(521, 12);
+            this.iconMaximizar.Location = new System.Drawing.Point(706, 12);
             this.iconMaximizar.Name = "iconMaximizar";
             this.iconMaximizar.Size = new System.Drawing.Size(25, 25);
             this.iconMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,7 +175,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMinimizar.Image")));
-            this.iconMinimizar.Location = new System.Drawing.Point(490, 12);
+            this.iconMinimizar.Location = new System.Drawing.Point(675, 12);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(25, 25);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,15 +205,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(240, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(583, 50);
+            this.panel1.Size = new System.Drawing.Size(768, 50);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(823, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
