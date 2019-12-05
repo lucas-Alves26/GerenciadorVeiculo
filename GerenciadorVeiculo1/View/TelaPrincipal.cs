@@ -79,8 +79,7 @@ namespace GerenciadorVeiculo1.View
 
         private void manutençãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnNovo fmrManutencao = new btnNovo();
-            fmrManutencao.Show();
+         
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

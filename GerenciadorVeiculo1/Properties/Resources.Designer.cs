@@ -163,6 +163,16 @@ namespace GerenciadorVeiculo1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap configuration_6036 {
+            get {
+                object obj = ResourceManager.GetObject("configuration_6036", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deletar {
             get {
                 object obj = ResourceManager.GetObject("deletar", resourceCulture);
@@ -186,6 +196,16 @@ namespace GerenciadorVeiculo1.Properties {
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap entrada {
+            get {
+                object obj = ResourceManager.GetObject("entrada", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +243,16 @@ namespace GerenciadorVeiculo1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap manut {
+            get {
+                object obj = ResourceManager.GetObject("manut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximizethewindow_theapplication_maximizar_2873_copia {
             get {
                 object obj = ResourceManager.GetObject("maximizethewindow_theapplication_maximizar_2873 copia", resourceCulture);
@@ -253,6 +283,26 @@ namespace GerenciadorVeiculo1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Relatorio {
+            get {
+                object obj = ResourceManager.GetObject("Relatorio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Relatorio1 {
+            get {
+                object obj = ResourceManager.GetObject("Relatorio1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salvo {
             get {
                 object obj = ResourceManager.GetObject("salvo", resourceCulture);
@@ -266,6 +316,26 @@ namespace GerenciadorVeiculo1.Properties {
         internal static System.Drawing.Bitmap usuario3 {
             get {
                 object obj = ResourceManager.GetObject("usuario3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap veiManut {
+            get {
+                object obj = ResourceManager.GetObject("veiManut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap veiSaida {
+            get {
+                object obj = ResourceManager.GetObject("veiSaida", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

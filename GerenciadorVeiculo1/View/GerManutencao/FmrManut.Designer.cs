@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorVeiculo1.View.GerManutencao
 {
-    partial class btnNovo
+    partial class FmrManut
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgManutencao = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgManutencao = new System.Windows.Forms.DataGridView();
             this.MAN_INT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEI_STR_PLACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEI_STR_MARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +40,16 @@
             this.VEI_DOUBLE_KM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgManutencao)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(28, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Novo+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgManutencao
             // 
@@ -53,20 +63,10 @@
             this.Data,
             this.VEI_DOUBLE_KM});
             this.dgManutencao.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgManutencao.Location = new System.Drawing.Point(12, 97);
+            this.dgManutencao.Location = new System.Drawing.Point(12, 95);
             this.dgManutencao.Name = "dgManutencao";
             this.dgManutencao.Size = new System.Drawing.Size(566, 241);
-            this.dgManutencao.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(28, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Novo+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dgManutencao.TabIndex = 3;
             // 
             // MAN_INT_ID
             // 
@@ -111,8 +111,8 @@
             // Data
             // 
             this.Data.DataPropertyName = "Data";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle8;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -126,16 +126,16 @@
             this.VEI_DOUBLE_KM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.VEI_DOUBLE_KM.Width = 90;
             // 
-            // btnNovo
+            // FmrManut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 357);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgManutencao);
-            this.Name = "btnNovo";
-            this.Text = "FmrManutencao";
-            this.Load += new System.EventHandler(this.FmrManutencao_Load);
+            this.Name = "FmrManut";
+            this.Text = "FmrManut";
+            this.Load += new System.EventHandler(this.FmrManut_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgManutencao)).EndInit();
             this.ResumeLayout(false);
 
@@ -143,8 +143,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgManutencao;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgManutencao;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAN_INT_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn VEI_STR_PLACA;
         private System.Windows.Forms.DataGridViewTextBoxColumn VEI_STR_MARCA;

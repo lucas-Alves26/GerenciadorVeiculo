@@ -486,10 +486,15 @@ namespace GerenciadorVeiculo1.View.GerMotorista
 
         private void btnLimparUs_Click(object sender, EventArgs e)
         {
-            Limpar();
+            this.Close();
         }
 
         private void txtNasc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
 
         }

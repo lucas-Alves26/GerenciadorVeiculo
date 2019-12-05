@@ -436,19 +436,19 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
             }
             if (char.IsNumber(e.KeyChar) == true)
             {
-                switch (txtVigIni.TextLength)
+                switch (txtVigFin.TextLength)
                 {
                     case 0:
-                        txtVigIni.Text = "";
+                        txtVigFin.Text = "";
                         break;
                     case 2:
-                        txtVigIni.Text = txtVigIni.Text + "/";
-                        txtVigIni.SelectionStart = 4;
+                        txtVigFin.Text = txtVigFin.Text + "/";
+                        txtVigFin.SelectionStart = 4;
                         break;
 
                     case 5:
-                        txtVigIni.Text = txtVigIni.Text + "/";
-                        txtVigIni.SelectionStart = 6;
+                        txtVigFin.Text = txtVigFin.Text + "/";
+                        txtVigFin.SelectionStart = 6;
                         break;
                 }
             }

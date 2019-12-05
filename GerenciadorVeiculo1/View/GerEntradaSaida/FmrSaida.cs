@@ -65,7 +65,7 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
         {
             try
             {
-                string idFun = "";
+                //string idFun = "";
                 string idMot = cbxMotorista.SelectedValue.ToString();
                 string idVei = cbxPlaca.SelectedValue.ToString();
                 string data = DateTime.Now.ToShortDateString();
@@ -156,6 +156,11 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

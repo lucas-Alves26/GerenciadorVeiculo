@@ -16,7 +16,7 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
     public partial class FmrVeiculos : Form
     {
         string status = "ATIVO";
-        string idVei;
+        string idSelect = "";
 
         DaoVeiculo dao = new DaoVeiculo();
 
@@ -52,15 +52,14 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
             // ao clicar na informação da coluna desejada vai pegar informação e
             //passar ao txtId
             var valor = dgVeiculo[e.ColumnIndex, e.RowIndex].Value.ToString();
-            txtId.Text = valor;
+            idSelect = valor;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-            dao.veiculo = new Veiculo(txtId.Text);
+        {       
             try
             {
+                dao.veiculo = new Veiculo(idSelect);
                 DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Excluir Arquivo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
 
                 if (confirm.ToString().ToUpper() == "YES")
@@ -87,10 +86,31 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            idVei = txtId.Text;//recebe o id colocado no txtboxId
-            FmrEditarVei fmrEditarVei = new FmrEditarVei();
-            fmrEditarVei.GetId(idVei);
-            fmrEditarVei.Show();
+            
+
+
+            if (idSelect == "")
+            {
+                MessageBox.Show("Selecione o ID do usuário para consultar");
+            }
+            else
+            {
+                try
+                {
+                    //recebe o id colocado no txtboxId
+                    FmrEditarVei fmrEditarVei = new FmrEditarVei();
+                    fmrEditarVei.GetId(idSelect);
+                    fmrEditarVei.Show();
+                }
+                catch (DomainExceptions ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

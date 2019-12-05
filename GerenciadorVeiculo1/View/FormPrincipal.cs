@@ -10,11 +10,19 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using GerenciadorVeiculo1.Entitys;
 using GerenciadorVeiculo1.View.GerEmpresa;
+using GerenciadorVeiculo1.View.GerMotorista;
+using GerenciadorVeiculo1.View.GerVeiculo;
+using GerenciadorVeiculo1.View.GerManutencao;
+using GerenciadorVeiculo1.Dal.DaoManutencao;
 
 namespace GerenciadorVeiculo1.View
 {
     public partial class FormPrincipal : Form
     {
+        string op = "Todas";
+
+        DaoManutencao daoManutencao = new DaoManutencao();
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -96,7 +104,7 @@ namespace GerenciadorVeiculo1.View
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            dgManut.DataSource = daoManutencao.SelectManutencao(op);
         }
 
         private void iconMinimizar_Click_1(object sender, EventArgs e)
@@ -146,15 +154,55 @@ namespace GerenciadorVeiculo1.View
             fmrTelaUsuario.Show();
         }
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             FmrEmpresa fmrEmpresa = new FmrEmpresa();
             fmrEmpresa.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FmrMotorista fmrMotorista = new FmrMotorista();
+            fmrMotorista.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            FmrVeiculos fmrVeiculos = new FmrVeiculos();
+            fmrVeiculos.Show();
+        }
+
+        private void dgManut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (dgManut.Height == 377)
+            {
+                dgManut.Height = 0;
+            }
+            else
+            {
+               dgManut.Height = 377;
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FmrManut fmrManut = new FmrManut();
+            fmrManut.Show();
+        }
+
+        private void dgManut_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

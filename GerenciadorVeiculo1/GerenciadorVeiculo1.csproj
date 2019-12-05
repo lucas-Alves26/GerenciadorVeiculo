@@ -133,17 +133,11 @@
     <Compile Include="View\GerEntradaSaida\FmrSaida.Designer.cs">
       <DependentUpon>FmrSaida.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\GerManutencao\FmrCadastroManut.cs">
+    <Compile Include="View\GerManutencao\FmrManut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\GerManutencao\FmrCadastroManut.Designer.cs">
-      <DependentUpon>FmrCadastroManut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\GerManutencao\FmrManutencao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\GerManutencao\FmrManutencao.Designer.cs">
-      <DependentUpon>FmrManutencao.cs</DependentUpon>
+    <Compile Include="View\GerManutencao\FmrManut.Designer.cs">
+      <DependentUpon>FmrManut.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GerMotorista\FmrCadastroMot.cs">
       <SubType>Form</SubType>
@@ -243,11 +237,8 @@
     <EmbeddedResource Include="View\GerEntradaSaida\FmrSaida.resx">
       <DependentUpon>FmrSaida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GerManutencao\FmrCadastroManut.resx">
-      <DependentUpon>FmrCadastroManut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\GerManutencao\FmrManutencao.resx">
-      <DependentUpon>FmrManutencao.cs</DependentUpon>
+    <EmbeddedResource Include="View\GerManutencao\FmrManut.resx">
+      <DependentUpon>FmrManut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerMotorista\FmrCadastroMot.resx">
       <DependentUpon>FmrCadastroMot.cs</DependentUpon>
@@ -410,6 +401,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veiManut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veiSaida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Relatorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Relatorio1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuration_6036.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

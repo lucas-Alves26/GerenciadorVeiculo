@@ -384,7 +384,7 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
 
         private void btnLimparUs_Click(object sender, EventArgs e)
         {
-            Limpar();
+            this.Close();
         }
         public void Limpar()
         {
@@ -406,6 +406,16 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
             cbxTipo.Text = "";
             txtVigIni.Text = "";
             txtVigFin.Text = "";
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLugar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

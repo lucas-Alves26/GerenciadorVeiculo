@@ -33,12 +33,21 @@ namespace GerenciadorVeiculo1.Entitys
                 dateFin = "01/01/1989";
             }
 
+            if(dateIni != "" && dateFin == "01/01/1989")
+            {
+                throw new DomainExceptions("O campo vigência final do seguro deve ser preenchido!");
+            }
+         
+            if (dateIni == "01/01/1989" && dateFin != "")
+                {
+                    throw new DomainExceptions("O campo vigência inicial do seguro deve ser preenchido!");
+                }
+
             Nome = nome;
             DateIni = DateTime.Parse(dateIni);
             DateFin = DateTime.Parse(dateFin);
             Tipo = tipo;
-        }
-
-
+        
+        }                
     }
 }

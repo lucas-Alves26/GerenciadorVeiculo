@@ -18,7 +18,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         DaoMotorista dao = new DaoMotorista();
 
         //armazena id do motorista
-        string motId;
+        string idSelect = "";
 
         public FmrMotorista()
         {
@@ -32,11 +32,15 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         {
             try
             {
-                dao.motorista = new Motorista(txtId.Text);
+                dao.motorista = new Motorista(idSelect);
                 dao.DeletMotorista();
                 MessageBox.Show("Deletado com sucesso!");
             }
             catch(DomainExceptions ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -56,29 +60,39 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         {
             FmrCadastroMot fmr = new FmrCadastroMot();
             fmr.Show();
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
+            try
             {
-                MessageBox.Show("Coloque o ID do motorista para consultar");
-
-            }
-            else
+                if (idSelect == "")
+                {
+                    MessageBox.Show("Selecione o ID do motorista para consultar");
+                }
+                else
+                {
+                    FmrEditarMot mot = new FmrEditarMot();
+                    mot.GetId(idSelect);
+                    mot.Show();
+                }
+            }catch(DomainExceptions ex)
             {
-                
-                motId = txtId.Text;//recebe o id colocado no txtboxId
-                FmrEditarMot mot = new FmrEditarMot();
-                mot.GetId(motId);
-                mot.Show();
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgMotorista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // ao clicar na informação da coluna desejada vai pegar informação e
+            //passar ao txtId
+            var valor = dgMotorista[e.ColumnIndex, e.RowIndex].Value.ToString();
+            idSelect = valor;
         }
     }
 }

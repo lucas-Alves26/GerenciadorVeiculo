@@ -11,28 +11,26 @@ using System.Windows.Forms;
 
 namespace GerenciadorVeiculo1.View.GerManutencao
 {
-    public partial class btnNovo : Form
+    public partial class FmrManut : Form
     {
-        string op ="Todas";
+        string op = "Todas";
 
         DaoManutencao daoManutencao = new DaoManutencao();
 
-        public btnNovo()
+        public FmrManut()
         {
             InitializeComponent();
-
-           
         }
 
-        private void FmrManutencao_Load(object sender, EventArgs e)
+        private void FmrManut_Load(object sender, EventArgs e)
         {
             dgManutencao.DataSource = daoManutencao.SelectManutencao(op);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FmrCadastroManut fmrCadastroManut = new FmrCadastroManut();
-            fmrCadastroManut.Show();
+            //FmrCadastroManut fmrCadastroManut = new FmrCadastroManut();
+            //fmrCadastroManut.Show();
         }
     }
 }
