@@ -1,6 +1,7 @@
 ﻿using dllDao;
 using GerenciadorVeiculo1.Dal.DaoEmpresa;
 using GerenciadorVeiculo1.Entitys;
+using GerenciadorVeiculo1.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,18 +40,26 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string estadoId = cbxEstado.SelectedValue.ToString();
-            string cidadeId = cbxCidade.SelectedValue.ToString();
+            try
+            {
+                string estadoId = cbxEstado.SelectedValue.ToString();
+                string cidadeId = cbxCidade.SelectedValue.ToString();
 
-            DaoEmpresa DaoEmpresa = new DaoEmpresa();
-            DaoEmpresa.empresa = new Empresa(txtName.Text, txtCnpj.Text, txtEmail.Text, txtDesc.Text);
-            DaoEmpresa.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCelular.Text, txtFixo.Text);
-            DaoEmpresa.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
+                DaoEmpresa DaoEmpresa = new DaoEmpresa();
+                DaoEmpresa.empresa = new Empresa(txtName.Text, txtCnpj.Text, txtEmail.Text, txtDesc.Text);
+                DaoEmpresa.telefone = new Telefone(txtDdd.Text, txtOpe.Text, txtCelular.Text, txtFixo.Text);
+                DaoEmpresa.endereco = new Endereco(int.Parse(estadoId), int.Parse(cidadeId), txtRua.Text, txtNum.Text, txtCep.Text, txtComp.Text, txtBairro.Text);
 
-            DaoEmpresa.cadastraEmpresa();
-            lblAviso.Text = "Cadastrado com sucesso!";
+                DaoEmpresa.cadastraEmpresa();
+                lblAviso.Text = "Cadastrado com sucesso!";
 
-            Limpar();
+                Limpar();
+            }
+            catch (DomainExceptions ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         //popula o combox ESTADO
@@ -311,6 +320,11 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
         private void txtName_Click(object sender, EventArgs e)
         {
             lblAviso.Text = "";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace GerenciadorVeiculo1.View
         DaoUsuario DaoUs = new DaoUsuario();
 
         string usuarioID;
+        string idSelect = "";
 
         public string GetUsuarioID()
         {
@@ -30,11 +31,8 @@ namespace GerenciadorVeiculo1.View
         {
             InitializeComponent();
 
-            // ao abrir o frm ja abre com as informações de usuarios cadastrados
-            
-            dgUsuario.DataSource = DaoUs.ConsultaUsuario();
-
-            
+            // ao abrir o frm ja abre com as informações de usuarios cadastrados        
+            dgUsuario.DataSource = DaoUs.ConsultaUsuario();           
         }
 
         private void fmrTelaUsuario_Load(object sender, EventArgs e)
@@ -47,7 +45,7 @@ namespace GerenciadorVeiculo1.View
             // ao clicar na informação da coluna desejada vai pegar informação e
             //passar ao txtId
             var valor = dgUsuario[e.ColumnIndex, e.RowIndex].Value.ToString();
-            txtId.Text = valor;
+            idSelect = valor;
 
         }
 
@@ -77,7 +75,7 @@ namespace GerenciadorVeiculo1.View
         {
             try
             {
-                DaoUs.usuario = new Usuario(txtId.Text);
+                DaoUs.usuario = new Usuario(idSelect);
                 DaoUs.DeletUsuario();
                 MessageBox.Show("Deletado com sucesso!");
             }
@@ -94,16 +92,14 @@ namespace GerenciadorVeiculo1.View
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
+            if (idSelect == "")
             {
-               MessageBox.Show("Coloque o ID do usuário para consultar");
-           
+               MessageBox.Show("Selecione o ID do usuário para consultar");    
             }
             else
-            {
-                    usuarioID = txtId.Text;
+            {       
                     FmrDadosUs dadosUs = new FmrDadosUs();
-                    dadosUs.GetId(usuarioID);
+                    dadosUs.GetId(idSelect);
                     dadosUs.Show();
             }    
         }

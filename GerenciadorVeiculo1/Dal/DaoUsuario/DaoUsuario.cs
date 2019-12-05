@@ -44,7 +44,7 @@ namespace GerenciadorVeiculo1.Dal
             +" INNER JOIN TBL_TELEFONE AS T ON T.TEL_INT_ID = F.TEL_INT_ID "
             +" INNER JOIN TBL_FOTO AS FT ON FT.FOT_INT_ID = F.FOT_INT_ID "
             +" INNER JOIN TBL_LOGINS AS L ON L.LOG_INT_ID = F.LOG_INT_ID "
-            +" WHERE F.FUN_INT_ID =" + usuario.UsuarioId.ToString();
+            +" WHERE F.FUN_INT_ID = " + usuario.UsuarioId.ToString();
 
             SqlDataReader dt = conexao.CarregarVariosDados(query);
 

@@ -28,7 +28,7 @@ namespace GerenciadorVeiculo1.Entitys
         {
             if(id =="")
             {
-                throw new DomainExceptions("Digite o ID o usuário!");
+                throw new DomainExceptions("Selecione o ID do usuário!");
             }
 
             UsuarioId = int.Parse(id);

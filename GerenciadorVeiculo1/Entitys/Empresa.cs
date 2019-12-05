@@ -23,7 +23,7 @@ namespace GerenciadorVeiculo1.Entitys
         {
             if (empId == "")
             {
-                throw new DomainExceptions("O campo ID da empresa deve ser preenchido!");
+                throw new DomainExceptions("O campo ID da empresa deve ser selecionado!");
             }
             EmpId = int.Parse(empId);
         }

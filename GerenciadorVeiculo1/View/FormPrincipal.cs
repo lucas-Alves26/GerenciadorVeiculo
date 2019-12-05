@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using GerenciadorVeiculo1.Entitys;
-
+using GerenciadorVeiculo1.View.GerEmpresa;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -149,6 +149,12 @@ namespace GerenciadorVeiculo1.View
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FmrEmpresa fmrEmpresa = new FmrEmpresa();
+            fmrEmpresa.Show();
         }
     }
 

@@ -360,5 +360,56 @@
   <ItemGroup>
     <None Include="Resources\xPreto.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491313931-cross_82985.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491313940-repeat_82991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491313943-tick_82988.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491313946-settings_82998.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_icon-icons.com_74429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionarve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_icon-icons.com_74434.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_icon-icons.com_744291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gravar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_256_icon-icons.com_76002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abririMenor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

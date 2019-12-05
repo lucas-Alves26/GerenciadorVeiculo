@@ -36,40 +36,62 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dgEmpresa = new System.Windows.Forms.DataGridView();
-            this.lblID = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(102, 284);
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = global::GerenciadorVeiculo1.Properties.Resources.buscar;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(113, 282);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(95, 31);
             this.btnBuscar.TabIndex = 10;
-            this.btnBuscar.Text = "Consultar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Text = "        Consultar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(11, 284);
+            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = global::GerenciadorVeiculo1.Properties.Resources.deletar;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(12, 282);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(95, 31);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Text = "     Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNovoUsuario
             // 
-            this.btnNovoUsuario.Location = new System.Drawing.Point(195, 284);
+            this.btnNovoUsuario.BackColor = System.Drawing.Color.White;
+            this.btnNovoUsuario.FlatAppearance.BorderSize = 0;
+            this.btnNovoUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNovoUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnNovoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoUsuario.Image = global::GerenciadorVeiculo1.Properties.Resources.adc;
+            this.btnNovoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoUsuario.Location = new System.Drawing.Point(214, 282);
             this.btnNovoUsuario.Name = "btnNovoUsuario";
-            this.btnNovoUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnNovoUsuario.Size = new System.Drawing.Size(95, 31);
             this.btnNovoUsuario.TabIndex = 8;
-            this.btnNovoUsuario.Text = "Novo +";
-            this.btnNovoUsuario.UseVisualStyleBackColor = true;
+            this.btnNovoUsuario.Text = "     Novo";
+            this.btnNovoUsuario.UseVisualStyleBackColor = false;
             this.btnNovoUsuario.Click += new System.EventHandler(this.btnNovoUsuario_Click);
             // 
             // groupBox1
@@ -78,21 +100,22 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.btnAtualizar);
             this.groupBox1.Controls.Add(this.dgEmpresa);
-            this.groupBox1.Controls.Add(this.lblID);
-            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 253);
+            this.groupBox1.Size = new System.Drawing.Size(447, 261);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista de Empresas";
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(283, 220);
+            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(256, 218);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(55, 17);
+            this.radioButton2.Size = new System.Drawing.Size(61, 20);
             this.radioButton2.TabIndex = 6;
             this.radioButton2.Text = "Todas";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -102,9 +125,11 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(213, 220);
+            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(189, 219);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 17);
+            this.radioButton1.Size = new System.Drawing.Size(61, 20);
             this.radioButton1.TabIndex = 5;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Ativas";
@@ -113,50 +138,43 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(361, 215);
+            this.btnAtualizar.BackColor = System.Drawing.Color.White;
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
+            this.btnAtualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAtualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnAtualizar.Location = new System.Drawing.Point(341, 214);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.Size = new System.Drawing.Size(95, 31);
             this.btnAtualizar.TabIndex = 1;
             this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // dgEmpresa
             // 
             this.dgEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEmpresa.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgEmpresa.Location = new System.Drawing.Point(6, 19);
+            this.dgEmpresa.Location = new System.Drawing.Point(6, 26);
             this.dgEmpresa.Name = "dgEmpresa";
             this.dgEmpresa.Size = new System.Drawing.Size(430, 185);
             this.dgEmpresa.TabIndex = 0;
             this.dgEmpresa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEmpresa_CellContentClick);
             // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(12, 220);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 13);
-            this.lblID.TabIndex = 4;
-            this.lblID.Text = "ID:";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(34, 217);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(41, 20);
-            this.txtId.TabIndex = 3;
-            // 
             // FmrEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 315);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(78)))), ((int)(((byte)(117)))));
+            this.ClientSize = new System.Drawing.Size(474, 332);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnNovoUsuario);
             this.Controls.Add(this.groupBox1);
             this.Name = "FmrEmpresa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Empresas";
             this.Load += new System.EventHandler(this.FmrEmpresa_Load);
             this.groupBox1.ResumeLayout(false);
@@ -174,8 +192,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridView dgEmpresa;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
     }

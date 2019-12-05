@@ -16,6 +16,7 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
     public partial class FmrEmpresa : Form
     {
         string status = "ATIVO";
+        string idSelect = "";
         string idEmp;
 
         DaoEmpresa DaoEmpresa = new DaoEmpresa();
@@ -50,9 +51,11 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DaoEmpresa.empresa = new Empresa(txtId.Text);
+            
             try
             {
+                DaoEmpresa.empresa = new Empresa(idSelect);
+
                 DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Excluir Arquivo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
 
                 if (confirm.ToString().ToUpper() == "YES")
@@ -77,20 +80,20 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
             // ao clicar na informação da coluna desejada vai pegar informação e
             //passar ao txtId
             var valor = dgEmpresa[e.ColumnIndex, e.RowIndex].Value.ToString();
-            txtId.Text = valor;
+            idSelect = valor;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
+            if (idSelect == "")
             {
-                MessageBox.Show("Coloque o ID da Empresa para consultar.");
+                MessageBox.Show("Selecione o ID empresa!");
             }
             else
             {
-                idEmp = txtId.Text;//recebe o id colocado no txtboxId
+                //recebe o id colocado no txtboxId
                 FmrEditarEmp editarEmp = new FmrEditarEmp();
-                editarEmp.GetId(idEmp);
+                editarEmp.GetId(idSelect);
                 editarEmp.Show();
             }
 
