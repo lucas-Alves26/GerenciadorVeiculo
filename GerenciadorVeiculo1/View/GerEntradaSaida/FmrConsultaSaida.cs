@@ -15,6 +15,7 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
     public partial class FmrConsultaSaida : Form
     {
         string op = "Todas";
+        string idSelect = "";
 
         Conexao conexao = new Conexao();
         DaoSaida daoSaida = new DaoSaida();
@@ -32,8 +33,11 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         private void dgSaida_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // ao clicar na informação da coluna desejada vai pegar informação e
+            //passar ao txtId
+            var valor = dgSaida[e.ColumnIndex, e.RowIndex].Value.ToString();
+            idSelect = valor;
 
-           
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -51,16 +55,36 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FmrDadosSaida fmrDadosSaida = new FmrDadosSaida();
-            fmrDadosSaida.Setid(txtId.Text);
-            fmrDadosSaida.Show();
+            if (idSelect == "")
+            {
+                MessageBox.Show("click no ID primeiro!");
+            }
+            else
+            {
+                FmrDadosSaida fmrDadosSaida = new FmrDadosSaida();
+                fmrDadosSaida.Setid(idSelect);
+                fmrDadosSaida.Show();
+            }
         }
 
         private void btnNovoUsuario_Click(object sender, EventArgs e)
         {
-            FmrEntrada fmrEntrada = new FmrEntrada();
-            fmrEntrada.Setid(txtId.Text);
-            fmrEntrada.Show();
+            if (idSelect == "")
+            {
+                MessageBox.Show("click no ID primeiro!");
+            }
+            else
+            {
+                FmrEntrada fmrEntrada = new FmrEntrada();
+                fmrEntrada.Setid(idSelect);
+                fmrEntrada.Show();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FmrSaida fmrSaida = new FmrSaida();
+            fmrSaida.Show();
         }
     }
 }

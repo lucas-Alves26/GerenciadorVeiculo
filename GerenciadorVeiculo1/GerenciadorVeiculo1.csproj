@@ -423,5 +423,11 @@
   <ItemGroup>
     <None Include="Resources\manut.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setaver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setaverd.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

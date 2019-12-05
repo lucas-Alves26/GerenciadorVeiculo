@@ -313,6 +313,26 @@ namespace GerenciadorVeiculo1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap setaver {
+            get {
+                object obj = ResourceManager.GetObject("setaver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setaverd {
+            get {
+                object obj = ResourceManager.GetObject("setaverd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap usuario3 {
             get {
                 object obj = ResourceManager.GetObject("usuario3", resourceCulture);

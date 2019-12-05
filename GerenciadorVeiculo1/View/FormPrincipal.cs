@@ -14,6 +14,7 @@ using GerenciadorVeiculo1.View.GerMotorista;
 using GerenciadorVeiculo1.View.GerVeiculo;
 using GerenciadorVeiculo1.View.GerManutencao;
 using GerenciadorVeiculo1.Dal.DaoManutencao;
+using GerenciadorVeiculo1.View.GerEntradaSaida;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -203,6 +204,18 @@ namespace GerenciadorVeiculo1.View
         private void dgManut_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FmrConsultaSaida fmrConsultaSaida = new FmrConsultaSaida();
+            fmrConsultaSaida.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FmrSaida fmrSaida = new FmrSaida();
+            fmrSaida.Show();
         }
     }
 

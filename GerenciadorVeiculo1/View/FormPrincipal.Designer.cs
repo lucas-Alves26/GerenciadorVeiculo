@@ -34,6 +34,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgManut = new System.Windows.Forms.DataGridView();
+            this.MAN_INT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEI_STR_PLACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEI_STR_MODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMiniiManut = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -111,11 +115,44 @@
             // dgManut
             // 
             this.dgManut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgManut.Location = new System.Drawing.Point(25, 64);
+            this.dgManut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MAN_INT_ID,
+            this.VEI_STR_PLACA,
+            this.VEI_STR_MODELO,
+            this.Data});
+            this.dgManut.Location = new System.Drawing.Point(34, 63);
             this.dgManut.Name = "dgManut";
-            this.dgManut.Size = new System.Drawing.Size(328, 377);
+            this.dgManut.Size = new System.Drawing.Size(315, 377);
             this.dgManut.TabIndex = 8;
             this.dgManut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgManut_CellContentClick_1);
+            // 
+            // MAN_INT_ID
+            // 
+            this.MAN_INT_ID.DataPropertyName = "MAN_INT_ID";
+            this.MAN_INT_ID.HeaderText = "Id";
+            this.MAN_INT_ID.Name = "MAN_INT_ID";
+            this.MAN_INT_ID.Width = 35;
+            // 
+            // VEI_STR_PLACA
+            // 
+            this.VEI_STR_PLACA.DataPropertyName = "VEI_STR_PLACA";
+            this.VEI_STR_PLACA.HeaderText = "Placa";
+            this.VEI_STR_PLACA.Name = "VEI_STR_PLACA";
+            this.VEI_STR_PLACA.Width = 70;
+            // 
+            // VEI_STR_MODELO
+            // 
+            this.VEI_STR_MODELO.DataPropertyName = "VEI_STR_MODELO";
+            this.VEI_STR_MODELO.HeaderText = "Modelo";
+            this.VEI_STR_MODELO.Name = "VEI_STR_MODELO";
+            this.VEI_STR_MODELO.Width = 90;
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.Width = 75;
             // 
             // btnMiniiManut
             // 
@@ -166,6 +203,7 @@
             this.button6.Text = "Entrada";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -184,6 +222,7 @@
             this.button5.Text = "Saida";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -349,7 +388,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MenuVertical);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrincipal";
@@ -388,5 +427,9 @@
         private System.Windows.Forms.Button btnMiniiManut;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgManut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAN_INT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEI_STR_PLACA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEI_STR_MODELO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
 }

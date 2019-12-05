@@ -165,5 +165,10 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
                 MessageBox.Show("Este campo aceita somente numero!");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
