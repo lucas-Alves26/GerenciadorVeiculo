@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnNovo = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgManutencao = new System.Windows.Forms.DataGridView();
             this.MAN_INT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEI_STR_PLACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,26 +39,9 @@
             this.VEI_DOUBLE_KM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgManutencao)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.Color.White;
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Image = global::GerenciadorVeiculo1.Properties.Resources.adc;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(113, 308);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(95, 31);
-            this.btnNovo.TabIndex = 4;
-            this.btnNovo.Text = "     Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgManutencao
             // 
@@ -77,6 +59,7 @@
             this.dgManutencao.Name = "dgManutencao";
             this.dgManutencao.Size = new System.Drawing.Size(566, 241);
             this.dgManutencao.TabIndex = 3;
+            this.dgManutencao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgManutencao_CellContentClick);
             // 
             // MAN_INT_ID
             // 
@@ -121,8 +104,8 @@
             // Data
             // 
             this.Data.DataPropertyName = "Data";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle2;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -168,6 +151,25 @@
             this.btnConsultar.TabIndex = 6;
             this.btnConsultar.Text = "     Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.White;
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Image = global::GerenciadorVeiculo1.Properties.Resources.adc;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Location = new System.Drawing.Point(113, 308);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(95, 31);
+            this.btnNovo.TabIndex = 4;
+            this.btnNovo.Text = "     Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.button1_Click);
             // 
             // FmrManut
             // 

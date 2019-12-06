@@ -98,5 +98,15 @@ namespace GerenciadorVeiculo1.View.GerManutencao
         {
             this.Close();
         }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAviso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
