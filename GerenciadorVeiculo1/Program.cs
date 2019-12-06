@@ -23,7 +23,7 @@ namespace GerenciadorVeiculo1
             Application.Run(new FormPrincipal());
             /*FmrSaida*/
             //tlaLogin
-            //fmrPrincipal
+            //FormPrincipal
         }
     }
 }

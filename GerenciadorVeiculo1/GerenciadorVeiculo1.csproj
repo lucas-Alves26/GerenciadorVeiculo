@@ -85,6 +85,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\FmrLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FmrLogin.Designer.cs">
+      <DependentUpon>FmrLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,12 +199,6 @@
     <Compile Include="View\GerVeiculo\FmrVeiculo.Designer.cs">
       <DependentUpon>FmrVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaLogin.Designer.cs">
-      <DependentUpon>TelaLogin.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +206,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FmrLogin.resx">
+      <DependentUpon>FmrLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -257,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerVeiculo\FmrVeiculo.resx">
       <DependentUpon>FmrVeiculo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaLogin.resx">
-      <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerUsuario\FmrUsuario.resx">
       <DependentUpon>FmrUsuario.cs</DependentUpon>
@@ -419,6 +419,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\setaverd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
