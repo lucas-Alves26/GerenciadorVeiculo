@@ -56,6 +56,7 @@
             this.btnLogar.TabIndex = 0;
             this.btnLogar.Text = "Entrar";
             this.btnLogar.UseVisualStyleBackColor = false;
+            this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
             // btnSair
             // 
@@ -72,6 +73,7 @@
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // txtUsuario
             // 
@@ -84,6 +86,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(167, 20);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "Usuário";
+            this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
             this.txtUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtSenha
@@ -98,6 +101,7 @@
             this.txtSenha.Size = new System.Drawing.Size(167, 24);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.Text = "Senha";
+            this.txtSenha.Click += new System.EventHandler(this.txtSenha_Click);
             // 
             // panel1
             // 
@@ -156,6 +160,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FmrLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

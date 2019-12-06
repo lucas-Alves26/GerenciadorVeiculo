@@ -20,7 +20,7 @@ namespace GerenciadorVeiculo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FmrLogin());
             /*FmrSaida*/
             //tlaLogin
             //FormPrincipal
