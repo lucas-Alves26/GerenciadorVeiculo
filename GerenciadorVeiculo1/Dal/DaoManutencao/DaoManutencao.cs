@@ -85,7 +85,8 @@ namespace GerenciadorVeiculo1.Dal.DaoManutencao
 
         public void FinalizarManutecao()
         {
-            string hora = manutencao.HoraFin.ToString();
+            string horaFin = manutencao.HoraFin.ToString();
+            string horaIni = manutencao.HoraIni.ToString();
 
             SqlConnection con = new SqlConnection(conexao.StrConexao());
 
@@ -93,13 +94,14 @@ namespace GerenciadorVeiculo1.Dal.DaoManutencao
             SqlCommand cmd2 = con.CreateCommand();
 
 
-            cmd1.CommandText = "UPDATE TBL_MANUTENCAO SET MAN_TIME_HORA_FIN = @hora, MAN_DOU_VALOR = @valor WHERE MAN_INT_ID = " + manutencao.IdManut;
+            cmd1.CommandText = "UPDATE TBL_MANUTENCAO SET MAN_TIME_HORA_FIN = @horaFin, MAN_TIME_HORA_INI = @horaIni, MAN_DOU_VALOR = @valor WHERE MAN_INT_ID = " + manutencao.IdManut;
 
             cmd2.CommandText = "UPDATE TBL_VEICULO SET VEI_STR_SITUACAO = 'Disponivel' WHERE VEI_INT_ID = " + manutencao.IdVei;
 
 
             cmd1.Parameters.Add(new SqlParameter("@idVei", manutencao.IdVei));
-            cmd1.Parameters.Add(new SqlParameter("@hora", hora));
+            cmd1.Parameters.Add(new SqlParameter("@horaFin", horaFin));
+            cmd1.Parameters.Add(new SqlParameter("@horaIni", horaIni));
             cmd1.Parameters.Add(new SqlParameter("@valor", manutencao.Valor.ToString()));
 
             cmd2.Parameters.Add(new SqlParameter("@idVei", manutencao.IdVei));
@@ -130,6 +132,7 @@ namespace GerenciadorVeiculo1.Dal.DaoManutencao
 
         }
 
+        //Alimenta o FormManut
         public DataTable SelectManutencao(string op)
         {
             string query = "";
@@ -156,12 +159,12 @@ namespace GerenciadorVeiculo1.Dal.DaoManutencao
 
             return dt;
         }
-
+        //Carrega dados da manutenção em espera
         public SqlDataReader SelectManut(string id)
         {
             //nesse select existe convert que está convertendo a data de nasc para trazer a data sem a hora
             //o 103 é o tipo de formado Britânico/francês
-            string query = "SELECT CONVERT(VARCHAR(10),M.MAN_DATE_DATA,103) AS DATA, M.MAN_INT_ID,M.MAN_DOU_VALOR,M.MAN_TIME_HORA_INI,MAN_TIME_HORA_FIN,V.VEI_STR_PLACA,V.VEI_STR_MODELO,V.VEI_DOUBLE_KM,"
+            string query = "SELECT CONVERT(VARCHAR(10),M.MAN_DATE_DATA,103) AS DATA, M.MAN_INT_ID,M.MAN_DOU_VALOR,M.MAN_TIME_HORA_INI,MAN_TIME_HORA_FIN,V.VEI_INT_ID,V.VEI_STR_PLACA,V.VEI_STR_MODELO,V.VEI_DOUBLE_KM,"
             + " P.EMP_INT_ID, P.EMP_STR_NOME, S.SERV_STR_SERVICO, S.SERV_STR_TIPO_SERV,S.SERV_STR_OBS FROM TBL_MANUTENCAO AS M"
             + " INNER JOIN TBL_VEICULO AS V ON M.VEI_INT_ID = V.VEI_INT_ID"
             + " INNER JOIN TBL_EMPRESA AS P ON P.EMP_INT_ID = V.EMP_INT_ID"
@@ -169,6 +172,20 @@ namespace GerenciadorVeiculo1.Dal.DaoManutencao
             + " WHERE M.MAN_INT_ID = " + id;
 
             SqlDataReader dt = conexao.CarregarVariosDados(query);
+
+            return dt;
+        }
+
+        public DataTable DadosManutPrincipal()
+        {
+            string query = "";
+      
+                query = "SELECT  DISTINCT M.MAN_INT_ID,V.VEI_STR_PLACA,V.VEI_STR_MODELO,CONVERT(VARCHAR(10),M.MAN_DATE_DATA,103) AS Data FROM TBL_MANUTENCAO AS M "
+                + " INNER JOIN TBL_VEICULO AS V ON V.VEI_INT_ID = M.VEI_INT_ID"
+                + " INNER JOIN TBL_SERVICO AS S ON S.MAN_INT_ID = M.MAN_INT_ID"
+                + " WHERE M.MAN_DOU_VALOR IS NULL";
+            
+            DataTable dt = conexao.CarregarDados(query);
 
             return dt;
         }

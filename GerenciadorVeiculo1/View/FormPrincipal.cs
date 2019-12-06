@@ -105,7 +105,7 @@ namespace GerenciadorVeiculo1.View
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            dgManut.DataSource = daoManutencao.SelectManutencao(op);
+            dgManut.DataSource = daoManutencao.DadosManutPrincipal();
         }
 
         private void iconMinimizar_Click_1(object sender, EventArgs e)

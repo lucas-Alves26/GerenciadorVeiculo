@@ -30,14 +30,17 @@
         {
             this.lblAviso = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.txtData = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtValor = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtHoraIni = new System.Windows.Forms.TextBox();
             this.txtHoraFin = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,23 +56,19 @@
             this.cbxServico = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtHoraIni = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox7.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
-            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAviso.ForeColor = System.Drawing.Color.White;
-            this.lblAviso.Location = new System.Drawing.Point(-18, 291);
+            this.lblAviso.Location = new System.Drawing.Point(12, 327);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(16, 24);
+            this.lblAviso.Size = new System.Drawing.Size(14, 20);
             this.lblAviso.TabIndex = 107;
             this.lblAviso.Text = ".";
             // 
@@ -100,10 +99,39 @@
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox7.Size = new System.Drawing.Size(561, 293);
+            this.groupBox7.Size = new System.Drawing.Size(561, 264);
             this.groupBox7.TabIndex = 104;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Manutenção";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtValor);
+            this.groupBox2.Location = new System.Drawing.Point(382, 203);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(170, 48);
+            this.groupBox2.TabIndex = 109;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 115;
+            this.label1.Text = "Valor:";
+            // 
+            // txtValor
+            // 
+            this.txtValor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValor.Location = new System.Drawing.Point(55, 16);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 21);
+            this.txtValor.TabIndex = 119;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // txtPlaca
             // 
@@ -143,13 +171,16 @@
             this.groupBox1.TabIndex = 114;
             this.groupBox1.TabStop = false;
             // 
-            // txtValor
+            // label6
             // 
-            this.txtValor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(55, 16);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 21);
-            this.txtValor.TabIndex = 119;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(5, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.TabIndex = 121;
+            this.label6.Text = "Hora Ini:";
             // 
             // label2
             // 
@@ -163,6 +194,18 @@
             this.label2.Text = "Hora final:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // txtHoraIni
+            // 
+            this.txtHoraIni.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraIni.Location = new System.Drawing.Point(6, 32);
+            this.txtHoraIni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtHoraIni.Name = "txtHoraIni";
+            this.txtHoraIni.Size = new System.Drawing.Size(62, 21);
+            this.txtHoraIni.TabIndex = 120;
+            this.txtHoraIni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHoraIni.TextChanged += new System.EventHandler(this.txtHoraIni_TextChanged);
+            this.txtHoraIni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoraIni_KeyPress);
+            // 
             // txtHoraFin
             // 
             this.txtHoraFin.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,16 +216,6 @@
             this.txtHoraFin.TabIndex = 117;
             this.txtHoraFin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHoraFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 115;
-            this.label1.Text = "Valor:";
             // 
             // txtModelo
             // 
@@ -346,6 +379,7 @@
             this.button2.TabIndex = 106;
             this.button2.Text = "     Fechar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnSalvar
             // 
@@ -365,69 +399,26 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 334);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 20);
-            this.label3.TabIndex = 108;
-            this.label3.Text = ".";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(5, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 16);
-            this.label6.TabIndex = 121;
-            this.label6.Text = "Hora Ini:";
-            // 
-            // txtHoraIni
-            // 
-            this.txtHoraIni.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraIni.Location = new System.Drawing.Point(6, 32);
-            this.txtHoraIni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtHoraIni.Name = "txtHoraIni";
-            this.txtHoraIni.Size = new System.Drawing.Size(62, 21);
-            this.txtHoraIni.TabIndex = 120;
-            this.txtHoraIni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtHoraIni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoraIni_KeyPress);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtValor);
-            this.groupBox2.Location = new System.Drawing.Point(382, 203);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(170, 48);
-            this.groupBox2.TabIndex = 109;
-            this.groupBox2.TabStop = false;
-            // 
             // FmrManutConsut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(78)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(581, 372);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.groupBox7);
             this.Name = "FmrManutConsut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FmrManutConsut";
             this.Load += new System.EventHandler(this.FmrManutConsut_Load);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +448,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoraFin;
         private System.Windows.Forms.TextBox txtData;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.TextBox txtEmpresa;

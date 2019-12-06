@@ -92,5 +92,14 @@ namespace GerenciadorVeiculo1.Entitys
             Valor = valor;  
             HoraFin = TimeSpan.Parse(horaFin);
         }
+
+        public Manutencao(string idManut, string idVei, string valor, string horaIni, string horaFin)
+        {
+            IdManut = int.Parse(idManut);
+            IdVei = int.Parse(idVei);
+            Valor = Double.Parse(valor);
+            HoraIni = TimeSpan.Parse(horaIni);
+            HoraFin = TimeSpan.Parse(horaFin);
+        }
     }
 }

@@ -21,10 +21,11 @@ namespace GerenciadorVeiculo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FmrManut());
+            Application.Run(new FormPrincipal());
             /*FmrSaida*/
             //tlaLogin
             //FormPrincipal
+            //FmrManut
         }
     }
 }

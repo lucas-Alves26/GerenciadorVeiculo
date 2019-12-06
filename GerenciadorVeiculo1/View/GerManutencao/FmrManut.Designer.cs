@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgManutencao = new System.Windows.Forms.DataGridView();
             this.MAN_INT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEI_STR_PLACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,8 +104,8 @@
             // Data
             // 
             this.Data.DataPropertyName = "Data";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle1;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -182,7 +182,7 @@
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgManutencao);
             this.Name = "FmrManut";
-            this.Text = "FmrManut";
+            this.Text = "Ger. Manutenção";
             this.Load += new System.EventHandler(this.FmrManut_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgManutencao)).EndInit();
             this.ResumeLayout(false);
