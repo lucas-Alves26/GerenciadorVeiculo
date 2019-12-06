@@ -382,7 +382,7 @@
             // 
             this.lblAviso.AutoSize = true;
             this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAviso.ForeColor = System.Drawing.Color.Red;
+            this.lblAviso.ForeColor = System.Drawing.Color.White;
             this.lblAviso.Location = new System.Drawing.Point(23, 314);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(14, 20);

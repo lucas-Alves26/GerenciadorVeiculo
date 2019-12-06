@@ -145,6 +145,12 @@
     <Compile Include="View\GerManutencao\FmrManut.Designer.cs">
       <DependentUpon>FmrManut.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GerManutencao\FmrManutConsut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerManutencao\FmrManutConsut.Designer.cs">
+      <DependentUpon>FmrManutConsut.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GerManutencao\FmrNovaManut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerManutencao\FmrManut.resx">
       <DependentUpon>FmrManut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerManutencao\FmrManutConsut.resx">
+      <DependentUpon>FmrManutConsut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerManutencao\FmrNovaManut.resx">
       <DependentUpon>FmrNovaManut.cs</DependentUpon>
