@@ -16,8 +16,8 @@ namespace GerenciadorVeiculo1.Entitys
         public string Obs { get; set; }
         public double Valor { get; set; }
         public DateTime Data { get; set; }
-        public DateTime HoraIni { get; set; }
-        public DateTime HoraFin { get; set; }
+        public TimeSpan HoraIni { get; set; }
+        public TimeSpan HoraFin { get; set; }
 
         public Manutencao()
         {
@@ -51,11 +51,8 @@ namespace GerenciadorVeiculo1.Entitys
             TipoServ = tipoServ;
             Obs = obs;
             Data = DateTime.Parse(data);
-            HoraIni = DateTime.Parse(horaIni);
+            HoraIni = TimeSpan.Parse(horaIni);
         }
-
-
-
 
 
         public Manutencao(string idVei, string servico, string tipoServ, string obs, double valor, string data, string horaIni, string horaFin) 
@@ -92,10 +89,8 @@ namespace GerenciadorVeiculo1.Entitys
                 throw new DomainExceptions(" O campo hora final ser preenchido!");
             }
 
-
-
             Valor = valor;  
-            HoraFin = DateTime.Parse(horaFin);
+            HoraFin = TimeSpan.Parse(horaFin);
         }
     }
 }
