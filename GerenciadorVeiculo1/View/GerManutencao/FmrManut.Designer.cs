@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.dgManutencao = new System.Windows.Forms.DataGridView();
             this.MAN_INT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 55);
+            this.button1.Location = new System.Drawing.Point(12, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -111,8 +111,8 @@
             // Data
             // 
             this.Data.DataPropertyName = "Data";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle2;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -130,6 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(78)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(590, 357);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgManutencao);
