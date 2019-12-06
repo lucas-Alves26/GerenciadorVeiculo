@@ -32,7 +32,7 @@ namespace GerenciadorVeiculo1.View.GerManutencao
         private void button1_Click(object sender, EventArgs e)
         {
             FmrNovaManut fmrNovaManut = new FmrNovaManut();
-            fmrNovaManut.Show();
+            fmrNovaManut.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace GerenciadorVeiculo1.View.GerManutencao
                 {
                     FmrManutConsut fmrManutConsut = new FmrManutConsut();
                     fmrManutConsut.GetId(idSelect);
-                    fmrManutConsut.Show();
+                    fmrManutConsut.ShowDialog();
                 }
                 catch (DomainExceptions ex)
                 {

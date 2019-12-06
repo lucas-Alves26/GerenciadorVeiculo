@@ -94,7 +94,7 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
                 //recebe o id colocado no txtboxId
                 FmrEditarEmp editarEmp = new FmrEditarEmp();
                 editarEmp.GetId(idSelect);
-                editarEmp.Show();
+                editarEmp.ShowDialog();
             }
 
         }
@@ -102,7 +102,7 @@ namespace GerenciadorVeiculo1.View.GerEmpresa
         private void btnNovoUsuario_Click(object sender, EventArgs e)
         {
             FmrCadastroEmp fmrCadastroEmp = new FmrCadastroEmp();
-            fmrCadastroEmp.Show();
+            fmrCadastroEmp.ShowDialog();
         }
     }
 }

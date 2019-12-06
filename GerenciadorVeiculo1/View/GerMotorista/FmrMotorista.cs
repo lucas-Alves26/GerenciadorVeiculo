@@ -59,7 +59,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
         private void btnNovoUsuario_Click(object sender, EventArgs e)
         {
             FmrCadastroMot fmr = new FmrCadastroMot();
-            fmr.Show();
+            fmr.ShowDialog();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace GerenciadorVeiculo1.View.GerMotorista
                 {
                     FmrEditarMot mot = new FmrEditarMot();
                     mot.GetId(idSelect);
-                    mot.Show();
+                    mot.ShowDialog();
                 }
             }catch(DomainExceptions ex)
             {

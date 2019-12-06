@@ -85,11 +85,11 @@
             // txtModelo
             // 
             this.txtModelo.Enabled = false;
-            this.txtModelo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelo.Location = new System.Drawing.Point(297, 40);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(116, 21);
+            this.txtModelo.Size = new System.Drawing.Size(116, 20);
             this.txtModelo.TabIndex = 113;
             this.txtModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -104,13 +104,14 @@
             // 
             // cbxPlaca
             // 
+            this.cbxPlaca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxPlaca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPlaca.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPlaca.FormattingEnabled = true;
             this.cbxPlaca.Location = new System.Drawing.Point(183, 38);
             this.cbxPlaca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxPlaca.Name = "cbxPlaca";
-            this.cbxPlaca.Size = new System.Drawing.Size(91, 23);
+            this.cbxPlaca.Size = new System.Drawing.Size(91, 21);
             this.cbxPlaca.TabIndex = 111;
             this.cbxPlaca.SelectionChangeCommitted += new System.EventHandler(this.cbxPlaca_SelectionChangeCommitted);
             // 
@@ -126,12 +127,12 @@
             // txtOdo
             // 
             this.txtOdo.Enabled = false;
-            this.txtOdo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOdo.Location = new System.Drawing.Point(429, 40);
             this.txtOdo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOdo.MaxLength = 7;
             this.txtOdo.Name = "txtOdo";
-            this.txtOdo.Size = new System.Drawing.Size(94, 21);
+            this.txtOdo.Size = new System.Drawing.Size(94, 20);
             this.txtOdo.TabIndex = 109;
             this.txtOdo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -146,13 +147,14 @@
             // 
             // cbxEmpresa
             // 
+            this.cbxEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEmpresa.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEmpresa.FormattingEnabled = true;
             this.cbxEmpresa.Location = new System.Drawing.Point(13, 38);
             this.cbxEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxEmpresa.Name = "cbxEmpresa";
-            this.cbxEmpresa.Size = new System.Drawing.Size(150, 23);
+            this.cbxEmpresa.Size = new System.Drawing.Size(150, 21);
             this.cbxEmpresa.TabIndex = 106;
             this.cbxEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbxEmpresa_SelectedIndexChanged);
             // 
@@ -178,12 +180,12 @@
             // DateAgenda
             // 
             this.DateAgenda.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.DateAgenda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateAgenda.Location = new System.Drawing.Point(373, 94);
             this.DateAgenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DateAgenda.Name = "DateAgenda";
-            this.DateAgenda.Size = new System.Drawing.Size(150, 21);
+            this.DateAgenda.Size = new System.Drawing.Size(150, 20);
             this.DateAgenda.TabIndex = 104;
             // 
             // label14
@@ -219,7 +221,7 @@
             // txtObsManut
             // 
             this.txtObsManut.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtObsManut.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObsManut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObsManut.Location = new System.Drawing.Point(13, 167);
             this.txtObsManut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtObsManut.MaxLength = 100;
@@ -230,9 +232,9 @@
             // 
             // cbxTipo
             // 
-            this.cbxTipo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cbxTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "Lataria",
@@ -245,14 +247,14 @@
             this.cbxTipo.Location = new System.Drawing.Point(183, 92);
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(150, 23);
+            this.cbxTipo.Size = new System.Drawing.Size(150, 21);
             this.cbxTipo.TabIndex = 1;
             // 
             // cbxServico
             // 
-            this.cbxServico.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cbxServico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxServico.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxServico.FormattingEnabled = true;
             this.cbxServico.Items.AddRange(new object[] {
             "Corretiva",
@@ -260,7 +262,7 @@
             this.cbxServico.Location = new System.Drawing.Point(13, 92);
             this.cbxServico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxServico.Name = "cbxServico";
-            this.cbxServico.Size = new System.Drawing.Size(150, 23);
+            this.cbxServico.Size = new System.Drawing.Size(150, 21);
             this.cbxServico.TabIndex = 0;
             // 
             // lblAviso
@@ -282,7 +284,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::GerenciadorVeiculo1.Properties.Resources.fechar;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(379, 290);
@@ -300,7 +302,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::GerenciadorVeiculo1.Properties.Resources.gravar;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(489, 290);
@@ -322,6 +324,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox7);
             this.Name = "FmrNovaManut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova manutenção";
             this.Load += new System.EventHandler(this.FmrNovaManut_Load);
             this.groupBox7.ResumeLayout(false);

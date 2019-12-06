@@ -36,6 +36,9 @@
     <Reference Include="dllDao">
       <HintPath>..\dllDao\obj\Debug\dllDao.dll</HintPath>
     </Reference>
+    <Reference Include="GraphLib">
+      <HintPath>..\..\..\C# unip\Aula04\GraphDisplay_04092014\GraphDisplay\GraphLib\obj\Debug\GraphLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

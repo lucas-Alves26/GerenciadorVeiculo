@@ -52,6 +52,16 @@ namespace GerenciadorVeiculo1.View.GerManutencao
             cbxTipo.Text = dt["SERV_STR_TIPO_SERV"].ToString();
             txtData.Text = dt["DATA"].ToString();
             idVei = dt["VEI_INT_ID"].ToString();
+
+            txtEmpresa.Enabled = false;
+            txtPlaca.Enabled = false;
+            txtModelo.Enabled = false;
+            txtObsManut.Enabled = false;
+            txtOdo.Enabled = false;
+            cbxServico.Enabled = false;
+            cbxTipo.Enabled = false;
+            txtData.Enabled = false;
+            idVei = dt["VEI_INT_ID"].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

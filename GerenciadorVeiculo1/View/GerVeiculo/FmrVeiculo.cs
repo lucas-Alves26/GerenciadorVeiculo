@@ -82,7 +82,7 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
         private void btnNovoUsuario_Click(object sender, EventArgs e)
         {
             FmrCadastroVei fmrCadastroVei = new FmrCadastroVei();
-            fmrCadastroVei.Show();
+            fmrCadastroVei.ShowDialog();
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -100,7 +100,7 @@ namespace GerenciadorVeiculo1.View.GerVeiculo
                     //recebe o id colocado no txtboxId
                     FmrEditarVei fmrEditarVei = new FmrEditarVei();
                     fmrEditarVei.GetId(idSelect);
-                    fmrEditarVei.Show();
+                    fmrEditarVei.ShowDialog();
                 }
                 catch (DomainExceptions ex)
                 {

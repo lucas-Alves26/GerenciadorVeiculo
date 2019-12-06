@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgManutencao = new System.Windows.Forms.DataGridView();
             this.MAN_INT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEI_STR_PLACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.Data,
             this.VEI_DOUBLE_KM});
             this.dgManutencao.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgManutencao.Location = new System.Drawing.Point(12, 61);
+            this.dgManutencao.Location = new System.Drawing.Point(12, 52);
             this.dgManutencao.Name = "dgManutencao";
             this.dgManutencao.Size = new System.Drawing.Size(566, 241);
             this.dgManutencao.TabIndex = 3;
@@ -104,8 +104,8 @@
             // Data
             // 
             this.Data.DataPropertyName = "Data";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle2;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -126,8 +126,8 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(483, 24);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(483, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 31);
             this.button2.TabIndex = 5;
@@ -142,10 +142,10 @@
             this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Image = global::GerenciadorVeiculo1.Properties.Resources.buscar;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(12, 308);
+            this.btnConsultar.Location = new System.Drawing.Point(12, 299);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(95, 31);
             this.btnConsultar.TabIndex = 6;
@@ -160,10 +160,10 @@
             this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Image = global::GerenciadorVeiculo1.Properties.Resources.adc;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(113, 308);
+            this.btnNovo.Location = new System.Drawing.Point(113, 299);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 31);
             this.btnNovo.TabIndex = 4;
@@ -176,12 +176,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(78)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(590, 374);
+            this.ClientSize = new System.Drawing.Size(590, 345);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgManutencao);
             this.Name = "FmrManut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ger. Manutenção";
             this.Load += new System.EventHandler(this.FmrManut_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgManutencao)).EndInit();

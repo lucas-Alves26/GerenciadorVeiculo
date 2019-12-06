@@ -14,7 +14,7 @@ namespace dllDao
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
+            con.ConnectionString = @"Data Source=NotebookLucas\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
 
         //se a conexao estiver fechada vai abrir a conexao
@@ -37,7 +37,7 @@ namespace dllDao
         //retorna a string de conexao para ser utilizada.
         public string StrConexao()
         {
-            return @"Data Source=DESKTOP-LUCAS\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
+            return @"Data Source=NotebookLucas\SQLEXPRESS;Initial Catalog=DB_GER_VEICULO;Integrated Security=True";
         }
             
         //Executa query simples.

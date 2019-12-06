@@ -43,19 +43,24 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
             cbxEmpresa.Text = dt["EMP_STR_NOME"].ToString();
             cbxMotorista.Text = dt["MOT_STR_NOME"].ToString();
             txtCnh.Text = dt["CNH_STR_REGISTRO"].ToString();
-            cbxPlaca.Text = dt["VEI_STR_PLACA"].ToString();
+            cbxPlacaa.Text = dt["VEI_STR_PLACA"].ToString();
             txtMarca.Text = dt["VEI_STR_MARCA"].ToString();
             txtModelo.Text = dt["VEI_STR_MODELO"].ToString();
             txtChassis.Text = dt["VEI_STR_CHASSI"].ToString();
             txtOdo.Text = dt["VEI_DOUBLE_KM"].ToString();
             txtData.Text = dt["DATA"].ToString();
             txtObs.Text = dt["SAI_STR_DESC"].ToString();
-            
+
+            //txtEmp.ReadOnly = true;
+            //txtMot.ReadOnly = true;
+            //txtCnh.ReadOnly = true;
+            //txtPlaca.ReadOnly = true;
+
 
             cbxEmpresa.Enabled = false;
             cbxMotorista.Enabled = false;
-            txtCnh.Enabled = false;
-            cbxPlaca.Enabled = false;
+            txtCnh.ReadOnly = true;
+            cbxPlacaa.Enabled = false;
             txtMarca.Enabled = false;
             txtModelo.Enabled = false;
             txtChassis.Enabled = false;
@@ -81,9 +86,9 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         public void populaPlaca(string idEmp)
         {
-            cbxPlaca.ValueMember = "VEI_INT_ID";
-            cbxPlaca.DisplayMember = "VEI_STR_PLACA";
-            cbxPlaca.DataSource = daoVeiculo.VeiculoPelaEmpresaSaida(idEmp,id);
+            cbxPlacaa.ValueMember = "VEI_INT_ID";
+            cbxPlacaa.DisplayMember = "VEI_STR_PLACA";
+            cbxPlacaa.DataSource = daoVeiculo.VeiculoPelaEmpresaSaida(idEmp,id);
         }
 
         private void cbxMotorista_SelectionChangeCommitted(object sender, EventArgs e)
@@ -95,7 +100,7 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         private void cbxPlaca_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string idVei = cbxPlaca.SelectedValue.ToString();
+            string idVei = cbxPlacaa.SelectedValue.ToString();
             SqlDataReader dr = daoVeiculo.SelectVeiculo(idVei);
             txtMarca.Text = dr["VEI_STR_MARCA"].ToString();
             txtModelo.Text = dr["VEI_STR_MODELO"].ToString();
@@ -117,6 +122,11 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
             cbxPlaca.Enabled = true;
             txtData.Enabled = true;
             txtObs.Enabled = true;
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

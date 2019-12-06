@@ -63,7 +63,9 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
             {
                 FmrDadosSaida fmrDadosSaida = new FmrDadosSaida();
                 fmrDadosSaida.Setid(idSelect);
-                fmrDadosSaida.Show();
+                fmrDadosSaida.ShowDialog();
+
+                
             }
         }
 
@@ -77,14 +79,14 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
             {
                 FmrEntrada fmrEntrada = new FmrEntrada();
                 fmrEntrada.Setid(idSelect);
-                fmrEntrada.Show();
+                fmrEntrada.ShowDialog();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FmrSaida fmrSaida = new FmrSaida();
-            fmrSaida.Show();
+            fmrSaida.ShowDialog();
         }
     }
 }
