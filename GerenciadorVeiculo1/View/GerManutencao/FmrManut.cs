@@ -29,8 +29,13 @@ namespace GerenciadorVeiculo1.View.GerManutencao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //FmrCadastroManut fmrCadastroManut = new FmrCadastroManut();
-            //fmrCadastroManut.Show();
+            FmrNovaManut fmrNovaManut = new FmrNovaManut();
+            fmrNovaManut.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dgManutencao.DataSource = daoManutencao.SelectManutencao(op);
         }
     }
 }
