@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GerenciadorVeiculo1.Relatorio;
 using GerenciadorVeiculo1.View;
 using GerenciadorVeiculo1.View.GerEmpresa;
 using GerenciadorVeiculo1.View.GerEntradaSaida;
@@ -21,7 +22,7 @@ namespace GerenciadorVeiculo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FmrLogin());
             /*FmrSaida*/
             //tlaLogin
             //FormPrincipal

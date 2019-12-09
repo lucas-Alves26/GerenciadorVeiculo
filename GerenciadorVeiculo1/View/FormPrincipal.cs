@@ -15,6 +15,7 @@ using GerenciadorVeiculo1.View.GerVeiculo;
 using GerenciadorVeiculo1.View.GerManutencao;
 using GerenciadorVeiculo1.Dal.DaoManutencao;
 using GerenciadorVeiculo1.View.GerEntradaSaida;
+using GerenciadorVeiculo1.Relatorio;
 
 namespace GerenciadorVeiculo1.View
 {
@@ -188,6 +189,8 @@ namespace GerenciadorVeiculo1.View
             {
                dgManut.Height = 377;
             }
+            dgManut.DataSource = daoManutencao.DadosManutPrincipal();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -217,6 +220,14 @@ namespace GerenciadorVeiculo1.View
             FmrSaida fmrSaida = new FmrSaida();
             fmrSaida.Show();
         }
-    }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            PrimeiroRelatorio primeiroRelatorio = new PrimeiroRelatorio();
+            primeiroRelatorio.ShowDialog();
+
+
+        }
+}
 
 }
