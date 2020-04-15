@@ -40,7 +40,12 @@ namespace GerenciadorVeiculo1.View.GerEntradaSaida
 
         private void FmrEntrada_Load(object sender, EventArgs e)
         {
-            txtDataEntrada.Text =  DateTime.Now.ToShortDateString();//mostra data atual no txtbox
+
+
+
+
+
+            ,,,,03txtDataEntrada.Text =  DateTime.Now.ToShortDateString();//mostra data atual no txtbox
             txtHoras.Text = DateTime.Now.ToShortTimeString(); /*DateTime.Now.ToString("HH:mm:ss");*///mostra a hora atual no ttxBox
 
            
